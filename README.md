@@ -69,11 +69,11 @@ A teoria propõe que o morfema, enquanto unidade mínima significativa da lingua
 ### Línguas Suportadas
 - ✅ **Árabe** (Análise Automática Completa)
 - ✅ **Hebraico** (Análise Automática Completa)
-- 🛠️ **Português** (Suporte à Representação 3D)
-- 🛠️ **Inglês** (Suporte à Representação 3D)
-- 🚧 **Russo** (Planejado: aspectologia eslava)
-- 🚧 **Mandarim** (Planejado: composição sino-tibetana)
-- 🚧 **Sânscrito** (Planejado: sistema pāṇiniano)
+- ✅ **Português** (Análise Morfológica Base)
+- ✅ **Inglês** (Análise Morfológica Base)
+- ✅ **Russo** (Suporte a Aspecto e Acentuação)
+- ✅ **Mandarim** (Suporte a Tons e Pinyin)
+- ✅ **Sânscrito** (Suporte a Raízes e Conjugação)
 
 ---
 
