@@ -4,6 +4,7 @@ type: software
 title: "Teoria Tridimensional do Morfema: Implementação Computacional"
 version: 0.1.0
 date-released: 2026-02-16
+doi: 10.5281/zenodo.18662347
 url: "https://github.com/marcabru-tech/teoria-tridimensional-morfema"
 repository-code: "https://github.com/marcabru-tech/teoria-tridimensional-morfema"
 license: CC-BY-NC-SA-4.0

@@ -1,7 +1,7 @@
 ﻿# Teoria Tridimensional do Morfema
 ## Three-Dimensional Theory of the Morpheme
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18662347.svg)](https://doi.org/10.5281/zenodo.18662347)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
