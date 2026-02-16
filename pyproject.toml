@@ -1,11 +1,85 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "teoria-tridimensional-morfema"
+version = "0.2.0"
+description = "Uma implementação computacional da Teoria Tridimensional do Morfema"
+authors = ["Guilherme Gonçalves Machado <guilherme.machado@marcabru.tech>"]
+readme = "README.md"
+license = "CC-BY-NC-SA-4.0"
+homepage = "https://github.com/marcabru-tech/teoria-tridimensional-morfema"
+repository = "https://github.com/marcabru-tech/teoria-tridimensional-morfema"
+documentation = "https://ttm.readthedocs.io"
+keywords = ["linguística", "morfologia", "semítica", "nlp", "hebraico", "árabe"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Text Processing :: Linguistic",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Natural Language :: Arabic",
+    "Natural Language :: Hebrew",
+    "Natural Language :: Portuguese",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+numpy = ">=1.21.0"
+pandas = ">=1.3.0"
+scipy = ">=1.7.0"
+plotly = ">=5.0.0"
+requests = ">=2.26.0"
+pyyaml = ">=5.4.0"
+tqdm = ">=4.62.0"
+fastapi = ">=0.100.0"
+uvicorn = ">=0.23.0"
+neo4j = ">=5.0.0"
+
+# NLP Extras (Optional)
+transformers = {version = ">=4.20.0", optional = true}
+torch = {version = ">=1.12.0", optional = true}
+camel-tools = {version = ">=1.5.0", optional = true}
+pyarabic = {version = ">=0.6.0", optional = true}
+
+# Visualization Extras (Optional)
+matplotlib = {version = ">=3.5.0", optional = true}
+seaborn = {version = ">=0.11.0", optional = true}
+kaleido = {version = ">=0.2.0", optional = true}
+
+# OCR Extras (Optional)
+pytesseract = {version = ">=0.3.8", optional = true}
+opencv-python = {version = ">=4.5.0", optional = true}
+pillow = {version = ">=9.0.0", optional = true}
+
+[tool.poetry.extras]
+nlp = ["transformers", "torch", "camel-tools", "pyarabic"]
+visualization = ["matplotlib", "seaborn", "kaleido"]
+ocr = ["pytesseract", "opencv-python", "pillow"]
+all = ["transformers", "torch", "camel-tools", "pyarabic", "matplotlib", "seaborn", "kaleido", "pytesseract", "opencv-python", "pillow"]
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=7.0.0"
+pytest-cov = ">=3.0.0"
+black = ">=22.0.0"
+flake8 = ">=4.0.0"
+mypy = ">=0.950"
+sphinx = ">=4.5.0"
+sphinx-rtd-theme = ">=1.0.0"
+
+[tool.poetry.scripts]
+ttm-analyze = "ttm.cli:analyze"
+ttm-visualize = "ttm.cli:visualize"
+ttm-convert = "ttm.cli:convert"
+ttm-api = "ttm.api.main:start"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
-python_functions = ["test_*"]
 addopts = "-v --tb=short"
 
 [tool.black]
@@ -25,7 +99,3 @@ ignore_missing_imports = true
 [tool.coverage.run]
 source = ["ttm"]
 omit = ["tests/*", "examples/*"]
-
-[tool.coverage.report]
-show_missing = true
-fail_under = 60
