@@ -1,0 +1,58 @@
+{
+    "מ-ל-ך": {
+        "semantic_field": "soberania",
+        "frequency": "very_high",
+        "description": "Ruling, king, royalty",
+        "examples": {
+            "מָלַךְ": "he ruled",
+            "מֶלֶךְ": "king",
+            "מַלְכָּה": "queen",
+            "מַלְכוּת": "kingdom / kingship",
+            "מַמְלָכָה": "kingdom (territory)"
+        }
+    },
+    "שׁ-מ-ר": {
+        "semantic_field": "proteção",
+        "frequency": "very_high",
+        "description": "Guarding, keeping, observing",
+        "examples": {
+            "שָׁמַר": "he guarded / he kept",
+            "שׁוֹמֵר": "guard / keeper",
+            "מִשְׁמָר": "guard (act) / shift",
+            "שְׁמִירָה": "guarding / keeping"
+        }
+    },
+    "כ-ת-ב": {
+        "semantic_field": "escrita",
+        "frequency": "high",
+        "description": "Writing",
+        "examples": {
+            "כָּתַב": "he wrote",
+            "כּוֹתֵב": "writer",
+            "מִכְתָּב": "letter",
+            "כְּתָב": "writing / script",
+            "כְּתֻבָּה": "ketubah (marriage contract)"
+        }
+    },
+    "א-ה-ב": {
+        "semantic_field": "amor",
+        "frequency": "high",
+        "description": "Loving",
+        "examples": {
+            "אָהַב": "he loved",
+            "אוֹהֵב": "lover / loving",
+            "אַהֲבָה": "love",
+            "אָהוּב": "beloved"
+        }
+    },
+    "ב-ר-א": {
+        "semantic_field": "criação",
+        "frequency": "high",
+        "description": "Creating (ex nihilo)",
+        "examples": {
+            "בָּרָא": "he created",
+            "בּוֹרֵא": "creator",
+            "בְּרִיאָה": "creation"
+        }
+    }
+}
