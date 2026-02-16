@@ -67,13 +67,13 @@ A teoria propõe que o morfema, enquanto unidade mínima significativa da lingua
 - [ ] Vocalização automática de textos árabes e hebraicos
 
 ### Línguas Suportadas
-- ✅ Árabe (العربية)
-- ✅ Hebraico (עברית)
-- ✅ Português
-- ✅ Inglês
-- 🚧 Russo (aspectologia eslava)
-- 🚧 Mandarim (composição sino-tibetana)
-- 🚧 Sânscrito (sistema pāṇiniano)
+- ✅ **Árabe** (Análise Automática Completa)
+- ✅ **Hebraico** (Análise Automática Completa)
+- 🛠️ **Português** (Suporte à Representação 3D)
+- 🛠️ **Inglês** (Suporte à Representação 3D)
+- 🚧 **Russo** (Planejado: aspectologia eslava)
+- 🚧 **Mandarim** (Planejado: composição sino-tibetana)
+- 🚧 **Sânscrito** (Planejado: sistema pāṇiniano)
 
 ---
 
