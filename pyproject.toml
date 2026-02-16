@@ -26,6 +26,9 @@ classifiers = [
     "Natural Language :: Hebrew",
     "Natural Language :: Portuguese",
 ]
+packages = [
+    { include = "ttm" }
+]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.13"
