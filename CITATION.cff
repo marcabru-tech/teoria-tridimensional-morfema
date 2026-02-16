@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "Se usar este software, por favor cite-o como abaixo."
+type: software
+title: "Teoria Tridimensional do Morfema: Implementação Computacional"
+version: 0.1.0
+date-released: 2026-02-16
+url: "https://github.com/marcabru-tech/teoria-tridimensional-morfema"
+repository-code: "https://github.com/marcabru-tech/teoria-tridimensional-morfema"
+license: CC-BY-NC-SA-4.0
+authors:
+  - family-names: "Machado"
+    given-names: "Guilherme Gonçalves"
+keywords:
+  - linguística
+  - morfologia
+  - semítica
+  - árabe
+  - hebraico
+  - nlp
+  - computational-linguistics
+  - morphology
+abstract: >-
+  Uma implementação computacional da Teoria Tridimensional do Morfema,
+  que propõe três dimensões analíticas irredutíveis para o morfema:
+  Largura (combinatório-derivacional), Profundidade (hermenêutico-semântica)
+  e Altura (suprassegmental-gráfica).

@@ -1,0 +1,243 @@
+{
+    "ك-ت-ب": {
+        "semantic_field": "escrita",
+        "frequency": "very_high",
+        "description": "Writing, recording, prescribing",
+        "examples": {
+            "كَتَبَ": "he wrote",
+            "كَاتِب": "writer",
+            "مَكْتُوب": "written / fate (destino)",
+            "كِتَاب": "book",
+            "مَكْتَبَة": "library",
+            "كُتُب": "books",
+            "كِتَابَة": "writing (act of)",
+            "مَكْتَب": "office / desk"
+        }
+    },
+    "ق-ر-أ": {
+        "semantic_field": "leitura",
+        "frequency": "very_high",
+        "description": "Reading, reciting",
+        "examples": {
+            "قَرَأَ": "he read",
+            "قَارِئ": "reader",
+            "قُرْآن": "Quran (recitation)",
+            "قِرَاءَة": "reading (act of)"
+        }
+    },
+    "ع-ل-م": {
+        "semantic_field": "conhecimento",
+        "frequency": "very_high",
+        "description": "Knowledge, learning, teaching",
+        "examples": {
+            "عَلِمَ": "he knew",
+            "عَالِم": "scholar / knowledgeable",
+            "مَعْلُوم": "known",
+            "عِلْم": "knowledge / science",
+            "مُعَلِّم": "teacher",
+            "تَعَلَّمَ": "he learned"
+        }
+    },
+    "ف-ع-ل": {
+        "semantic_field": "ação",
+        "frequency": "very_high",
+        "description": "Doing, action, effect",
+        "examples": {
+            "فَعَلَ": "he did",
+            "فَاعِل": "doer / agent",
+            "مَفْعُول": "done / object",
+            "فِعْل": "action / verb"
+        }
+    },
+    "د-ر-س": {
+        "semantic_field": "estudo",
+        "frequency": "high",
+        "description": "Studying, teaching, lessons",
+        "examples": {
+            "دَرَسَ": "he studied",
+            "دَارِس": "student",
+            "مَدْرَسَة": "school",
+            "دَرْس": "lesson",
+            "مُدَرِّس": "teacher"
+        }
+    },
+    "ح-م-د": {
+        "semantic_field": "louvor",
+        "frequency": "very_high",
+        "description": "Praising, thanking",
+        "examples": {
+            "حَمِدَ": "he praised",
+            "حَامِد": "one who praises",
+            "مَحْمُود": "praised / praiseworthy",
+            "حَمْد": "praise",
+            "مُحَمَّد": "Muhammad (greatly praised)",
+            "أَحْمَد": "Ahmad (most praised)"
+        }
+    },
+    "س-ل-م": {
+        "semantic_field": "paz",
+        "frequency": "very_high",
+        "description": "Peace, submission, safety",
+        "examples": {
+            "سَلِمَ": "he was safe",
+            "سَالِم": "safe / sound",
+            "مُسْلِم": "Muslim (one who submits)",
+            "سَلَام": "peace",
+            "إِسْلَام": "Islam (submission)",
+            "تَسْلِيم": "surrender / delivery"
+        }
+    },
+    "ف-ت-ح": {
+        "semantic_field": "abertura",
+        "frequency": "high",
+        "description": "Opening, conquering, initiating",
+        "examples": {
+            "فَتَحَ": "he opened",
+            "فَاتِح": "opener / conqueror",
+            "مَفْتُوح": "opened",
+            "فَتْح": "conquest / opening",
+            "مِفْتَاح": "key"
+        }
+    },
+    "ج-م-ع": {
+        "semantic_field": "reunião",
+        "frequency": "high",
+        "description": "Gathering, collecting, assembling",
+        "examples": {
+            "جَمَعَ": "he gathered",
+            "جَامِع": "gatherer / mosque",
+            "مَجْمُوع": "collected / total",
+            "جَمْع": "gathering / plural",
+            "جَامِعَة": "university"
+        }
+    },
+    "ن-ز-ل": {
+        "semantic_field": "descida",
+        "frequency": "high",
+        "description": "Descending, sending down, revelation",
+        "examples": {
+            "نَزَلَ": "he descended",
+            "نَازِل": "descending",
+            "مَنْزِل": "house / station",
+            "نُزُول": "descent",
+            "تَنْزِيل": "revelation / sending down"
+        }
+    },
+    "خ-ل-ق": {
+        "semantic_field": "criação",
+        "frequency": "high",
+        "description": "Creating, making, character",
+        "examples": {
+            "خَلَقَ": "he created",
+            "خَالِق": "creator",
+            "مَخْلُوق": "creature / created being",
+            "خَلْق": "creation",
+            "أَخْلَاق": "ethics / morals"
+        }
+    },
+    "ع-ب-د": {
+        "semantic_field": "adoração",
+        "frequency": "very_high",
+        "description": "Worshipping, serving, slavery",
+        "examples": {
+            "عَبَدَ": "he worshipped",
+            "عَابِد": "worshipper",
+            "عَبْد": "servant / slave",
+            "عِبَادَة": "worship",
+            "مَعْبَد": "temple"
+        }
+    },
+    "ر-ح-م": {
+        "semantic_field": "misericórdia",
+        "frequency": "very_high",
+        "description": "Showing mercy, compassion",
+        "examples": {
+            "رَحِمَ": "he showed mercy",
+            "رَاحِم": "merciful",
+            "رَحْمَة": "mercy",
+            "رَحِيم": "most merciful",
+            "رَحْمَان": "most compassionate"
+        }
+    },
+    "ش-ه-د": {
+        "semantic_field": "testemunho",
+        "frequency": "high",
+        "description": "Witnessing, testifying, martyrdom",
+        "examples": {
+            "شَهِدَ": "he witnessed",
+            "شَاهِد": "witness",
+            "مَشْهُود": "witnessed",
+            "شَهَادَة": "testimony / certificate",
+            "شَهِيد": "martyr"
+        }
+    },
+    "و-ح-د": {
+        "semantic_field": "unidade",
+        "frequency": "high",
+        "description": "Unity, oneness, uniqueness",
+        "examples": {
+            "وَحَّدَ": "he unified",
+            "وَاحِد": "one / single",
+            "تَوْحِيد": "monotheism / unification",
+            "وَحْدَة": "unity / unit"
+        }
+    },
+    "ن-ص-ر": {
+        "semantic_field": "vitória",
+        "frequency": "high",
+        "description": "Helping, victory, support",
+        "examples": {
+            "نَصَرَ": "he helped / he was victorious",
+            "نَاصِر": "helper / supporter",
+            "مَنْصُور": "victorious",
+            "نَصْر": "victory / help"
+        }
+    },
+    "ح-ك-م": {
+        "semantic_field": "julgamento",
+        "frequency": "high",
+        "description": "Judging, ruling, wisdom",
+        "examples": {
+            "حَكَمَ": "he judged / he ruled",
+            "حَاكِم": "judge / ruler",
+            "حُكْم": "ruling / judgment",
+            "حَكِيم": "wise",
+            "حِكْمَة": "wisdom"
+        }
+    },
+    "ص-ل-ح": {
+        "semantic_field": "retidão",
+        "frequency": "high",
+        "description": "Being good, reform, reconciliation",
+        "examples": {
+            "صَلُحَ": "he was good / righteous",
+            "صَالِح": "righteous / good",
+            "إِصْلَاح": "reform",
+            "مُصْلِح": "reformer",
+            "صُلْح": "peace / reconciliation"
+        }
+    },
+    "ذ-ك-ر": {
+        "semantic_field": "lembrança",
+        "frequency": "high",
+        "description": "Remembering, mentioning, male",
+        "examples": {
+            "ذَكَرَ": "he remembered / he mentioned",
+            "ذَاكِر": "one who remembers",
+            "ذِكْر": "remembrance / mention",
+            "تَذْكِيرَة": "reminder / ticket",
+            "ذَكَر": "male"
+        }
+    },
+    "ج-ه-د": {
+        "semantic_field": "esforço",
+        "frequency": "high",
+        "description": "Striving, effort, struggle",
+        "examples": {
+            "جَاهَدَ": "he strove / he struggled",
+            "مُجَاهِد": "striver / fighter",
+            "جِهَاد": "striving / struggle",
+            "اِجْتِهَاد": "diligent effort / legal reasoning"
+        }
+    }
+}
