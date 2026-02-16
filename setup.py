@@ -113,6 +113,6 @@ setup(
         ],
     },
     zip_safe=False,
-    license="CC BY-NC-SA 4.0",
+    license_files=["LICENSE"],
     platforms=["any"],
 )
