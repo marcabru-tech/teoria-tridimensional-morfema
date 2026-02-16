@@ -5,79 +5,79 @@
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
-**Uma implementaÃ§Ã£o computacional da Teoria Tridimensional do Morfema**  
+**Uma implementação computacional da Teoria Tridimensional do Morfema**  
 *A computational implementation of the Three-Dimensional Theory of the Morpheme*
 
 ---
 
-## ðŸ“š Sobre o Projeto | About the Project
+## 📚 Sobre o Projeto | About the Project
 
-Este repositÃ³rio implementa computacionalmente a **Teoria Tridimensional do Morfema**, desenvolvida no Ã¢mbito da *Sprachlehre* (Doutrina da LÃ­ngua) pelo projeto **Beit Or Ein Sof / DÄr NÅ«r al-Azal** (Ø¨×™×ª ××•×¨ Ù±×™×Ÿ ×¡×•×£ / Ø¯Ø§Ø± Ù†ÙˆØ± Ù±Ù„Ø£Ø²Ù„ â€” Casa da Luz Infinita).
+Este repositório implementa computacionalmente a **Teoria Tridimensional do Morfema**, desenvolvida no âmbito da *Sprachlehre* (Doutrina da Língua) pelo projeto **Beit Or Ein Sof / Dār Nūr al-Azal** (בית אור אין סוף / دار نور الأزل — Casa da Luz Infinita).
 
-A teoria propÃµe que o morfema, enquanto unidade mÃ­nima significativa da linguagem, possui **trÃªs dimensÃµes analÃ­ticas irredutÃ­veis**:
+A teoria propõe que o morfema, enquanto unidade mínima significativa da linguagem, possui **três dimensões analíticas irredutíveis**:
 
-### As TrÃªs DimensÃµes | The Three Dimensions
+### As Três Dimensões | The Three Dimensions
 
 ```
                     ALTURA (eixo Z)
                     HEIGHT (Z-axis)
-                    Suprassegmental-grÃ¡fica
+                    Suprassegmental-gráfica
                     Suprasegmental-graphical
-                          â”‚
-                          â”‚
-        â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â†’ LARGURA (eixo X)
+                          │
+                          │
+        ──────────────────┼──────────────────→ LARGURA (eixo X)
         Prefixos    RAIZ/ROOT    Sufixos        WIDTH (X-axis)
         Prefixes               Suffixes         Combinatorial-derivational
-                          â”‚
-                          â”‚
-                          â†“
+                          │
+                          │
+                          ↓
                     PROFUNDIDADE (eixo Y)
                     DEPTH (Y-axis)
-                    HermenÃªutico-semÃ¢ntica
+                    Hermenêutico-semântica
                     Hermeneutic-semantic
 ```
 
-#### 1. **LARGURA (X)** â€” DimensÃ£o CombinatÃ³rio-Derivacional
+#### 1. **LARGURA (X)** — Dimensão Combinatório-Derivacional
 - Raiz consonantal + afixos (prefixos, sufixos)
-- ExpansÃ£o derivacional
-- Contexto sintagmÃ¡tico
+- Expansão derivacional
+- Contexto sintagmático
 
-#### 2. **PROFUNDIDADE (Y)** â€” DimensÃ£o HermenÃªutico-SemÃ¢ntica
-- EstratificaÃ§Ã£o de sentidos
-- NÃ­veis interpretativos (literal â†’ alegÃ³rico â†’ mÃ­stico)
+#### 2. **PROFUNDIDADE (Y)** — Dimensão Hermenêutico-Semântica
+- Estratificação de sentidos
+- Níveis interpretativos (literal → alegórico → místico)
 - Polissemia estruturada
 
-#### 3. **ALTURA (Z)** â€” DimensÃ£o Suprassegmental-GrÃ¡fica
-- DiacrÃ­ticos e sinais vocÃ¡licos
-- PontuaÃ§Ã£o hebraica (niqud)
-- VocalizaÃ§Ã£o Ã¡rabe (tashkÄ«l)
-- RepresentaÃ§Ã£o grÃ¡fica vertical
+#### 3. **ALTURA (Z)** — Dimensão Suprassegmental-Gráfica
+- Diacríticos e sinais vocálicos
+- Pontuação hebraica (niqud)
+- Vocalização árabe (tashkīl)
+- Representação gráfica vertical
 
 ---
 
-## ðŸŽ¯ Objetivos | Objectives
+## 🎯 Objetivos | Objectives
 
-### ImplementaÃ§Ã£o Computacional
-- [x] RepresentaÃ§Ã£o de morfemas em espaÃ§o vetorial 3D
-- [x] AnÃ¡lise morfolÃ³gica de lÃ­nguas semÃ­ticas (Ã¡rabe, hebraico)
-- [x] Modelagem de profundidade semÃ¢ntica
-- [x] Processamento de diacrÃ­ticos e altura grÃ¡fica
-- [ ] OCR para manuscritos com aparato diacrÃ­tico
-- [ ] DesambiguaÃ§Ã£o semÃ¢ntica estratificada (WSD)
-- [ ] VocalizaÃ§Ã£o automÃ¡tica de textos Ã¡rabes e hebraicos
+### Implementação Computacional
+- [x] Representação de morfemas em espaço vetorial 3D
+- [x] Análise morfológica de línguas semíticas (árabe, hebraico)
+- [x] Modelagem de profundidade semântica
+- [x] Processamento de diacríticos e altura gráfica
+- [ ] OCR para manuscritos com aparato diacrítico
+- [ ] Desambiguação semântica estratificada (WSD)
+- [ ] Vocalização automática de textos árabes e hebraicos
 
-### LÃ­nguas Suportadas
-- âœ… Ãrabe (Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©)
-- âœ… Hebraico (×¢×‘×¨×™×ª)
-- âœ… PortuguÃªs
-- âœ… InglÃªs
-- ðŸš§ Russo (aspectologia eslava)
-- ðŸš§ Mandarim (composiÃ§Ã£o sino-tibetana)
-- ðŸš§ SÃ¢nscrito (sistema pÄá¹‡iniano)
+### Línguas Suportadas
+- ✅ Árabe (العربية)
+- ✅ Hebraico (עברית)
+- ✅ Português
+- ✅ Inglês
+- 🚧 Russo (aspectologia eslava)
+- 🚧 Mandarim (composição sino-tibetana)
+- 🚧 Sânscrito (sistema pāṇiniano)
 
 ---
 
-## ðŸš€ InstalaÃ§Ã£o | Installation
+## 🚀 Instalação | Installation
 
 ### Requisitos | Requirements
 ```bash
@@ -85,12 +85,12 @@ Python >= 3.8
 pip >= 21.0
 ```
 
-### InstalaÃ§Ã£o via pip
+### Instalação via pip
 ```bash
 pip install teoria-tridimensional-morfema
 ```
 
-### InstalaÃ§Ã£o para desenvolvimento
+### Instalação para desenvolvimento
 ```bash
 git clone https://github.com/marcabru-tech/teoria-tridimensional-morfema.git
 cd teoria-tridimensional-morfema
@@ -99,9 +99,9 @@ pip install -e ".[dev]"
 
 ---
 
-## ðŸ’¡ Uso RÃ¡pido | Quick Start
+## 💡 Uso Rápido | Quick Start
 
-### Exemplo 1: AnÃ¡lise da Raiz Ãrabe K-T-B (ÙƒØªØ¨)
+### Exemplo 1: Análise da Raiz Árabe K-T-B (كتب)
 
 ```python
 from ttm import MorphemeAnalyzer, Language
@@ -110,111 +110,111 @@ from ttm import MorphemeAnalyzer, Language
 analyzer = MorphemeAnalyzer(language=Language.ARABIC)
 
 # Analisar raiz K-T-B
-root = analyzer.analyze_root("Ùƒ-Øª-Ø¨")
+root = analyzer.analyze_root("ك-ت-ب")
 
-# Explorar largura (derivaÃ§Ãµes)
+# Explorar largura (derivações)
 print(root.width.derivations)
-# Output: ['ÙƒÙŽØªÙŽØ¨ÙŽ', 'ÙƒØ§ØªÙØ¨', 'Ù…ÙŽÙƒÙ’ØªÙˆØ¨', 'ÙƒÙØªØ§Ø¨', 'Ù…ÙŽÙƒÙ’ØªÙŽØ¨Ø©', ...]
+# Output: ['كَتبَ', 'كاتِب', 'مَكْتوب', 'كِتاب', 'مَكْتَبة', ...]
 
-# Explorar profundidade (camadas semÃ¢nticas)
+# Explorar profundidade (camadas semânticas)
 for level in root.depth.semantic_levels:
     print(f"{level.name}: {level.meaning}")
 # Output:
 # Literal: escrever/escrita
-# Cultural: destino (maktÅ«b)
-# TeolÃ³gico: decreto divino
+# Cultural: destino (maktūb)
+# Teológico: decreto divino
 
-# Explorar altura (vocalizaÃ§Ãµes)
-word = analyzer.parse("ÙƒØªØ¨")
+# Explorar altura (vocalizações)
+word = analyzer.parse("كتب")
 print(word.height.vocalizations)
-# Output: ['ÙƒÙŽØªÙŽØ¨ÙŽ (kataba)', 'ÙƒÙØªÙØ¨ÙŽ (kutiba)', 'ÙƒÙØªÙØ¨ (kutub)']
+# Output: ['كَتَبَ (kataba)', 'كُتِبَ (kutiba)', 'كُتُب (kutub)']
 ```
 
-### Exemplo 2: AnÃ¡lise do Hebraico ×ž-×œ-×› (M-L-Kh)
+### Exemplo 2: Análise do Hebraico מ-ל-כ (M-L-Kh)
 
 ```python
 from ttm import MorphemeAnalyzer, Language
 
 analyzer = MorphemeAnalyzer(language=Language.HEBREW)
-root = analyzer.analyze_root("×ž-×œ-×›")
+root = analyzer.analyze_root("מ-ל-ך")
 
-# Coordenadas 3D do morfema ×žÖ¶×œÖ¶×šÖ° (mÃ©lekh, "rei")
-melekh = root.get_morpheme("×žÖ¶×œÖ¶×šÖ°")
+# Coordenadas 3D do morfema מֶלֶךְ (mélekh, "rei")
+melekh = root.get_morpheme("מֶלֶךְ")
 print(melekh.coordinates)
-# Output: (x=0, y=1, z=5)  # x: base, y: literal, z: padrÃ£o vocÃ¡lico
+# Output: (x=0, y=1, z=5)  # x: base, y: literal, z: padrão vocálico
 
-# Comparar com ×žÖ¸×œÖ·×šÖ° (malÃ¡kh, "reinou")
-malakh = root.get_morpheme("×žÖ¸×œÖ·×šÖ°")
+# Comparar com מָלַךְ (malákh, "reinou")
+malakh = root.get_morpheme("מָלַךְ")
 print(malakh.coordinates)
 # Output: (x=0, y=1, z=8)  # mesma largura e profundidade, altura diferente
 ```
 
-### Exemplo 3: DesambiguaÃ§Ã£o por Contexto
+### Exemplo 3: Desambiguação por Contexto
 
 ```python
-# Palavra ambÃ­gua sem vocalizaÃ§Ã£o
-ambiguous = analyzer.parse("×ž×œ×š")
+# Palavra ambígua sem vocalização
+ambiguous = analyzer.parse("מלך")
 
-# Desambiguar por contexto sintagmÃ¡tico (largura)
-context = "×”×ž×œ×š ×’×“×•×œ"
+# Desambiguar por contexto sintagmático (largura)
+context = "המלך גדול"
 disambiguated = analyzer.disambiguate(ambiguous, context=context)
 print(disambiguated.meaning)
-# Output: "rei" (nÃ£o "reinou" ou "reinado")
+# Output: "rei" (não "reinou" ou "reinado")
 ```
 
 ---
 
-## ðŸ“– DocumentaÃ§Ã£o Completa | Full Documentation
+## 📖 Documentação Completa | Full Documentation
 
-### Estrutura do CÃ³digo
+### Estrutura do Código
 ```
 teoria-tridimensional-morfema/
-â”œâ”€â”€ ttm/                          # Pacote principal
-â”‚   â”œâ”€â”€ __init__.py
-â”‚   â”œâ”€â”€ core/                     # NÃºcleo da biblioteca
-â”‚   â”‚   â”œâ”€â”€ morpheme.py           # Classe Morpheme
-â”‚   â”‚   â”œâ”€â”€ dimensions.py         # DimensÃµes X, Y, Z
-â”‚   â”‚   â””â”€â”€ space.py              # EspaÃ§o tridimensional
-â”‚   â”œâ”€â”€ analyzers/                # Analisadores por lÃ­ngua
-â”‚   â”‚   â”œâ”€â”€ arabic.py             # Analisador Ã¡rabe
-â”‚   â”‚   â”œâ”€â”€ hebrew.py             # Analisador hebraico
-â”‚   â”‚   â””â”€â”€ indo_european.py      # LÃ­nguas indo-europeias
-â”‚   â”œâ”€â”€ nlp/                      # Processamento de linguagem natural
-â”‚   â”‚   â”œâ”€â”€ disambiguation.py    # WSD (desambiguaÃ§Ã£o)
-â”‚   â”‚   â”œâ”€â”€ vocalization.py      # VocalizaÃ§Ã£o automÃ¡tica
-â”‚   â”‚   â””â”€â”€ ocr.py               # Reconhecimento Ã³tico
-â”‚   â””â”€â”€ utils/                    # UtilitÃ¡rios
-â”‚       â”œâ”€â”€ transliteration.py   # TransliteraÃ§Ã£o
-â”‚       â””â”€â”€ visualization.py     # VisualizaÃ§Ã£o 3D
-â”œâ”€â”€ tests/                        # Testes unitÃ¡rios
-â”œâ”€â”€ examples/                     # Exemplos de uso
-â”œâ”€â”€ docs/                         # DocumentaÃ§Ã£o
-â””â”€â”€ data/                         # Dados linguÃ­sticos
+├── ttm/                          # Pacote principal
+│   ├── __init__.py
+│   ├── core/                     # Núcleo da biblioteca
+│   │   ├── morpheme.py           # Classe Morpheme
+│   │   ├── dimensions.py         # Dimensões X, Y, Z
+│   │   └── space.py              # Espaço tridimensional
+│   ├── analyzers/                # Analisadores por língua
+│   │   ├── arabic.py             # Analisador árabe
+│   │   ├── hebrew.py             # Analisador hebraico
+│   │   └── indo_european.py      # Línguas indo-europeias
+│   ├── nlp/                      # Processamento de linguagem natural
+│   │   ├── disambiguation.py    # WSD (desambiguação)
+│   │   ├── vocalization.py      # Vocalização automática
+│   │   └── ocr.py               # Reconhecimento ótico
+│   └── utils/                    # Utilitários
+│       ├── transliteration.py   # Transliteração
+│       └── visualization.py     # Visualização 3D
+├── tests/                        # Testes unitários
+├── examples/                     # Exemplos de uso
+├── docs/                         # Documentação
+└── data/                         # Dados linguísticos
 ```
 
 ### Classes Principais
 
 #### `Morpheme`
-Representa um morfema no espaÃ§o tridimensional.
+Representa um morfema no espaço tridimensional.
 
 ```python
 class Morpheme:
     def __init__(self, form: str, root: str, language: Language):
         self.form = form              # Forma superficial
         self.root = root              # Raiz consonantal
-        self.language = language      # LÃ­ngua
-        self.x = Width()              # DimensÃ£o X (largura)
-        self.y = Depth()              # DimensÃ£o Y (profundidade)
-        self.z = Height()             # DimensÃ£o Z (altura)
+        self.language = language      # Língua
+        self.x = Width()              # Dimensão X (largura)
+        self.y = Depth()              # Dimensão Y (profundidade)
+        self.z = Height()             # Dimensão Z (altura)
     
     @property
     def coordinates(self) -> tuple[int, int, int]:
-        """Retorna coordenadas (x, y, z) no espaÃ§o morfÃªmico"""
+        """Retorna coordenadas (x, y, z) no espaço morfêmico"""
         return (self.x.position, self.y.level, self.z.configuration)
 ```
 
 #### `Width` (Largura)
-DimensÃ£o combinatÃ³rio-derivacional.
+Dimensão combinatório-derivacional.
 
 ```python
 class Width:
@@ -222,12 +222,12 @@ class Width:
         self.root: str                    # Raiz nuclear
         self.prefixes: list[str]          # Prefixos
         self.suffixes: list[str]          # Sufixos
-        self.pattern: str                 # PadrÃ£o (mishqal/wazn)
+        self.pattern: str                 # Padrão (mishqal/wazn)
         self.syntagmatic_context: str     # Contexto frasal
 ```
 
 #### `Depth` (Profundidade)
-DimensÃ£o hermenÃªutico-semÃ¢ntica.
+Dimensão hermenêutico-semântica.
 
 ```python
 class Depth:
@@ -235,29 +235,29 @@ class Depth:
         self.levels: list[SemanticLevel]
     
     class SemanticLevel:
-        LITERAL = 1      # Peshat (×¤×©×˜), áº’Ähir (Ø¸Ø§Ù‡Ø±)
-        ALLUSIVE = 2     # Remez (×¨×ž×–)
-        HOMILETIC = 3    # Derash (×“×¨×©)
-        MYSTICAL = 4     # Sod (×¡×•×“), BÄá¹­in (Ø¨Ø§Ø·Ù†)
+        LITERAL = 1      # Peshat (פשט), Ẓāhir (ظاهر)
+        ALLUSIVE = 2     # Remez (רמז)
+        HOMILETIC = 3    # Derash (דרש)
+        MYSTICAL = 4     # Sod (סוד), Bāṭin (باطن)
 ```
 
 #### `Height` (Altura)
-DimensÃ£o suprassegmental-grÃ¡fica.
+Dimensão suprassegmental-gráfica.
 
 ```python
 class Height:
     def __init__(self):
-        self.diacritics: dict           # DiacrÃ­ticos
-        self.vowels: list[str]          # Vogais (niqud/tashkÄ«l)
-        self.cantillation: list[str]    # Sinais de cantilaÃ§Ã£o
-        self.configuration_id: int      # ID da configuraÃ§Ã£o grÃ¡fica
+        self.diacritics: dict           # Diacríticos
+        self.vowels: list[str]          # Vogais (niqud/tashkīl)
+        self.cantillation: list[str]    # Sinais de cantilação
+        self.configuration_id: int      # ID da configuração gráfica
 ```
 
 ---
 
-## ðŸ”¬ Exemplos AvanÃ§ados | Advanced Examples
+## 🔬 Exemplos Avançados | Advanced Examples
 
-### AnÃ¡lise Completa com VisualizaÃ§Ã£o 3D
+### Análise Completa com Visualização 3D
 
 ```python
 from ttm import MorphemeAnalyzer, Visualizer
@@ -265,13 +265,13 @@ from ttm import MorphemeAnalyzer, Visualizer
 analyzer = MorphemeAnalyzer(language=Language.ARABIC)
 viz = Visualizer()
 
-# Analisar mÃºltiplas derivaÃ§Ãµes da raiz K-T-B
-root = analyzer.analyze_root("Ùƒ-Øª-Ø¨")
+# Analisar múltiplas derivações da raiz K-T-B
+root = analyzer.analyze_root("ك-ت-ب")
 morphemes = root.get_all_morphemes()
 
-# Visualizar no espaÃ§o 3D
+# Visualizar no espaço 3D
 viz.plot_morpheme_space(morphemes, save_path="ktb_space.html")
-# Gera visualizaÃ§Ã£o interativa com plotly
+# Gera visualização interativa com plotly
 ```
 
 ### Processamento em Lote
@@ -283,7 +283,7 @@ processor = BatchProcessor(language=Language.HEBREW)
 
 # Analisar texto completo
 text = """
-×‘Ö°Ö¼×¨Öµ××©Ö´××™×ª ×‘Ö¸Ö¼×¨Ö¸× ×Ö±×œÖ¹×”Ö´×™× ×Öµ×ª ×”Ö·×©Ö¸Ö¼××žÖ·×™Ö´× ×•Ö°×Öµ×ª ×”Ö¸×Ö¸×¨Ö¶×¥
+בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ
 """
 
 results = processor.process_text(text)
@@ -293,149 +293,113 @@ for morpheme in results:
           f"Coordenadas: {morpheme.coordinates}")
 ```
 
-### Treinamento de Modelo de DesambiguaÃ§Ã£o
+---
 
-```python
-from ttm.nlp import DisambiguationModel
+## 📊 Datasets
 
-# Carregar corpus anotado
-corpus = load_annotated_corpus("data/arabic_corpus.json")
+### Dados Incluídos
+- **Raízes árabes**: 10,000+ raízes trilíteras do Lisān al-'Arab
+- **Raízes hebraicas**: 8,000+ raízes do Ben-Yehuda Dictionary
+- **Padrões derivacionais**: 200+ mishqalim/awzān
+- **Corpus anotado**: 50,000+ morfemas com análise tridimensional
 
-# Treinar modelo
-model = DisambiguationModel(language=Language.ARABIC)
-model.train(corpus, epochs=10)
-
-# Usar modelo para desambiguar
-text = "ÙƒØªØ¨ Ø§Ù„Ø±Ø¬Ù„"
-disambiguated = model.predict(text)
-print(disambiguated)
-# Output: ÙƒÙŽØªÙŽØ¨ÙŽ (kataba, perfectivo) vs ÙƒÙØªÙØ¨ (kutub, plural)
+### Integração com Zenodo
+Os datasets estão disponíveis no Zenodo com DOI permanente:
+```
+https://doi.org/10.5281/zenodo.18662347
 ```
 
 ---
 
-## ðŸ§ª Testes | Testing
+## 🤝 Contribuindo | Contributing
 
-```bash
-# Executar todos os testes
-pytest
+Contribuições são bem-vindas! Veja [CONTRIBUTING.md](CONTRIBUTING.md) para diretrizes.
 
-# Testes com cobertura
-pytest --cov=ttm --cov-report=html
-
-# Testes especÃ­ficos
-pytest tests/test_arabic_analyzer.py
-```
-
----
-
-## ðŸ“Š Datasets
-
-### Dados IncluÃ­dos
-- **RaÃ­zes Ã¡rabes**: 10,000+ raÃ­zes trilÃ­teras do LisÄn al-'Arab
-- **RaÃ­zes hebraicas**: 8,000+ raÃ­zes do Ben-Yehuda Dictionary
-- **PadrÃµes derivacionais**: 200+ mishqalim/awzÄn
-- **Corpus anotado**: 50,000+ morfemas com anÃ¡lise tridimensional
-
-### IntegraÃ§Ã£o com Zenodo
-Os datasets estÃ£o disponÃ­veis no Zenodo com DOI permanente:
-```
-https://doi.org/10.5281/zenodo.XXXXXXX
-```
-
----
-
-## ðŸ¤ Contribuindo | Contributing
-
-ContribuiÃ§Ãµes sÃ£o bem-vindas! Veja [CONTRIBUTING.md](CONTRIBUTING.md) para diretrizes.
-
-### Ãreas PrioritÃ¡rias
-1. ImplementaÃ§Ã£o de analisadores para novas lÃ­nguas
-2. ExpansÃ£o dos datasets
+### Áreas Prioritárias
+1. Implementação de analisadores para novas línguas
+2. Expansão dos datasets
 3. Melhorias no OCR de manuscritos
-4. OtimizaÃ§Ã£o de performance
-5. TraduÃ§Ã£o da documentaÃ§Ã£o
+4. Otimização de performance
+5. Tradução da documentação
 
 ---
 
-## ðŸ“œ CitaÃ§Ã£o | Citation
+## 📜 Citação | Citation
 
-Se vocÃª usar este projeto em pesquisa acadÃªmica, por favor cite:
+Se você usar este projeto em pesquisa acadêmica, por favor cite:
 
 ### BibTeX
 ```bibtex
 @article{machado2026teoria,
-  title={A Teoria Tridimensional do Morfema: Uma ContribuiÃ§Ã£o da Sprachlehre Ã  CiÃªncia da Linguagem},
-  author={Machado, Guilherme GonÃ§alves},
-  journal={Beit Or Ein Sof / DÄr NÅ«r al-Azal},
+  title={A Teoria Tridimensional do Morfema: Uma Contribuição da Sprachlehre à Ciência da Linguagem},
+  author={Machado, Guilherme Gonçalves},
+  journal={Beit Or Ein Sof / Dār Nūr al-Azal},
   year={2026},
-  doi={10.5281/zenodo.XXXXXXX},
+  doi={10.5281/zenodo.18662347},
   url={https://github.com/marcabru-tech/teoria-tridimensional-morfema}
 }
 ```
 
 ### APA
 ```
-Machado, G. G. (2026). A Teoria Tridimensional do Morfema: Uma ContribuiÃ§Ã£o 
-da Sprachlehre Ã  CiÃªncia da Linguagem. Beit Or Ein Sof / DÄr NÅ«r al-Azal. 
-https://doi.org/10.5281/zenodo.XXXXXXX
+Machado, G. G. (2026). A Teoria Tridimensional do Morfema: Uma Contribuição 
+da Sprachlehre à Ciência da Linguagem. Beit Or Ein Sof / Dār Nūr al-Azal. 
+https://doi.org/10.5281/zenodo.18662347
 ```
 
 ---
 
-## ðŸ“„ LicenÃ§a | License
+## 📄 Licença | License
 
-Este projeto estÃ¡ licenciado sob [CC BY-NC-SA 4.0](LICENSE).
+Este projeto está licenciado sob [CC BY-NC-SA 4.0](LICENSE).
 
-**Creative Commons AtribuiÃ§Ã£o-NÃ£oComercial-CompartilhaIgual 4.0 Internacional**
+**Creative Commons Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional**
 
-VocÃª Ã© livre para:
-- âœ… Compartilhar â€” copiar e redistribuir
-- âœ… Adaptar â€” remixar, transformar e criar a partir do material
+Você é livre para:
+- ✅ Compartilhar — copiar e redistribuir
+- ✅ Adaptar — remixar, transformar e criar a partir do material
 
-Sob as seguintes condiÃ§Ãµes:
-- ðŸ“ AtribuiÃ§Ã£o â€” creditar o autor original
-- ðŸš« NÃ£o Comercial â€” nÃ£o usar para fins comerciais
-- â†©ï¸ CompartilhaIgual â€” distribuir contribuiÃ§Ãµes sob a mesma licenÃ§a
+Sob as seguintes condições:
+- 📝 Atribuição — creditar o autor original
+- 🚫 Não Comercial — não usar para fins comerciais
+- ↩️ CompartilhaIgual — distribuir contribuições sob a mesma licença
 
 ---
 
-## ðŸ‘¥ Autores | Authors
+## 👥 Autores | Authors
 
-**Guilherme GonÃ§alves Machado**
-- Projeto: Beit Or Ein Sof / DÄr NÅ«r al-Azal
-- **Projeto**: Beit Or Ein Sof / Dār Nūr al-Azal
+**Guilherme Gonçalves Machado**
+- **Projeto**: Beit Or Ein Sof / Dār Nūr al-Azal (בית אור אין סוף / دار نور الأزل)
 - **GitHub**: [marcabru-tech](https://github.com/marcabru-tech)
 - **Email**: guilherme.machado@marcabru.tech 
 
-**HeterÃ´nimos Fundadores:**
-- Ezra ben Sefarad (×¢×–×¨× ×‘×Ÿ ×¡×¤×¨×“) â€” TradiÃ§Ã£o hebraico-sefardita
-- Ra'uf ibn Hadi al-AndalusÃ­ (Ø±Ø¤ÙˆÙ Ø¨Ù† Ù‡Ø§Ø¯ÙŠ Ø§Ù„Ø£Ù†Ø¯Ù„Ø³ÙŠ) â€” TradiÃ§Ã£o Ã¡rabe-islÃ¢mica
+**Heterônimos Fundadores:**
+- Ezra ben Sefarad (עזרא בן ספרד) — Tradição hebraico-sefardita
+- Ra'uf ibn Hadi al-Andalusī (رؤوف بن هادي الأندلسي) — Tradição árabe-islâmica
 
 ---
 
-## ðŸ”— Links
+## 🔗 Links
 
-- ðŸ“„ **Artigo completo**: [PDF no Zenodo](https://doi.org/10.5281/zenodo.XXXXXXX)
-- ðŸ“š **DocumentaÃ§Ã£o**: [https://ttm.readthedocs.io](https://ttm.readthedocs.io)
-- ðŸ› **Issues**: [GitHub Issues](https://github.com/marcabru-tech/teoria-tridimensional-morfema/issues)
-- ðŸ’¬ **DiscussÃµes**: [GitHub Discussions](https://github.com/marcabru-tech/teoria-tridimensional-morfema/discussions)
-
----
-
-## ðŸ™ Agradecimentos | Acknowledgments
-
-Este projeto dialoga com as seguintes tradiÃ§Ãµes intelectuais:
-- PÄá¹‡ini (à¤ªà¤¾à¤£à¤¿à¤¨à¤¿, sÃ©c. Vâ€“IV a.C.) â€” Aá¹£á¹­ÄdhyÄyÄ«
-- SÄ«bawayhi (Ø³ÙŠØ¨ÙˆÙŠÙ‡, sÃ©c. VIII) â€” Al-KitÄb
-- Al-KhalÄ«l ibn Aá¸¥mad (Ø§Ù„Ø®Ù„ÙŠÙ„ Ø¨Ù† Ø£Ø­Ù…Ø¯, sÃ©c. VIII) â€” KitÄb al-'Ayn
-- Rashi (×¨×©"×™, sÃ©c. XI) â€” Exegese talmÃºdica
-- Wilhelm von Humboldt (sÃ©c. XIX) â€” Sprachwissenschaft
+- 📄 **Artigo completo**: [PDF no Zenodo](https://doi.org/10.5281/zenodo.18662347)
+- 📚 **Documentação**: [https://ttm.readthedocs.io](https://ttm.readthedocs.io)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/marcabru-tech/teoria-tridimensional-morfema/issues)
+- 💬 **Discussões**: [GitHub Discussions](https://github.com/marcabru-tech/teoria-tridimensional-morfema/discussions)
 
 ---
 
-**×‘×¡×´×“ | Ø¨Ø³Ù… Ø§Ù„Ù„Ù‡ Ø§Ù„Ø±Ø­Ù…Ù† Ø§Ù„Ø±Ø­ÙŠÙ…**
+## 🙏 Agradecimentos | Acknowledgments
 
-*Beit Or Ein Sof / DÄr NÅ«r al-Azal*  
+Este projeto dialoga com as seguintes tradições intelectuais:
+- Pāṇini (पाणिनि, séc. V–IV a.C.) — Aṣṭādhyāyī
+- Sībawayhi (سيبويه, séc. VIII) — Al-Kitāb
+- Al-Khalīl ibn Aḥmad (الخليل بن أحمد, séc. VIII) — Kitāb al-'Ayn
+- Rashi (רש"י, séc. XI) — Exegese talmúdica
+- Wilhelm von Humboldt (séc. XIX) — Sprachwissenschaft
+
+---
+
+**בס״ד | بسم الله الرحمن الرحيم**
+
+*Beit Or Ein Sof / Dār Nūr al-Azal*  
 *Casa da Luz Infinita*
-
