@@ -404,8 +404,9 @@ Sob as seguintes condiÃ§Ãµes:
 
 **Guilherme GonÃ§alves Machado**
 - Projeto: Beit Or Ein Sof / DÄr NÅ«r al-Azal
-- Email: 
-- ORCID: 
+- **Projeto**: Beit Or Ein Sof / Dār Nūr al-Azal
+- **GitHub**: [marcabru-tech](https://github.com/marcabru-tech)
+- **Email**: guilherme.machado@marcabru.tech 
 
 **HeterÃ´nimos Fundadores:**
 - Ezra ben Sefarad (×¢×–×¨× ×‘×Ÿ ×¡×¤×¨×“) â€” TradiÃ§Ã£o hebraico-sefardita
