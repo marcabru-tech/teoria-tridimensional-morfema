@@ -66,6 +66,26 @@ A teoria propõe que o morfema, enquanto unidade mínima significativa da lingua
 - [ ] Desambiguação semântica estratificada (WSD)
 - [ ] Vocalização automática de textos árabes e hebraicos
 
+## 🚀 TTM v2.0 (Robustez Técnica)
+
+O projeto agora conta com uma infraestrutura completa para produção:
+
+-   **API (FastAPI)**: Endpoints REST para análise morfológica.
+-   **Banco de Dados (Neo4j)**: Persistência em grafos para relações semânticas.
+-   **Visualização 3D (React + Three.js)**: Interface interativa para exploração dos morfemas.
+-   **Docker**: Containerização completa via `docker-compose`.
+
+### Como Rodar (Full Stack)
+```bash
+docker-compose up --build
+```
+Acesse:
+- Frontend: `http://localhost:3000`
+- API Docs: `http://localhost:8000/docs`
+- Neo4j: `http://localhost:7474`
+
+---
+
 ### Línguas Suportadas
 - ✅ **Árabe** (Análise Automática Completa)
 - ✅ **Hebraico** (Análise Automática Completa)
