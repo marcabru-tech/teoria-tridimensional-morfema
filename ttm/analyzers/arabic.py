@@ -10,7 +10,6 @@ from __future__ import annotations
 import json
 import os
 import re
-import unicodedata
 from typing import Dict, List, Optional
 
 from ttm.analyzers.base import LanguageAnalyzer
