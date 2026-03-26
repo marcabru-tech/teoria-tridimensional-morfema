@@ -6,8 +6,7 @@ Implements tri-dimensional analysis for Sinitic languages (Isolating/Tonal).
 
 from __future__ import annotations
 
-import re
-from typing import List, Tuple
+from typing import List
 
 from ttm.analyzers.base import LanguageAnalyzer
 from ttm.core.dimensions import Depth, Height, Width
@@ -22,6 +21,7 @@ PINYIN_TONES = {
     'à': 4, 'è': 4, 'ì': 4, 'ò': 4, 'ù': 4, 'ǜ': 4,
 }
 
+
 class MandarinAnalyzer(LanguageAnalyzer):
     """Analyzer for Mandarin Chinese (Sinitic type)."""
 
@@ -30,7 +30,7 @@ class MandarinAnalyzer(LanguageAnalyzer):
 
     def analyze_root(self, root: str) -> RootSpace:
         """Analyze a character/radical.
-        
+
         For Mandarin, 'root' could be interpreted as the radical or the character itself.
         """
         space = RootSpace(root=root, language="zh")
@@ -40,18 +40,18 @@ class MandarinAnalyzer(LanguageAnalyzer):
 
     def parse_morpheme(self, form: str, pinyin: str = "") -> Morpheme:
         """Parse a Mandarin character/word.
-        
+
         Args:
             form: The Chinese character(s) (e.g. "好").
             pinyin: Optional pinyin with tones (e.g. "hǎo").
         """
         # Width: Character composition (Radical not implemented in MVP)
         width = Width(root=form)
-        
-        # Height: Tone analysis from Pinyin
+
+        # Height: Tone analysis from Pinyin (5 = Neutral/no tone mark)
         tones = self._extract_tones(pinyin)
-        height = Height(base_form=pinyin, configuration_id=tones[0] if tones else 5) # 5=Neutral
-        
+        height = Height(base_form=pinyin, configuration_id=tones[0] if tones else 5)
+
         # Depth: Contextual meaning (placeholder)
         depth = Depth()
 
@@ -61,7 +61,7 @@ class MandarinAnalyzer(LanguageAnalyzer):
             language="zh",
             x=width,
             y=depth,
-            z=height
+            z=height,
         )
 
     def vocalize(self, form: str) -> List[str]:
@@ -74,6 +74,7 @@ class MandarinAnalyzer(LanguageAnalyzer):
         for char in pinyin:
             if char in PINYIN_TONES:
                 tones.append(PINYIN_TONES[char])
-        if not tones and pinyin: # If pinyin exists but no tone mark -> Neutral (5)
-             tones.append(5)
+        # If pinyin exists but has no tone mark -> Neutral (5)
+        if not tones and pinyin:
+            tones.append(5)
         return tones

@@ -10,7 +10,6 @@ from typing import List, Optional
 
 try:
     import plotly.graph_objects as go
-    from plotly.subplots import make_subplots
 
     HAS_PLOTLY = True
 except ImportError:

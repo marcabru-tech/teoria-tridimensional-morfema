@@ -10,7 +10,7 @@ que propõe três dimensões analíticas irredutíveis:
 - **Altura (Z)**: Dimensão suprassegmental-gráfica
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __author__ = "Guilherme Gonçalves Machado"
 __license__ = "CC BY-NC-SA 4.0"
 
@@ -18,6 +18,7 @@ from ttm.core.morpheme import Morpheme
 from ttm.core.dimensions import Width, Depth, Height, SemanticLevel, SemanticLayer, Diacritic
 from ttm.core.space import MorphemeSpace, RootSpace
 from ttm.utils.language import Language, LanguageFeatures
+from ttm.analyzers.factory import MorphemeAnalyzer
 
 __all__ = [
     "Morpheme",
@@ -31,4 +32,5 @@ __all__ = [
     "RootSpace",
     "Language",
     "LanguageFeatures",
+    "MorphemeAnalyzer",
 ]

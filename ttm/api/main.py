@@ -2,6 +2,8 @@
 FastAPI application for the TTM project.
 """
 
+import os
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -14,10 +16,14 @@ app = FastAPI(
     version="0.2.0",
 )
 
-# CORS setup
+# CORS setup — restrict origins via environment variable in production.
+# Set TTM_ALLOWED_ORIGINS to a comma-separated list of allowed origins.
+_raw_origins = os.environ.get("TTM_ALLOWED_ORIGINS", "")
+_allowed_origins = [o.strip() for o in _raw_origins.split(",") if o.strip()] or ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins for dev
+    allow_origins=_allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -26,30 +32,35 @@ app.add_middleware(
 # Cache analyzers to avoid re-initializing
 _ANALYZERS = {}
 
+# Mapping of common ISO 639-1 codes to Language enum values
+_LANG_CODE_MAP = {
+    "pt": Language.PORTUGUESE,
+    "en": Language.ENGLISH,
+    "ar": Language.ARABIC,
+    "he": Language.HEBREW,
+    "ru": Language.RUSSIAN,
+    "zh": Language.CHINESE,
+    "sa": Language.SANSKRIT,
+}
+
+
 def get_analyzer(lang_code: str):
     """Get or create an analyzer for the given language code."""
     if lang_code in _ANALYZERS:
         return _ANALYZERS[lang_code]
-    
+
     try:
-        # Simple mapping from code to Language enum
+        # Try direct enum value lookup first, then fall back to the alias map
         lang_enum = None
         for L in Language:
             if L.value == lang_code:
                 lang_enum = L
                 break
-        
-        if not lang_enum:
-             # Try improving lookup
-             if lang_code == "pt": lang_enum = Language.PORTUGUESE
-             elif lang_code == "en": lang_enum = Language.ENGLISH
-             elif lang_code == "ar": lang_enum = Language.ARABIC
-             elif lang_code == "he": lang_enum = Language.HEBREW
-             elif lang_code == "ru": lang_enum = Language.RUSSIAN
-             elif lang_code == "zh": lang_enum = Language.CHINESE_MANDARIN
-             elif lang_code == "sa": lang_enum = Language.SANSKRIT
 
-        if not lang_enum:
+        if lang_enum is None:
+            lang_enum = _LANG_CODE_MAP.get(lang_code)
+
+        if lang_enum is None:
             raise ValueError(f"Unsupported language code: {lang_code}")
 
         analyzer = MorphemeAnalyzer(language=lang_enum)
@@ -64,16 +75,15 @@ async def root():
     """Health check endpoint."""
     return {"message": "TTM API is running", "version": "0.2.0"}
 
+
 @app.post("/analyze", response_model=AnalysisResponse)
 async def analyze_text(request: AnalysisRequest):
     """Analyze a single word or text."""
     try:
         analyzer = get_analyzer(request.language)
-        
-        # Determine if it's a full root analysis or simple parsing
-        # For MVP, we use 'parse' which delegates to 'parse_morpheme'
-        morpheme = analyzer.parse(request.text) 
-        
+
+        morpheme = analyzer.parse_morpheme(request.text)
+
         # Build response
         response = MorphemeResponse(
             form=morpheme.form,
@@ -82,29 +92,33 @@ async def analyze_text(request: AnalysisRequest):
             coordinates=MorphemeCoordinates(
                 x=morpheme.x.position,
                 y=morpheme.y.level,
-                z=morpheme.z.configuration
+                z=morpheme.z.configuration,
             ),
-            gloss=None, # Not explicitly in Morpheme class yet
+            gloss=None,
             semantic_data={
                 "width": {
-                   "prefixes": morpheme.x.prefixes,
-                   "suffixes": morpheme.x.suffixes
+                    "prefixes": morpheme.x.prefixes,
+                    "suffixes": morpheme.x.suffixes,
                 },
                 "height": {
-                   "vocalization": morpheme.z.vowel_pattern
-                }
-            }
+                    "vocalization": morpheme.z.vowel_pattern,
+                },
+            },
         )
 
         return AnalysisResponse(
             original_text=request.text,
-            morphemes=[response]
+            morphemes=[response],
         )
 
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
 
 def start():
     """Entry point for running the API with uvicorn."""
     import uvicorn
+
     uvicorn.run("ttm.api.main:app", host="0.0.0.0", port=8000, reload=True)

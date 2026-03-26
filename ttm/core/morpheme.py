@@ -11,7 +11,7 @@ import math
 from dataclasses import dataclass, field
 from typing import Any, Dict, Optional, Tuple
 
-from ttm.core.dimensions import Depth, Diacritic, Height, SemanticLayer, SemanticLevel, Width
+from ttm.core.dimensions import Depth, Height, SemanticLevel, Width
 
 
 @dataclass
