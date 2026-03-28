@@ -1,0 +1,35 @@
+# Python package — not needed by the Vercel Next.js build
+ttm/
+requirements.txt
+pyproject.toml
+
+# Docker — not used by Vercel
+Dockerfile
+docker-compose.yml
+.dockerignore
+web/Dockerfile
+
+# Python byte-code and caches
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+
+# Data, scripts, examples, docs
+data/
+scripts/
+examples/
+docs/
+
+# CI tooling
+.github/
+
+# Dev artefacts
+.mypy_cache/
+.pytest_cache/
+htmlcov/
+.coverage
