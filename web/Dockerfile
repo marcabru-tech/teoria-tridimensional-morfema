@@ -7,7 +7,11 @@ COPY . .
 RUN npm run build
 
 # Production stage
-FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production && npm cache clean --force
+COPY --from=build /app/.next ./.next
+COPY --from=build /app/public ./public
+EXPOSE 3000
+CMD ["npm", "start"]
