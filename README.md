@@ -4,7 +4,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18662347.svg)](https://doi.org/10.5281/zenodo.18662347)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmarcabru-tech%2Fteoria-tridimensional-morfema&root-directory=web)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmarcabru-tech%2Fteoria-tridimensional-morfema)
 
 **Uma implementação computacional da Teoria Tridimensional do Morfema**  
 *A computational implementation of the Three-Dimensional Theory of the Morpheme*
@@ -14,13 +14,14 @@
 ## 🚀 Deploy na Vercel | Deploy to Vercel
 
 O frontend Next.js (**TTM Explorer**) pode ser implantado na Vercel em minutos.
+A configuração de build está declarada em `vercel.json` na raiz do repositório.
 
 ### Opção A — Deploy com um clique
 
 Clique no botão acima ("Deploy with Vercel") ou acesse:
 
 ```
-https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmarcabru-tech%2Fteoria-tridimensional-morfema&root-directory=web
+https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmarcabru-tech%2Fteoria-tridimensional-morfema
 ```
 
 ### Opção B — Deploy manual via Vercel CLI
@@ -29,42 +30,40 @@ https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmarcabru-
 # 1. Instale a CLI da Vercel (se necessário)
 npm i -g vercel
 
-# 2. Entre na pasta do frontend
-cd web
-
-# 3. Faça login
+# 2. Na raiz do repositório
 vercel login
 
-# 4. Deploy (preview)
+# 3. Deploy (preview)
 vercel
 
-# 5. Deploy para produção
+# 4. Deploy para produção
 vercel --prod
 ```
 
 ### Opção C — Deploy via Vercel Dashboard (GitHub Integration)
 
 1. Acesse [vercel.com/new](https://vercel.com/new) e importe o repositório.
-2. Em **Root Directory**, insira `web` e clique em **Edit** → `web`.
-3. Mantenha os valores padrão para **Framework Preset** (Next.js é detectado automaticamente).
+2. Deixe **Root Directory** como `./` (raiz do repositório).
+3. O `vercel.json` na raiz já define o framework, comandos de build e diretório de saída.
 4. Clique em **Deploy**.
 
-> A raiz do projeto na Vercel deve ser a pasta **`web/`**.  
-> O arquivo `web/vercel.json` já contém todas as configurações necessárias.
+> Toda a configuração de build vive em `vercel.json` (raiz do repositório).
+> Isso mantém o deploy declarativo via Git e libera a edição pelo dashboard da Vercel.
 
 ---
 
 ### 🔧 Variáveis de Ambiente | Environment Variables
 
 A versão atual do TTM Explorer **não requer variáveis de ambiente** para funcionar.  
-Toda a lógica de análise morfológica roda no servidor Next.js (API Routes em `/api/analyze`).
+Toda a lógica de análise morfológica roda no servidor Next.js (API Routes em `/api/analyze`), sem chamadas a um backend externo.
 
-Se você adicionar integrações externas no futuro, configure as variáveis no painel da Vercel em:  
-**Project Settings → Environment Variables**
+Se você integrar o frontend a uma instância FastAPI externa no futuro, adicione a variável abaixo no painel da Vercel em **Project Settings → Environment Variables** (Production **e** Preview):
 
 | Variável | Necessária | Descrição | Exemplo |
 |---|---|---|---|
-| *(nenhuma obrigatória no momento)* | — | — | — |
+| `NEXT_PUBLIC_API_URL` | Apenas se usar backend externo | URL base da API FastAPI | `https://api.exemplo.com` |
+
+> **Nota:** sem um backend FastAPI hospedado, não defina `NEXT_PUBLIC_API_URL`. O frontend funciona de forma autônoma com as API Routes do Next.js.
 
 ---
 
