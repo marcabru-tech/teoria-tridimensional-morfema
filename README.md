@@ -4,11 +4,93 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18662347.svg)](https://doi.org/10.5281/zenodo.18662347)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmarcabru-tech%2Fteoria-tridimensional-morfema&root-directory=web)
 
 **Uma implementação computacional da Teoria Tridimensional do Morfema**  
 *A computational implementation of the Three-Dimensional Theory of the Morpheme*
 
 ---
+
+## 🚀 Deploy na Vercel | Deploy to Vercel
+
+O frontend Next.js (**TTM Explorer**) pode ser implantado na Vercel em minutos.
+
+### Opção A — Deploy com um clique
+
+Clique no botão acima ("Deploy with Vercel") ou acesse:
+
+```
+https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmarcabru-tech%2Fteoria-tridimensional-morfema&root-directory=web
+```
+
+### Opção B — Deploy manual via Vercel CLI
+
+```bash
+# 1. Instale a CLI da Vercel (se necessário)
+npm i -g vercel
+
+# 2. Entre na pasta do frontend
+cd web
+
+# 3. Faça login
+vercel login
+
+# 4. Deploy (preview)
+vercel
+
+# 5. Deploy para produção
+vercel --prod
+```
+
+### Opção C — Deploy via Vercel Dashboard (GitHub Integration)
+
+1. Acesse [vercel.com/new](https://vercel.com/new) e importe o repositório.
+2. Em **Root Directory**, insira `web` e clique em **Edit** → `web`.
+3. Mantenha os valores padrão para **Framework Preset** (Next.js é detectado automaticamente).
+4. Clique em **Deploy**.
+
+> A raiz do projeto na Vercel deve ser a pasta **`web/`**.  
+> O arquivo `web/vercel.json` já contém todas as configurações necessárias.
+
+---
+
+### 🔧 Variáveis de Ambiente | Environment Variables
+
+A versão atual do TTM Explorer **não requer variáveis de ambiente** para funcionar.  
+Toda a lógica de análise morfológica roda no servidor Next.js (API Routes em `/api/analyze`).
+
+Se você adicionar integrações externas no futuro, configure as variáveis no painel da Vercel em:  
+**Project Settings → Environment Variables**
+
+| Variável | Necessária | Descrição | Exemplo |
+|---|---|---|---|
+| *(nenhuma obrigatória no momento)* | — | — | — |
+
+---
+
+### 🧪 Testes de Smoke | Smoke Tests
+
+Para validar um deploy de preview ou produção, use o script de smoke:
+
+```bash
+cd web
+
+# Contra um preview
+node tests/smoke/smoke.js https://<seu-preview>.vercel.app
+
+# Ou via npm script
+npm run smoke -- https://<seu-preview>.vercel.app
+```
+
+O script verifica:
+- `GET /` retorna `200 OK` com `text/html`
+- `POST /api/analyze` analisa corretamente árabe, hebraico e inglês
+- Entradas inválidas retornam `400`
+- Assets estáticos em `/_next/static/` têm `Cache-Control: immutable`
+
+---
+
+
 
 ## 📚 Sobre o Projeto | About the Project
 

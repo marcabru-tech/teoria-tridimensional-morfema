@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "smoke": "node tests/smoke/smoke.js"
   },
   "dependencies": {
     "@react-three/drei": "^9.105.6",
