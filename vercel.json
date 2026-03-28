@@ -1,7 +1,8 @@
 {
-  "buildCommand": "npm --prefix web install && npm --prefix web run build",
-  "outputDirectory": "web/.next",
+  "framework": "nextjs",
   "installCommand": "npm --prefix web install",
+  "buildCommand": "npm --prefix web run build",
+  "outputDirectory": "web/.next",
   "headers": [
     {
       "source": "/_next/static/(.*)",
