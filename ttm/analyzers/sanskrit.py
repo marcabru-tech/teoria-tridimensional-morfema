@@ -26,8 +26,8 @@ class SanskritAnalyzer(IndoEuropeanAnalyzer):
         forms = [root]
 
         if root == "gam":
-            forms.append("gacchati")   # he goes
-            forms.append("agaccham")   # I went (Imperfect)
+            forms.append("gacchati")  # he goes
+            forms.append("agaccham")  # I went (Imperfect)
             forms.append("gamiṣyāmi")  # I will go (Future)
 
         for form in forms:

@@ -64,9 +64,7 @@ class MorphemeSpace:
         """
         return [m for m in self.morphemes if m.root == root]
 
-    def get_morphemes_at_coordinates(
-        self, x: int, y: int, z: int
-    ) -> List[Morpheme]:
+    def get_morphemes_at_coordinates(self, x: int, y: int, z: int) -> List[Morpheme]:
         """Get morphemes at exact coordinates.
 
         Args:
@@ -79,9 +77,7 @@ class MorphemeSpace:
         """
         return [m for m in self.morphemes if m.coordinates == (x, y, z)]
 
-    def get_morphemes_in_range(
-        self, center: Tuple[int, int, int], radius: float
-    ) -> List[Morpheme]:
+    def get_morphemes_in_range(self, center: Tuple[int, int, int], radius: float) -> List[Morpheme]:
         """Find all morphemes within a radius of a center point.
 
         Args:
@@ -95,16 +91,12 @@ class MorphemeSpace:
         result = []
         for morpheme in self.morphemes:
             mx, my, mz = morpheme.coordinates
-            distance = math.sqrt(
-                (mx - cx) ** 2 + (my - cy) ** 2 + (mz - cz) ** 2
-            )
+            distance = math.sqrt((mx - cx) ** 2 + (my - cy) ** 2 + (mz - cz) ** 2)
             if distance <= radius:
                 result.append(morpheme)
         return result
 
-    def find_nearest(
-        self, morpheme: Morpheme, k: int = 5
-    ) -> List[Tuple[Morpheme, float]]:
+    def find_nearest(self, morpheme: Morpheme, k: int = 5) -> List[Tuple[Morpheme, float]]:
         """Find the k nearest neighbors to a morpheme.
 
         Args:
@@ -122,9 +114,7 @@ class MorphemeSpace:
         distances.sort(key=lambda x: x[1])
         return distances[:k]
 
-    def filter_morphemes(
-        self, predicate: Callable[[Morpheme], bool]
-    ) -> List[Morpheme]:
+    def filter_morphemes(self, predicate: Callable[[Morpheme], bool]) -> List[Morpheme]:
         """Filter morphemes using a predicate function.
 
         Args:
@@ -135,9 +125,7 @@ class MorphemeSpace:
         """
         return [m for m in self.morphemes if predicate(m)]
 
-    def compute_density(
-        self, center: Tuple[int, int, int], radius: float
-    ) -> float:
+    def compute_density(self, center: Tuple[int, int, int], radius: float) -> float:
         """Compute the density of morphemes in a spherical region.
 
         Args:
@@ -150,7 +138,7 @@ class MorphemeSpace:
         if radius <= 0:
             return 0.0
         count = len(self.get_morphemes_in_range(center, radius))
-        volume = (4 / 3) * math.pi * (radius ** 3)
+        volume = (4 / 3) * math.pi * (radius**3)
         return count / volume
 
     def get_statistics(self) -> Dict:
@@ -219,8 +207,7 @@ class RootSpace(MorphemeSpace):
         """
         if morpheme.root != self.root:
             raise ValueError(
-                f"Morpheme root '{morpheme.root}' doesn't match "
-                f"space root '{self.root}'"
+                f"Morpheme root '{morpheme.root}' doesn't match " f"space root '{self.root}'"
             )
         super().add_morpheme(morpheme)
 
@@ -233,10 +220,7 @@ class RootSpace(MorphemeSpace):
         Returns:
             List of morphemes with the specified derivation degree.
         """
-        return [
-            m for m in self.morphemes
-            if m.x.derivation_degree == degree
-        ]
+        return [m for m in self.morphemes if m.x.derivation_degree == degree]
 
     def get_derivation_tree(self) -> Dict[int, List[Morpheme]]:
         """Get morphemes organized by derivation degree.

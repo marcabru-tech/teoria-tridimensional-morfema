@@ -18,7 +18,6 @@ from ttm.core.morpheme import Morpheme
 from ttm.core.space import RootSpace
 from ttm.utils.language import Language
 
-
 _LANGUAGE_ANALYZERS = {
     Language.ARABIC: ArabicAnalyzer,
     Language.HEBREW: HebrewAnalyzer,

@@ -7,7 +7,7 @@ Focuses on Aspect (Vid) and Stress (Udarenie).
 from __future__ import annotations
 
 from ttm.analyzers.indo_european import IndoEuropeanAnalyzer
-from ttm.core.dimensions import Depth, Height, Width
+from ttm.core.dimensions import Depth, Height, SemanticLevel, Width
 from ttm.core.morpheme import Morpheme
 from ttm.core.space import RootSpace
 
@@ -39,15 +39,15 @@ class RussianAnalyzer(IndoEuropeanAnalyzer):
         """Parse Russian word."""
         # Width: Stem + Affixes
         root = form
-        prefixes = []
-        suffixes = []
+        prefixes: list[str] = []
+        suffixes: list[str] = []
 
         # Simple Aspect detection
         aspect = "IMPERFECTIVE"
         if form.startswith("pro") or form.startswith("s"):
             aspect = "PERFECTIVE"
             prefixes.append(form[:3] if form.startswith("pro") else form[:1])
-            root = form[len(prefixes[0]):]
+            root = form[len(prefixes[0]) :]
 
         # Height: Stress (placeholder, usually marked with combining acute accent ́ )
         stress_pos = form.find("\u0301")  # Combining acute accent
@@ -55,7 +55,7 @@ class RussianAnalyzer(IndoEuropeanAnalyzer):
 
         # Depth: Semantics + Aspect
         depth = Depth()
-        depth.add_layer(level=1, meaning=f"Aspect: {aspect}")
+        depth.add_layer(level=SemanticLevel.LITERAL, meaning=f"Aspect: {aspect}")
 
         width = Width(root=root, prefixes=prefixes, suffixes=suffixes)
 

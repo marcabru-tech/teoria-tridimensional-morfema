@@ -21,15 +21,31 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('pyproject.toml', 'requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-${{ matrix.python-version }}-
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -e .
-          pip install pytest>=7.0.0 pytest-cov>=3.0.0 flake8>=4.0.0
+          pip install pytest>=7.0.0 pytest-cov>=3.0.0 flake8>=4.0.0 black>=22.0.0 mypy>=0.950
+
+      - name: Check formatting with black
+        run: |
+          black --check --line-length=100 ttm/
 
       - name: Lint with flake8
         run: |
-          flake8 ttm/ --max-line-length=100 --count --show-source --statistics
+          flake8 ttm/ --max-line-length=100 --extend-ignore=E203 --count --show-source --statistics
+
+      - name: Type-check with mypy
+        run: |
+          mypy ttm/ --ignore-missing-imports
 
       - name: Run tests with coverage
         run: |

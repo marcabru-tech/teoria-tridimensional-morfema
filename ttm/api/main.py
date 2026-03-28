@@ -2,13 +2,21 @@
 FastAPI application for the TTM project.
 """
 
+import logging
 import os
+from typing import Dict
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from ttm import MorphemeAnalyzer, Language
 from ttm.api.models import AnalysisRequest, AnalysisResponse, MorphemeResponse, MorphemeCoordinates
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+)
+logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title="TTM API",
@@ -18,8 +26,9 @@ app = FastAPI(
 
 # CORS setup — restrict origins via environment variable in production.
 # Set TTM_ALLOWED_ORIGINS to a comma-separated list of allowed origins.
-_raw_origins = os.environ.get("TTM_ALLOWED_ORIGINS", "")
-_allowed_origins = [o.strip() for o in _raw_origins.split(",") if o.strip()] or ["*"]
+# Defaults to localhost only; never falls back to a wildcard.
+_raw_origins = os.environ.get("TTM_ALLOWED_ORIGINS", "http://localhost:3000")
+_allowed_origins = [o.strip() for o in _raw_origins.split(",") if o.strip()]
 
 app.add_middleware(
     CORSMiddleware,
@@ -30,7 +39,7 @@ app.add_middleware(
 )
 
 # Cache analyzers to avoid re-initializing
-_ANALYZERS = {}
+_ANALYZERS: Dict[str, MorphemeAnalyzer] = {}
 
 # Mapping of common ISO 639-1 codes to Language enum values
 _LANG_CODE_MAP = {
@@ -49,25 +58,23 @@ def get_analyzer(lang_code: str):
     if lang_code in _ANALYZERS:
         return _ANALYZERS[lang_code]
 
-    try:
-        # Try direct enum value lookup first, then fall back to the alias map
-        lang_enum = None
-        for L in Language:
-            if L.value == lang_code:
-                lang_enum = L
-                break
+    # Try direct enum value lookup first, then fall back to the alias map
+    lang_enum = None
+    for L in Language:
+        if L.value == lang_code:
+            lang_enum = L
+            break
 
-        if lang_enum is None:
-            lang_enum = _LANG_CODE_MAP.get(lang_code)
+    if lang_enum is None:
+        lang_enum = _LANG_CODE_MAP.get(lang_code)
 
-        if lang_enum is None:
-            raise ValueError(f"Unsupported language code: {lang_code}")
+    if lang_enum is None:
+        raise HTTPException(status_code=400, detail=f"Unsupported language code: {lang_code}")
 
-        analyzer = MorphemeAnalyzer(language=lang_enum)
-        _ANALYZERS[lang_code] = analyzer
-        return analyzer
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
+    analyzer = MorphemeAnalyzer(language=lang_enum)
+    _ANALYZERS[lang_code] = analyzer
+    logger.info("Analyzer created for language: %s", lang_code)
+    return analyzer
 
 
 @app.get("/")
@@ -113,12 +120,14 @@ async def analyze_text(request: AnalysisRequest):
 
     except HTTPException:
         raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    except Exception:
+        logger.exception("Unexpected error analyzing text: %r", request.text)
+        raise HTTPException(status_code=500, detail="Internal server error")
 
 
 def start():
     """Entry point for running the API with uvicorn."""
     import uvicorn
 
-    uvicorn.run("ttm.api.main:app", host="0.0.0.0", port=8000, reload=True)
+    reload = os.environ.get("TTM_RELOAD", "false").lower() == "true"
+    uvicorn.run("ttm.api.main:app", host="0.0.0.0", port=8000, reload=reload)
