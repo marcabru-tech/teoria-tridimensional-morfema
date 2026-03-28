@@ -28,8 +28,7 @@ class MorphemeVisualizer:
     def __init__(self):
         if not HAS_PLOTLY:
             raise ImportError(
-                "plotly is required for visualization. "
-                "Install with: pip install plotly"
+                "plotly is required for visualization. " "Install with: pip install plotly"
             )
 
     def plot_morpheme_space(

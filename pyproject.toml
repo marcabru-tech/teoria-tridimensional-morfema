@@ -92,12 +92,18 @@ target-version = ["py39", "py310", "py311"]
 [tool.flake8]
 max-line-length = 100
 exclude = [".git", "__pycache__", "build", "dist", "*.egg-info"]
+extend-ignore = ["E203"]
 
 [tool.mypy]
 python_version = "3.9"
 warn_return_any = true
 warn_unused_configs = true
 ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "neo4j.*"
+ignore_errors = true
+follow_imports = "skip"
 
 [tool.coverage.run]
 source = ["ttm"]

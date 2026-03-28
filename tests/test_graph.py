@@ -6,10 +6,21 @@ Uses mocking to avoid needing a live database.
 from unittest.mock import MagicMock, patch
 import sys
 
+
+# A real exception class for neo4j.exceptions.ClientError so that
+# `except ClientError` in graph.py works correctly at import time.
+class _FakeClientError(Exception):
+    pass
+
+
+_fake_exceptions = MagicMock()
+_fake_exceptions.ClientError = _FakeClientError
+
 # Mock the neo4j module BEFORE importing ttm.db.graph
 sys.modules["neo4j"] = MagicMock()
+sys.modules["neo4j.exceptions"] = _fake_exceptions
 
-from ttm.db.graph import Neo4jClient
+from ttm.db.graph import Neo4jClient  # noqa: E402
 
 class TestNeo4jClient:
     def setup_method(self):

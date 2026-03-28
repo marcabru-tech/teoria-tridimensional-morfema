@@ -17,7 +17,7 @@ from ttm.core.morpheme import Morpheme
 from ttm.core.space import RootSpace
 
 # Hebrew niqqud (points) Unicode range
-HEBREW_NIQQUD = re.compile("[\u0591-\u05C7]")
+HEBREW_NIQQUD = re.compile("[\u0591-\u05c7]")
 
 
 def strip_niqqud(text: str) -> str:

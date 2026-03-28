@@ -26,8 +26,16 @@ COPY . .
 # Install the app itself
 RUN poetry install --no-interaction --no-ansi
 
+# Create a non-root user and switch to it
+RUN adduser --disabled-password --gecos "" ttmuser
+USER ttmuser
+
 # Expose API port
 EXPOSE 8000
 
-# Run the API
+# Health check
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+    CMD /usr/local/bin/python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/')" || exit 1
+
+# Run the API (hot-reload disabled by default; set TTM_RELOAD=true for development)
 CMD ["uvicorn", "ttm.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -19,7 +19,7 @@ from ttm.core.space import RootSpace
 
 # Arabic diacritics Unicode range
 ARABIC_DIACRITICS = re.compile(
-    "[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06E4\u06E7\u06E8\u06EA-\u06ED]"
+    "[\u0610-\u061a\u064b-\u065f\u0670\u06d6-\u06dc\u06df-\u06e4\u06e7\u06e8\u06ea-\u06ed]"
 )
 
 # Standard Arabic derivational patterns (awzān)

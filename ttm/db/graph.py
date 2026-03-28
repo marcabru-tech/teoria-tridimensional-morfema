@@ -2,10 +2,14 @@
 Graph database client for TTM using Neo4j.
 """
 
+import logging
 import os
 from typing import List, Dict, Any
 
 from neo4j import GraphDatabase
+from neo4j.exceptions import ClientError
+
+logger = logging.getLogger(__name__)
 
 
 class Neo4jClient:
@@ -27,14 +31,24 @@ class Neo4jClient:
         self.driver.close()
 
     def create_constraints(self):
-        """Create uniqueness constraints for the graph."""
+        """Create uniqueness constraints for the graph (idempotent)."""
+        constraints = [
+            "CREATE CONSTRAINT FOR (r:Root) REQUIRE r.id IS UNIQUE",
+            "CREATE CONSTRAINT FOR (m:Morpheme) REQUIRE m.form IS UNIQUE",
+            "CREATE CONSTRAINT FOR (s:SemanticField) REQUIRE s.name IS UNIQUE",
+        ]
         with self.driver.session() as session:
-            # Root uniqueness
-            session.run("CREATE CONSTRAINT FOR (r:Root) REQUIRE r.id IS UNIQUE")
-            # Morpheme uniqueness
-            session.run("CREATE CONSTRAINT FOR (m:Morpheme) REQUIRE m.form IS UNIQUE")
-            # Semantic Field uniqueness
-            session.run("CREATE CONSTRAINT FOR (s:SemanticField) REQUIRE s.name IS UNIQUE")
+            for cypher in constraints:
+                try:
+                    session.run(cypher)
+                except ClientError as exc:
+                    # Neo4j raises ClientError when the constraint already exists.
+                    msg = str(exc).lower()
+                    if "already exists" in msg or "equivalent" in msg:
+                        logger.debug("Constraint already exists, skipping: %s", cypher)
+                    else:
+                        logger.error("Failed to create constraint: %s — %s", cypher, exc)
+                        raise
 
     def create_root(self, root: str, language: str, meaning: str = ""):
         """Create a Root node."""

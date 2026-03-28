@@ -21,10 +21,10 @@ class SemanticLevel(enum.IntEnum):
     Ẓāhir/Bāṭin (Arabic): Apparent, Hidden
     """
 
-    LITERAL = 1       # Peshat (פשט) / Ẓāhir (ظاهر)
-    ALLUSIVE = 2      # Remez (רמז)
-    HOMILETIC = 3     # Derash (דרש)
-    MYSTICAL = 4      # Sod (סוד) / Bāṭin (باطن)
+    LITERAL = 1  # Peshat (פשט) / Ẓāhir (ظاهر)
+    ALLUSIVE = 2  # Remez (רמז)
+    HOMILETIC = 3  # Derash (דרש)
+    MYSTICAL = 4  # Sod (סוד) / Bāṭin (باطن)
 
 
 @dataclass
