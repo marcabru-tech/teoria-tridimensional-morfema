@@ -45,3 +45,17 @@ docs/_build/
 *.pkl
 *.h5
 *.hdf5
+
+# Secrets and credentials — NEVER commit these
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.yml
+secrets.yaml
+secrets.json
+credentials.json
+service_account.json
