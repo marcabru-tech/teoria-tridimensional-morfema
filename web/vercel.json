@@ -1,11 +1,7 @@
 {
-  "framework": "nextjs",
-  "installCommand": "npm --prefix web ci",
-  "buildCommand": "npm --prefix web run build",
-  "outputDirectory": "web/.next",
   "functions": {
     "api/main.py": {
-      "includeFiles": "ttm/**"
+      "includeFiles": "../ttm/**"
     }
   },
   "headers": [
