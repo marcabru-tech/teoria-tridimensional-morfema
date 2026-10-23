@@ -19,7 +19,7 @@ export interface Diacritic {
 }
 
 export interface Width {
-  root: string;
+  root: string | null;
   prefixes: string[];
   suffixes: string[];
   pattern: string;
@@ -49,7 +49,10 @@ export interface MorphemeCoordinates {
 
 export interface MorphemeAnalysis {
   morpheme: string;
-  root: string;
+  root: string | null;
+  rootStatus: 'identificada' | 'nao_identificada';
+  rootConfidence: 'alta' | 'media' | null;
+  rootMessage: string;
   language: string;
   gloss: string;
   coordinates: MorphemeCoordinates;

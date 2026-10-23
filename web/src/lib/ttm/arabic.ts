@@ -1,5 +1,6 @@
 import arabicRoots from '@/data/roots/arabic_roots.json';
 import { MorphemeAnalysis, SemanticLevel, Width, Depth, Height } from './types';
+import { AffixConfig, RootMatch, buildRootIndex, matchRoot } from './matching';
 
 const ARABIC_DIACRITICS = /[\u0610-\u061a\u064b-\u065f\u0670\u06d6-\u06dc\u06df-\u06e4\u06e7\u06e8\u06ea-\u06ed]/g;
 
@@ -17,38 +18,21 @@ function extractDiacritics(text: string): string[] {
 // (ver scripts/check-data-sync.mjs).
 const rootsData: Record<string, any> = arabicRoots;
 
-function getRootsData() {
-  return rootsData;
-}
+const ARABIC_AFFIXES: AffixConfig = {
+  proclitics: ['وال', 'فال', 'بال', 'كال', 'لل', 'ال', 'و', 'ف', 'ب', 'ل', 'ك', 'س'],
+  verbalPrefixes: ['سي', 'ست', 'ي', 'ت', 'أ', 'ن', 'ا'],
+  suffixesToRoot: ['وا', 'ون', 'ين', 'ات', 'نا', 'هم', 'هن', 'كم', 'كن', 'ها', 'ه', 'ك', 'ي', 'ن', 'ا', 'ت'],
+  suffixesToExample: ['وا', 'ون', 'ين', 'ات', 'ة', 'ها', 'هم', 'هن', 'كم', 'كن', 'نا', 'تم', 'تن', 'تما', 'ه', 'ك', 'ي', 'ن', 'ا', 'ت'],
+};
+
+const rootIndex = buildRootIndex(rootsData, stripDiacritics);
 
 export function analyzeArabic(form: string): MorphemeAnalysis {
-  const data = getRootsData() || {};
   const stripped = stripDiacritics(form);
   const diacriticsFound = extractDiacritics(form);
-  
-  // Try to find root in data
-  let matchedRoot = '';
-  let rootInfo: any = null;
-  
-  for (const [root, info] of Object.entries(data)) {
-    const rootChars = root.replace(/-/g, '');
-    if (stripped === rootChars || stripped.includes(rootChars) || rootChars.includes(stripped)) {
-      matchedRoot = root;
-      rootInfo = info;
-      break;
-    }
-    // Check examples
-    for (const exampleForm of Object.keys((info as any).examples || {})) {
-      if (stripDiacritics(exampleForm) === stripped) {
-        matchedRoot = root;
-        rootInfo = info;
-        break;
-      }
-    }
-    if (rootInfo) break;
-  }
-
-  const root = matchedRoot || stripped.split('').join('-');
+  const match: RootMatch | null = matchRoot(stripped, rootIndex, ARABIC_AFFIXES);
+  const root = match ? match.rootKey : null;
+  const rootInfo = match?.info ?? null;
   const semanticField = rootInfo?.semantic_field || '';
   const description = rootInfo?.description || '';
   const examples = rootInfo?.examples || {};
@@ -57,16 +41,16 @@ export function analyzeArabic(form: string): MorphemeAnalysis {
 
   const width: Width = {
     root,
-    prefixes: [],
-    suffixes: [],
+    prefixes: match?.prefix ? [match.prefix] : [],
+    suffixes: match?.suffix ? [match.suffix] : [],
     pattern: '',
-    derivationDegree: matchedRoot ? 0 : 1,
+    derivationDegree: match ? (match.via === 'raiz' ? 0 : 1) : 1,
     possibleDerivations: derivations,
   };
 
   // Build depth with semantic layers (Ẓāhir/Bāṭin tradition — four levels mirroring PaRDeS)
   const layers = [
-    { level: SemanticLevel.LITERAL, levelName: 'Literal (Ẓāhir)', meaning: description || `Surface meaning of ${form}`, tradition: 'Islamic' },
+    { level: SemanticLevel.LITERAL, levelName: 'Literal (Ẓāhir)', meaning: root ? (description || `Surface meaning of ${form}`) : 'raiz não identificada — sem significado lexical na base', tradition: 'Islamic' },
     { level: SemanticLevel.ALLUSIVE, levelName: 'Allusive (Isharī)', meaning: semanticField ? `Field: ${semanticField}` : 'Allusive meaning', tradition: 'Sufi' },
     { level: SemanticLevel.HOMILETIC, levelName: 'Homiletic (Tafsīr)', meaning: 'Exegetical / commentarial dimension', tradition: 'Islamic' },
     { level: SemanticLevel.MYSTICAL, levelName: 'Mystical (Bāṭin)', meaning: 'Hidden / esoteric dimension', tradition: 'Sufi' },
@@ -89,8 +73,11 @@ export function analyzeArabic(form: string): MorphemeAnalysis {
   return {
     morpheme: form,
     root,
+    rootStatus: match ? 'identificada' : 'nao_identificada',
+    rootConfidence: match ? match.confidence : null,
+    rootMessage: match ? `raiz identificada (casamento: ${match.via}; certeza: ${match.confidence})` : 'raiz não identificada',
     language: 'ar',
-    gloss: examples[form] || description || '',
+    gloss: match?.gloss || description || '',
     coordinates: { x: width.derivationDegree, y: depth.currentLevel, z: height.configurationId },
     dimensions: { width, depth, height },
   };

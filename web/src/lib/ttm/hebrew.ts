@@ -1,5 +1,6 @@
 import hebrewRoots from '@/data/roots/hebrew_roots.json';
 import { MorphemeAnalysis, SemanticLevel, Width, Depth, Height } from './types';
+import { AffixConfig, RootMatch, buildRootIndex, matchRoot } from './matching';
 
 const HEBREW_NIQQUD = /[\u0591-\u05c7]/g;
 
@@ -17,36 +18,33 @@ function extractNiqqud(text: string): string[] {
 // (ver scripts/check-data-sync.mjs).
 const rootsData: Record<string, any> = hebrewRoots;
 
-function getRootsData() {
-  return rootsData;
+const FINALS: Record<string, string> = { 'ך': 'כ', 'ם': 'מ', 'ן': 'נ', 'ף': 'פ', 'ץ': 'צ' };
+function normalizeHebrew(text: string): string {
+  return stripNiqqud(text).replace(/[ךםןףץ]/g, (c) => FINALS[c]);
 }
+const HEBREW_AFFIXES: AffixConfig = {
+  proclitics: ['וה', 'וב', 'ול', 'ומ', 'וכ', 'וש', 'ה', 'ו', 'ב', 'ל', 'מ', 'כ', 'ש'],
+  verbalPrefixes: ['וי', 'י', 'ת', 'נ', 'א'],
+  suffixesToRoot: ['ים', 'כם', 'הם', 'נו', 'ם', 'ו', 'ך', 'י'],
+  suffixesToExample: ['תי', 'ות', 'ת', 'ה', 'י', 'ך', 'כם', 'הם', 'נו'],
+};
+
+// Correção: os afixos passam pela mesma normalização da entrada (letras finais -> mediais),
+// senão sufixos como 'ים', 'ם', 'ך' nunca casam com a forma normalizada.
+const foldList = (l: string[]) => l.map(normalizeHebrew);
+HEBREW_AFFIXES.proclitics = foldList(HEBREW_AFFIXES.proclitics);
+HEBREW_AFFIXES.verbalPrefixes = foldList(HEBREW_AFFIXES.verbalPrefixes);
+HEBREW_AFFIXES.suffixesToRoot = foldList(HEBREW_AFFIXES.suffixesToRoot);
+HEBREW_AFFIXES.suffixesToExample = foldList(HEBREW_AFFIXES.suffixesToExample);
+const rootIndex = buildRootIndex(rootsData, normalizeHebrew);
 
 export function analyzeHebrew(form: string): MorphemeAnalysis {
-  const data = getRootsData() || {};
   const stripped = stripNiqqud(form);
   const niqqudFound = extractNiqqud(form);
-  
-  let matchedRoot = '';
-  let rootInfo: any = null;
-  
-  for (const [root, info] of Object.entries(data)) {
-    const rootChars = root.replace(/-/g, '');
-    if (stripped === rootChars) {
-      matchedRoot = root;
-      rootInfo = info;
-      break;
-    }
-    for (const exampleForm of Object.keys((info as any).examples || {})) {
-      if (stripNiqqud(exampleForm) === stripped) {
-        matchedRoot = root;
-        rootInfo = info;
-        break;
-      }
-    }
-    if (rootInfo) break;
-  }
-
-  const root = matchedRoot || stripped.split('').join('-');
+  const norm = normalizeHebrew(form);
+  const match: RootMatch | null = matchRoot(norm, rootIndex, HEBREW_AFFIXES);
+  const root = match ? match.rootKey : null;
+  const rootInfo = match?.info ?? null;
   const semanticField = rootInfo?.semantic_field || '';
   const description = rootInfo?.description || '';
   const examples = rootInfo?.examples || {};
@@ -55,16 +53,16 @@ export function analyzeHebrew(form: string): MorphemeAnalysis {
 
   const width: Width = {
     root,
-    prefixes: [],
-    suffixes: [],
+    prefixes: match?.prefix ? [match.prefix] : [],
+    suffixes: match?.suffix ? [match.suffix] : [],
     pattern: '',
-    derivationDegree: matchedRoot ? 0 : 1,
+    derivationDegree: match ? (match.via === 'raiz' ? 0 : 1) : 1,
     possibleDerivations: derivations,
   };
 
   // Hebrew PaRDeS semantic levels
   const layers = [
-    { level: SemanticLevel.LITERAL, levelName: 'Peshat (פשט)', meaning: description || `Literal meaning of ${form}`, tradition: 'Rabbinic' },
+    { level: SemanticLevel.LITERAL, levelName: 'Peshat (פשט)', meaning: root ? (description || `Literal meaning of ${form}`) : 'raiz não identificada — sem significado lexical na base', tradition: 'Rabbinic' },
     { level: SemanticLevel.ALLUSIVE, levelName: 'Remez (רמז)', meaning: semanticField ? `Allegorical: ${semanticField}` : 'Allegorical meaning', tradition: 'Medieval' },
     { level: SemanticLevel.HOMILETIC, levelName: 'Derash (דרש)', meaning: 'Homiletical / midrashic dimension', tradition: 'Rabbinic' },
     { level: SemanticLevel.MYSTICAL, levelName: 'Sod (סוד)', meaning: 'Mystical / Kabbalistic dimension', tradition: 'Kabbalah' },
@@ -87,8 +85,11 @@ export function analyzeHebrew(form: string): MorphemeAnalysis {
   return {
     morpheme: form,
     root,
+    rootStatus: match ? 'identificada' : 'nao_identificada',
+    rootConfidence: match ? match.confidence : null,
+    rootMessage: match ? `raiz identificada (casamento: ${match.via}; certeza: ${match.confidence})` : 'raiz não identificada',
     language: 'he',
-    gloss: examples[form] || description || '',
+    gloss: match?.gloss || description || '',
     coordinates: { x: width.derivationDegree, y: depth.currentLevel, z: height.configurationId },
     dimensions: { width, depth, height },
   };
