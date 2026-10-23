@@ -104,3 +104,5 @@ jobs:
             exit 1
           }
           npm run smoke -- http://localhost:3000
+          # Conjunto de referência (S2.1): só registra o relatório; vira bloqueante no S2.2 com --enforce
+          node tests/reference/evaluate.mjs http://localhost:3000 --report /tmp/relatorio-referencia.md

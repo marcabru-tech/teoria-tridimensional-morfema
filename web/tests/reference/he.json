@@ -1,0 +1,2304 @@
+{
+  "description": "Conjunto de referência do TTM — hebraico bíblico (S2.1). Linha de base inicial, não prova de domínio da variedade.",
+  "attribution": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb ; Open Scriptures Hebrew Lexicon available at https://github.com/openscriptures/HebrewLexicon",
+  "categories": {
+    "coberta": "forma de raiz presente na base do TTM; o motor deve devolver essa raiz",
+    "fora_da_cobertura": "forma legítima de raiz ausente da base; o motor deve devolver 'raiz não identificada'",
+    "armadilha": "forma que contém as letras de uma raiz coberta sem pertencer a ela; qualquer raiz coberta devolvida é falso positivo"
+  },
+  "excluded": [
+    {
+      "form": "בָרָ֥א",
+      "location": "2Sam.12.17",
+      "reason": "homônimo: o LexicalIndex classifica sob ברה ('comer'), mas outros léxicos (HALOT) tratam como homônimo de ברא; testa sentido, não extração de raiz. Candidato a uma futura categoria 'homônimo'."
+    },
+    {
+      "form": "ב/מלכן",
+      "location": "2Sam.12.31",
+      "reason": "ketiv sem vogais (qere בַּמַּלְבֵּן) e de raiz disputada (uma linha o liga a Moloque/Malcam, raiz מלך)."
+    }
+  ],
+  "cases": [
+    {
+      "id": "he-001",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "מֶֽלֶךְ",
+      "input": "מֶֽלֶךְ",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "מ-ל-ך",
+        "output": "מ-ל-ך"
+      },
+      "reference_root": "מלך",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.14.1",
+        "word": 4,
+        "oshb_id": "01BFg",
+        "morph": "HNcmsc",
+        "lemma": "4428"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "hae",
+        "entry_word": "מֶ֫לֶךְ",
+        "bdb": "m.cd.ab",
+        "root_entry": "haj"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-002",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "הַ/מֶּֽלֶךְ",
+      "input": "הַמֶּֽלֶךְ",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "מ-ל-ך",
+        "output": "מ-ל-ך"
+      },
+      "reference_root": "מלך",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.14.17",
+        "word": 19,
+        "oshb_id": "01jDj",
+        "morph": "HTd/Ncmsa",
+        "lemma": "d/4428"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "hae",
+        "entry_word": "מֶ֫לֶךְ",
+        "bdb": "m.cd.ab",
+        "root_entry": "haj"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-003",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "וַ/יִּמְלֹ֣ךְ",
+      "input": "וַיִּמְלֹ֣ךְ",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "מ-ל-ך",
+        "output": "מ-ל-ך"
+      },
+      "reference_root": "מלך",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.36.32",
+        "word": 1,
+        "oshb_id": "01xVz",
+        "morph": "HC/Vqw3ms",
+        "lemma": "c/4427 a"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "hag",
+        "entry_word": "מָלַךְ",
+        "bdb": "m.cd.ae",
+        "root_entry": "haj"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-004",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "מַלְכ֥וּת",
+      "input": "מַלְכ֥וּת",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "מ-ל-ך",
+        "output": "מ-ל-ך"
+      },
+      "reference_root": "מלך",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "1Chr.12.24",
+        "word": 11,
+        "oshb_id": "13gq4",
+        "morph": "HNcfsc",
+        "lemma": "4438"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "han",
+        "entry_word": "מַלְכוּת",
+        "bdb": "m.cd.ak",
+        "root_entry": "haj"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-005",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "מַמְלָכָֽה",
+      "input": "מַמְלָכָֽה",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "מ-ל-ך",
+        "output": "מ-ל-ך"
+      },
+      "reference_root": "מלך",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "2Chr.9.19",
+        "word": 15,
+        "oshb_id": "14GfA",
+        "morph": "HNcfsa",
+        "lemma": "4467"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "hbu",
+        "entry_word": "מַמְלָכָה",
+        "bdb": "m.cd.al",
+        "root_entry": "haj"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-006",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "בְ/מַלְכוּת֛/וֹ",
+      "input": "בְמַלְכוּת֛וֹ",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "מ-ל-ך",
+        "output": "מ-ל-ך"
+      },
+      "reference_root": "מלך",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "1Chr.11.10",
+        "word": 8,
+        "oshb_id": "13uda",
+        "morph": "HR/Ncfsc/Sp3ms",
+        "lemma": "b/4438"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "han",
+        "entry_word": "מַלְכוּת",
+        "bdb": "m.cd.ak",
+        "root_entry": "haj"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-007",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "שָׁמַ֥ר",
+      "input": "שָׁמַ֥ר",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "שׁ-מ-ר",
+        "output": "שׁ-מ-ר"
+      },
+      "reference_root": "שׁמר",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.37.11",
+        "word": 5,
+        "oshb_id": "01GWW",
+        "morph": "HVqp3ms",
+        "lemma": "8104"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "nbf",
+        "entry_word": "שָׁמַר",
+        "bdb": "v.ef.aa",
+        "root_entry": "nbf"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-008",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "לִ/שְׁמֹ֕ר",
+      "input": "לִשְׁמֹ֕ר",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "שׁ-מ-ר",
+        "output": "שׁ-מ-ר"
+      },
+      "reference_root": "שׁמר",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.3.24",
+        "word": 14,
+        "oshb_id": "01UwQ",
+        "morph": "HR/Vqc",
+        "lemma": "l/8104"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "nbf",
+        "entry_word": "שָׁמַר",
+        "bdb": "v.ef.aa",
+        "root_entry": "nbf"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-009",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "שִׁמֻּרִ֥ים",
+      "input": "שִׁמֻּרִ֥ים",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "שׁ-מ-ר",
+        "output": "שׁ-מ-ר"
+      },
+      "reference_root": "שׁמר",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Exod.12.42",
+        "word": 2,
+        "oshb_id": "02fn2",
+        "morph": "HNcmpa",
+        "lemma": "8107"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "nbc",
+        "entry_word": "שִׁמֻּר",
+        "bdb": "v.ef.ai",
+        "root_entry": "nbf"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-010",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "מִשְׁמֶ֥רֶת",
+      "input": "מִשְׁמֶ֥רֶת",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "שׁ-מ-ר",
+        "output": "שׁ-מ-ר"
+      },
+      "reference_root": "שׁמר",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Lev.8.35",
+        "word": 11,
+        "oshb_id": "03dWK",
+        "morph": "HNcfsc",
+        "lemma": "4931"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "hus",
+        "entry_word": "מִשְׁמֶ֫רֶת",
+        "bdb": "v.ef.as",
+        "root_entry": "nbf"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-011",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "וְ/שָֽׁמְרוּ֙",
+      "input": "וְשָֽׁמְרוּ֙",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "שׁ-מ-ר",
+        "output": "שׁ-מ-ר"
+      },
+      "reference_root": "שׁמר",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.18.19",
+        "word": 11,
+        "oshb_id": "01fmp",
+        "morph": "HC/Vqq3cp",
+        "lemma": "c/8104"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "nbf",
+        "entry_word": "שָׁמַר",
+        "bdb": "v.ef.aa",
+        "root_entry": "nbf"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-012",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "יִשְׁמֹ֔ר",
+      "input": "יִשְׁמֹ֔ר",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "שׁ-מ-ר",
+        "output": "שׁ-מ-ר"
+      },
+      "reference_root": "שׁמר",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "1Sam.2.9",
+        "word": 4,
+        "oshb_id": "09W7V",
+        "morph": "HVqi3ms",
+        "lemma": "8104"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "nbf",
+        "entry_word": "שָׁמַר",
+        "bdb": "v.ef.aa",
+        "root_entry": "nbf"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-013",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "כְּתֹ֨ב",
+      "input": "כְּתֹ֨ב",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "כ-ת-ב",
+        "output": "כ-ת-ב"
+      },
+      "reference_root": "כתב",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Exod.17.14",
+        "word": 5,
+        "oshb_id": "02nTB",
+        "morph": "HVqv2ms",
+        "lemma": "3789"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "gaa",
+        "entry_word": "כָּתַב",
+        "bdb": "k.dn.aa",
+        "root_entry": "gaa"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-014",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "וַ/יִּכְתֹּ֣ב",
+      "input": "וַיִּכְתֹּ֣ב",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "כ-ת-ב",
+        "output": "כ-ת-ב"
+      },
+      "reference_root": "כתב",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Exod.24.4",
+        "word": 1,
+        "oshb_id": "02XSs",
+        "morph": "HC/Vqw3ms",
+        "lemma": "c/3789"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "gaa",
+        "entry_word": "כָּתַב",
+        "bdb": "k.dn.aa",
+        "root_entry": "gaa"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-015",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "הַ/כָּת֖וּב",
+      "input": "הַכָּת֖וּב",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "כ-ת-ב",
+        "output": "כ-ת-ב"
+      },
+      "reference_root": "כתב",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Josh.1.8",
+        "word": 15,
+        "oshb_id": "06TXw",
+        "morph": "HTd/Vqsmsa",
+        "lemma": "d/3789"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "gaa",
+        "entry_word": "כָּתַב",
+        "bdb": "k.dn.aa",
+        "root_entry": "gaa"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-016",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "כְּתוּבִ֗ים",
+      "input": "כְּתוּבִ֗ים",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "כ-ת-ב",
+        "output": "כ-ת-ב"
+      },
+      "reference_root": "כתב",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "1Kgs.14.19",
+        "word": 9,
+        "oshb_id": "116WC",
+        "morph": "HVqsmpa",
+        "lemma": "3789"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "gaa",
+        "entry_word": "כָּתַב",
+        "bdb": "k.dn.aa",
+        "root_entry": "gaa"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-017",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "מִכְתַּ֤ב",
+      "input": "מִכְתַּ֤ב",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "כ-ת-ב",
+        "output": "כ-ת-ב"
+      },
+      "reference_root": "כתב",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Exod.32.16",
+        "word": 6,
+        "oshb_id": "02XUT",
+        "morph": "HNcmsc",
+        "lemma": "4385"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "gyq",
+        "entry_word": "מִכְתָּב",
+        "bdb": "k.dn.ad",
+        "root_entry": "gaa"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-018",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "בִּ/כְתָ֛ב",
+      "input": "בִּכְתָ֛ב",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "כ-ת-ב",
+        "output": "כ-ת-ב"
+      },
+      "reference_root": "כתב",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "1Chr.28.19",
+        "word": 2,
+        "oshb_id": "13wJq",
+        "morph": "HR/Ncmsa",
+        "lemma": "b/3791"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "fzz",
+        "entry_word": "כְּתָב",
+        "bdb": "k.dn.ab",
+        "root_entry": "gaa"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-019",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "אָהֵֽב",
+      "input": "אָהֵֽב",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "א-ה-ב",
+        "output": "א-ה-ב"
+      },
+      "reference_root": "אהב",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.27.9",
+        "word": 17,
+        "oshb_id": "0162a",
+        "morph": "HVqp3ms",
+        "lemma": "157"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "agk",
+        "entry_word": "אָהֵב",
+        "bdb": "a.bh.aa",
+        "root_entry": "agk"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-020",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "וַ/יֶּאֱהַ֥ב",
+      "input": "וַיֶּאֱהַ֥ב",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "א-ה-ב",
+        "output": "א-ה-ב"
+      },
+      "reference_root": "אהב",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.25.28",
+        "word": 1,
+        "oshb_id": "01hv5",
+        "morph": "HC/Vqw3ms",
+        "lemma": "c/157"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "agk",
+        "entry_word": "אָהֵב",
+        "bdb": "a.bh.aa",
+        "root_entry": "agk"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-021",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "אֲהֵבָ֑/הּ",
+      "input": "אֲהֵבָ֑הּ",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "א-ה-ב",
+        "output": "א-ה-ב"
+      },
+      "reference_root": "אהב",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "2Sam.13.15",
+        "word": 13,
+        "oshb_id": "10YUT",
+        "morph": "HVqp3ms/Sp3fs",
+        "lemma": "157"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "agk",
+        "entry_word": "אָהֵב",
+        "bdb": "a.bh.aa",
+        "root_entry": "agk"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-022",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "וְ/אָֽהַבְתָּ֥",
+      "input": "וְאָֽהַבְתָּ֥",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "א-ה-ב",
+        "output": "א-ה-ב"
+      },
+      "reference_root": "אהב",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Lev.19.18",
+        "word": 8,
+        "oshb_id": "032m6",
+        "morph": "HC/Vqq2ms",
+        "lemma": "c/157"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "agk",
+        "entry_word": "אָהֵב",
+        "bdb": "a.bh.aa",
+        "root_entry": "agk"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-023",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "אֲהֵבַ֨תֶ/ךְ֙",
+      "input": "אֲהֵבַ֨תֶךְ֙",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "א-ה-ב",
+        "output": "א-ה-ב"
+      },
+      "reference_root": "אהב",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Ruth.4.15",
+        "word": 11,
+        "oshb_id": "08e9g",
+        "morph": "HVqp3fs/Sp2fs",
+        "lemma": "157"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "agk",
+        "entry_word": "אָהֵב",
+        "bdb": "a.bh.aa",
+        "root_entry": "agk"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-024",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "לְ/אַהֲבָ֣ה",
+      "input": "לְאַהֲבָ֣ה",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "א-ה-ב",
+        "output": "א-ה-ב"
+      },
+      "reference_root": "אהב",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Deut.10.15",
+        "word": 5,
+        "oshb_id": "05oD9",
+        "morph": "HR/Vqc",
+        "lemma": "l/157"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "agk",
+        "entry_word": "אָהֵב",
+        "bdb": "a.bh.aa",
+        "root_entry": "agk"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-025",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "בָּרָ֣א",
+      "input": "בָּרָ֣א",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "ב-ר-א",
+        "output": "ב-ר-א"
+      },
+      "reference_root": "ברא",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.1",
+        "word": 2,
+        "oshb_id": "01Nvk",
+        "morph": "HVqp3ms",
+        "lemma": "1254 a"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "bxy",
+        "entry_word": "בָּרָא",
+        "bdb": "b.cw.aa",
+        "root_entry": "bxy"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-026",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "וַ/יִּבְרָ֣א",
+      "input": "וַיִּבְרָ֣א",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "ב-ר-א",
+        "output": "ב-ר-א"
+      },
+      "reference_root": "ברא",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.21",
+        "word": 1,
+        "oshb_id": "016kU",
+        "morph": "HC/Vqw3ms",
+        "lemma": "c/1254 a"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "bxy",
+        "entry_word": "בָּרָא",
+        "bdb": "b.cw.aa",
+        "root_entry": "bxy"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-027",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "בְּרָאָ֑/ם",
+      "input": "בְּרָאָ֑ם",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "ב-ר-א",
+        "output": "ב-ר-א"
+      },
+      "reference_root": "ברא",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.5.2",
+        "word": 3,
+        "oshb_id": "015mW",
+        "morph": "HVqp3ms/Sp3mp",
+        "lemma": "1254 a"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "bxy",
+        "entry_word": "בָּרָא",
+        "bdb": "b.cw.aa",
+        "root_entry": "bxy"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-028",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "בּוֹרֵא֙",
+      "input": "בּוֹרֵא֙",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "ב-ר-א",
+        "output": "ב-ר-א"
+      },
+      "reference_root": "ברא",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Isa.40.28",
+        "word": 9,
+        "oshb_id": "23wJq",
+        "morph": "HVqrmsa",
+        "lemma": "1254 a"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "bxy",
+        "entry_word": "בָּרָא",
+        "bdb": "b.cw.aa",
+        "root_entry": "bxy"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-029",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "נִ֝בְרָ֗א",
+      "input": "נִ֝בְרָ֗א",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "ב-ר-א",
+        "output": "ב-ר-א"
+      },
+      "reference_root": "ברא",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Ps.102.19",
+        "word": 6,
+        "oshb_id": "19BXC",
+        "morph": "HVNrmsa",
+        "lemma": "1254 a"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "bxy",
+        "entry_word": "בָּרָא",
+        "bdb": "b.cw.aa",
+        "root_entry": "bxy"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-030",
+      "category": "coberta",
+      "variety": "hebraico bíblico",
+      "attested_form": "בְּרִיאָ֞ה",
+      "input": "בְּרִיאָ֞ה",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": "ב-ר-א",
+        "output": "ב-ר-א"
+      },
+      "reference_root": "ברא",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Num.16.30",
+        "word": 2,
+        "oshb_id": "04N8o",
+        "morph": "HNcfsa",
+        "lemma": "1278"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "byx",
+        "entry_word": "בְּרִיאָה",
+        "bdb": "b.cw.ab",
+        "root_entry": "bxy"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-031",
+      "category": "fora_da_cobertura",
+      "variety": "hebraico bíblico",
+      "attested_form": "הָיְתָ֥ה",
+      "input": "הָיְתָ֥ה",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "היה",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.2",
+        "word": 2,
+        "oshb_id": "01Qzf",
+        "morph": "HVqp3fs",
+        "lemma": "1961"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "daq",
+        "entry_word": "הָיָה",
+        "bdb": "e.bf.aa",
+        "root_entry": "daq"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-032",
+      "category": "fora_da_cobertura",
+      "variety": "hebraico bíblico",
+      "attested_form": "מְרַחֶ֖פֶת",
+      "input": "מְרַחֶ֖פֶת",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "רחף",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.2",
+        "word": 11,
+        "oshb_id": "01yNB",
+        "morph": "HVprfsa",
+        "lemma": "7363 b"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "lvq",
+        "entry_word": "רָחַף",
+        "bdb": "t.cd.aa",
+        "root_entry": "lvq"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-033",
+      "category": "fora_da_cobertura",
+      "variety": "hebraico bíblico",
+      "attested_form": "וַ/יֹּ֥אמֶר",
+      "input": "וַיֹּ֥אמֶר",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "אמר",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.3",
+        "word": 1,
+        "oshb_id": "01thY",
+        "morph": "HC/Vqw3ms",
+        "lemma": "c/559"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "awn",
+        "entry_word": "אָמַר",
+        "bdb": "a.ea.aa",
+        "root_entry": "awn"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-034",
+      "category": "fora_da_cobertura",
+      "variety": "hebraico bíblico",
+      "attested_form": "וַ/יַּ֧רְא",
+      "input": "וַיַּ֧רְא",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ראה",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.4",
+        "word": 1,
+        "oshb_id": "01USR",
+        "morph": "HC/Vqw3ms",
+        "lemma": "c/7200"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "lpd",
+        "entry_word": "רָאָה",
+        "bdb": "t.ab.aa",
+        "root_entry": "lpd"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-035",
+      "category": "fora_da_cobertura",
+      "variety": "hebraico bíblico",
+      "attested_form": "וַ/יַּבְדֵּ֣ל",
+      "input": "וַיַּבְדֵּ֣ל",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "בדל",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.4",
+        "word": 7,
+        "oshb_id": "01jQb",
+        "morph": "HC/Vhw3ms",
+        "lemma": "c/914"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "bki",
+        "entry_word": "בָּדַל",
+        "bdb": "b.ah.aa",
+        "root_entry": "bki"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-036",
+      "category": "fora_da_cobertura",
+      "variety": "hebraico bíblico",
+      "attested_form": "וַ/יִּקְרָ֨א",
+      "input": "וַיִּקְרָ֨א",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "קרא",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.5",
+        "word": 1,
+        "oshb_id": "01nAB",
+        "morph": "HC/Vqw3ms",
+        "lemma": "c/7121"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "lln",
+        "entry_word": "קָרָא",
+        "bdb": "s.cy.aa",
+        "root_entry": "lln"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-037",
+      "category": "fora_da_cobertura",
+      "variety": "hebraico bíblico",
+      "attested_form": "וַ/יַּ֣עַשׂ",
+      "input": "וַיַּ֣עַשׂ",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "עשׂה",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.7",
+        "word": 1,
+        "oshb_id": "01bmv",
+        "morph": "HC/Vqw3ms",
+        "lemma": "c/6213 a"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "jxj",
+        "entry_word": "עָשָׂה",
+        "bdb": "p.fy.aa",
+        "root_entry": "jxj"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-038",
+      "category": "fora_da_cobertura",
+      "variety": "hebraico bíblico",
+      "attested_form": "יִקָּו֨וּ",
+      "input": "יִקָּו֨וּ",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "קוה",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.9",
+        "word": 3,
+        "oshb_id": "01NPq",
+        "morph": "HVNj3mp",
+        "lemma": "6960 b"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "lel",
+        "entry_word": "קָוָה",
+        "bdb": "s.ar.aa",
+        "root_entry": "lel"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-039",
+      "category": "fora_da_cobertura",
+      "variety": "hebraico bíblico",
+      "attested_form": "תַּֽדְשֵׁ֤א",
+      "input": "תַּֽדְשֵׁ֤א",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "דשׁא",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.11",
+        "word": 3,
+        "oshb_id": "01Qsh",
+        "morph": "HVhj3fs",
+        "lemma": "1876"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "cxh",
+        "entry_word": "דָּשָׁא",
+        "bdb": "d.cn.aa",
+        "root_entry": "cxh"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-040",
+      "category": "fora_da_cobertura",
+      "variety": "hebraico bíblico",
+      "attested_form": "מַזְרִ֣יעַ",
+      "input": "מַזְרִ֣יעַ",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "זרע",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.11",
+        "word": 7,
+        "oshb_id": "01Bbz",
+        "morph": "HVhrmsa",
+        "lemma": "2232"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "dlx",
+        "entry_word": "זָרַע",
+        "bdb": "g.cl.aa",
+        "root_entry": "dlx"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-041",
+      "category": "fora_da_cobertura",
+      "variety": "hebraico bíblico",
+      "attested_form": "וַ/תּוֹצֵ֨א",
+      "input": "וַתּוֹצֵ֨א",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "יצא",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.12",
+        "word": 1,
+        "oshb_id": "01TXw",
+        "morph": "HC/Vhw3fs",
+        "lemma": "c/3318"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "fga",
+        "entry_word": "יָצָא",
+        "bdb": "j.cq.aa",
+        "root_entry": "fga"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-042",
+      "category": "fora_da_cobertura",
+      "variety": "hebraico bíblico",
+      "attested_form": "לְ/הָאִ֖יר",
+      "input": "לְהָאִ֖יר",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "אור",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.15",
+        "word": 5,
+        "oshb_id": "01FMU",
+        "morph": "HR/Vhc",
+        "lemma": "l/215"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "ajb",
+        "entry_word": "אוֹר",
+        "bdb": "a.cd.aa",
+        "root_entry": "ajb"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-043",
+      "category": "fora_da_cobertura",
+      "variety": "hebraico bíblico",
+      "attested_form": "וַ/יִּתֵּ֥ן",
+      "input": "וַיִּתֵּ֥ן",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "נתן",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.17",
+        "word": 1,
+        "oshb_id": "01B6c",
+        "morph": "HC/Vqw3ms",
+        "lemma": "c/5414"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "iow",
+        "entry_word": "נָתַן",
+        "bdb": "n.gg.aa",
+        "root_entry": "iow"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-044",
+      "category": "fora_da_cobertura",
+      "variety": "hebraico bíblico",
+      "attested_form": "וְ/לִ/מְשֹׁל֙",
+      "input": "וְלִמְשֹׁל֙",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "משׁל",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.18",
+        "word": 1,
+        "oshb_id": "01n9v",
+        "morph": "HC/R/Vqc",
+        "lemma": "c/l/4910"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "htu",
+        "entry_word": "מָשַׁל",
+        "bdb": "m.dw.aa",
+        "root_entry": "htu"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-045",
+      "category": "fora_da_cobertura",
+      "variety": "hebraico bíblico",
+      "attested_form": "יִשְׁרְצ֣וּ",
+      "input": "יִשְׁרְצ֣וּ",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "שׁרץ",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.20",
+        "word": 3,
+        "oshb_id": "01i4W",
+        "morph": "HVqi3mp",
+        "lemma": "8317"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "nkq",
+        "entry_word": "שָׁרַץ",
+        "bdb": "v.gc.aa",
+        "root_entry": "nkq"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-046",
+      "category": "armadilha",
+      "variety": "hebraico bíblico",
+      "attested_form": "בְּ/רֵאשִׁ֖ית",
+      "input": "בְּרֵאשִׁ֖ית",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ראשׁ",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Gen.1.1",
+        "word": 1,
+        "oshb_id": "01xeN",
+        "morph": "HR/Ncfsa",
+        "lemma": "b/7225"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "lqb",
+        "entry_word": "רֵאשִׁית",
+        "bdb": "t.ad.ag",
+        "root_entry": "lpx"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-047",
+      "category": "armadilha",
+      "variety": "hebraico bíblico",
+      "attested_form": "בָּ/רֹ֔אשׁ",
+      "input": "בָּרֹ֔אשׁ",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ראשׁ",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "1Chr.16.7",
+        "word": 6,
+        "oshb_id": "13quH",
+        "morph": "HRd/Ncmsa",
+        "lemma": "b/7218 a"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "lpx",
+        "entry_word": "רֹאשׁ",
+        "bdb": "t.ad.aa",
+        "root_entry": "lpx"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-048",
+      "category": "armadilha",
+      "variety": "hebraico bíblico",
+      "attested_form": "בִּ/רְא֤וֹת",
+      "input": "בִּרְא֤וֹת",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ראה",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "1Chr.21.28",
+        "word": 3,
+        "oshb_id": "13Pez",
+        "morph": "HR/Vqc",
+        "lemma": "b/7200"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "lpd",
+        "entry_word": "רָאָה",
+        "bdb": "t.ab.aa",
+        "root_entry": "lpd"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-049",
+      "category": "armadilha",
+      "variety": "hebraico bíblico",
+      "attested_form": "בִּ/רְאֹת֣/וֹ",
+      "input": "בִּרְאֹת֣וֹ",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ראה",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "2Sam.24.17",
+        "word": 5,
+        "oshb_id": "10VTY",
+        "morph": "HR/Vqc/Sp3ms",
+        "lemma": "b/7200"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "lpd",
+        "entry_word": "רָאָה",
+        "bdb": "t.ab.aa",
+        "root_entry": "lpd"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-050",
+      "category": "armadilha",
+      "variety": "hebraico bíblico",
+      "attested_form": "בָּֽ/רֹאֶ֔ה",
+      "input": "בָּֽרֹאֶ֔ה",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ראה",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Isa.28.7",
+        "word": 18,
+        "oshb_id": "236SP",
+        "morph": "HRd/Ncmsa",
+        "lemma": "b/7203 b"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "lpf",
+        "entry_word": "רֹאֶה",
+        "bdb": "t.ab.ad",
+        "root_entry": "lpd"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-051",
+      "category": "armadilha",
+      "variety": "hebraico bíblico",
+      "attested_form": "בָּֽ/רִאשׁ֖וֹן",
+      "input": "בָּֽרִאשׁ֖וֹן",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ראשׁ",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Ezek.29.17",
+        "word": 5,
+        "oshb_id": "26YQK",
+        "morph": "HRd/Aamsa",
+        "lemma": "b/7223"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "lqa",
+        "entry_word": "רִאשׁוֹן",
+        "bdb": "t.ad.ad",
+        "root_entry": "lpx"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-052",
+      "category": "armadilha",
+      "variety": "hebraico bíblico",
+      "attested_form": "גָּמְלֵ֣/ךְ",
+      "input": "גָּמְלֵ֣ךְ",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "גמל",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "1Sam.1.23",
+        "word": 10,
+        "oshb_id": "09JyD",
+        "morph": "HVqc/Sp2fs",
+        "lemma": "1580"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "clp",
+        "entry_word": "גָּמַל",
+        "bdb": "c.cj.aa",
+        "root_entry": "clp"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-053",
+      "category": "armadilha",
+      "variety": "hebraico bíblico",
+      "attested_form": "מִ/לֶּ֣כֶת",
+      "input": "מִלֶּ֣כֶת",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "הלך",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "1Sam.30.21",
+        "word": 8,
+        "oshb_id": "09TTL",
+        "morph": "HR/Vqc",
+        "lemma": "m/3212"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "fbo",
+        "entry_word": "יָלַךְ",
+        "bdb": "e.bn.aa",
+        "root_entry": "dbi"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-054",
+      "category": "armadilha",
+      "variety": "hebraico bíblico",
+      "attested_form": "וּ֝/מַלְכֻּדְתּ֗/וֹ",
+      "input": "וּ֝מַלְכֻּדְתּ֗וֹ",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "לכד",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Job.18.10",
+        "word": 4,
+        "oshb_id": "18bKv",
+        "morph": "HC/Ncfsc/Sp3ms",
+        "lemma": "c/4434"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "hak",
+        "entry_word": "מַלְכֹּ֫דֶת",
+        "bdb": "l.bp.ac",
+        "root_entry": "gfy"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-055",
+      "category": "armadilha",
+      "variety": "hebraico bíblico",
+      "attested_form": "מִ/לָּֽכֶד",
+      "input": "מִלָּֽכֶד",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "לכד",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Prov.3.26",
+        "word": 7,
+        "oshb_id": "20ufm",
+        "morph": "HR/Ncmsa",
+        "lemma": "m/3921"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "gfx",
+        "entry_word": "לֶ֫כֶד",
+        "bdb": "l.bp.ab",
+        "root_entry": "gfy"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-056",
+      "category": "armadilha",
+      "variety": "hebraico bíblico",
+      "attested_form": "גְּמֻלְ/כֶ֖ם",
+      "input": "גְּמֻלְכֶ֖ם",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "גמל",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Joel.4.4",
+        "word": 21,
+        "oshb_id": "29H82",
+        "morph": "HNcmsc/Sp2mp",
+        "lemma": "1576"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "cll",
+        "entry_word": "גְּמוּל",
+        "bdb": "c.cj.ab",
+        "root_entry": "clp"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-057",
+      "category": "armadilha",
+      "variety": "hebraico bíblico",
+      "attested_form": "כִּ/תְבוּנָ/ם֙",
+      "input": "כִּתְבוּנָם֙",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "בין",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Hos.13.2",
+        "word": 8,
+        "oshb_id": "28xfx",
+        "morph": "HR/Ncfsc/Sp3mp",
+        "lemma": "k/8394"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "nnw",
+        "entry_word": "תְּבוּנָה",
+        "bdb": "b.bo.ah",
+        "root_entry": "bny"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-058",
+      "category": "armadilha",
+      "variety": "hebraico bíblico",
+      "attested_form": "כְּ/תַבְנִ֣ית",
+      "input": "כְּתַבְנִ֣ית",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "בנה",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Isa.44.13",
+        "word": 12,
+        "oshb_id": "23bDR",
+        "morph": "HR/Ncfsc",
+        "lemma": "k/8403"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "nof",
+        "entry_word": "תַּבְנִית",
+        "bdb": "b.cb.ao",
+        "root_entry": "btg"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "he-059",
+      "category": "armadilha",
+      "variety": "hebraico bíblico",
+      "attested_form": "וּֽ/כְ/מַשְׂמְר֥וֹת",
+      "input": "וּֽכְמַשְׂמְר֥וֹת",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "סמר",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Eccl.12.11",
+        "word": 4,
+        "oshb_id": "21TjF",
+        "morph": "HC/R/Ncbpa",
+        "lemma": "c/k/4930"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "hur",
+        "entry_word": "מַשְׂמְרָה",
+        "bdb": "o.bw.ac",
+        "root_entry": "ivq"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "note": "Armadilha de sin/shin: מַשְׂמְרוֹת (raiz סמר, com sin) só se distingue de מִשְׁמֶרֶת (raiz שמר, com shin) se o motor preservar o ponto diacrítico de ש. Um motor que remove todos os pontos não tem como distinguir."
+    },
+    {
+      "id": "he-060",
+      "category": "armadilha",
+      "variety": "hebraico bíblico",
+      "attested_form": "כִּ/תְבוּאַ֥ת",
+      "input": "כִּתְבוּאַ֥ת",
+      "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "בוא",
+      "source": {
+        "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
+        "url": "https://github.com/openscriptures/morphhb",
+        "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
+        "license": "CC BY 4.0",
+        "location": "Num.18.30",
+        "word": 9,
+        "oshb_id": "048aX",
+        "morph": "HR/Ncfsc",
+        "lemma": "k/8393"
+      },
+      "root_evidence": {
+        "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
+        "url": "https://github.com/openscriptures/HebrewLexicon",
+        "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+        "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
+        "entry": "nnv",
+        "entry_word": "תְּבוּאָה",
+        "bdb": "b.ap.ae",
+        "root_entry": "blg"
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    }
+  ]
+}
