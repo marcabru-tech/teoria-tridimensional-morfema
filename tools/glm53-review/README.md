@@ -50,14 +50,16 @@ Para conferir no PowerShell: `Get-FileHash .\tools\glm53-review\input\*.md -Algo
 
 ## Pedaços, novas tentativas e retomada
 
-A Digiti fica atrás da Cloudflare, que corta qualquer requisição sem resposta em cerca de 100 s. Isso dá HTTP 504 "Gateway time-out". O lote árabe inteiro, com o raciocínio do GLM-5.3, passou desse limite na primeira execução (23/10/2026). Por isso o runner:
+A Digiti fica atrás da Cloudflare, que corta qualquer requisição sem resposta em cerca de 100 s. Isso dá HTTP 504 "Gateway time-out". Na primeira execução real (23/10/2026), o lote árabe inteiro passou desse limite; pedaços de 10 casos também passaram, por causa do raciocínio do GLM-5.3. Por isso o runner:
+
+- **usa streaming por padrão.** Os tokens chegam aos poucos, então a conexão não fica ociosa e a Cloudflare não a corta. O texto final vem de `delta.content`; o raciocínio (`delta.reasoning_content`) é descartado e nunca é salvo. A chamada é abortada após 3 min sem receber dado nenhum ou após 30 min no total. Para voltar ao modo antigo, use `--no-stream`;
 
 - **divide cada lote em pedaços** de 10 casos (`--chunk-size 10`, o padrão; `0` envia o lote inteiro). Cada pedaço leva o cabeçalho do lote, com as atribuições e as raízes cobertas, mais as seções `### id`, sem alterar nenhum caractere. O script confere que cabeçalho e seções reconstroem o lote original;
 - **tenta de novo** em erros transitórios (429, 5xx, 520, 522, 524 e falha de conexão), até `--retries 2` vezes, com espera de 20 s e depois 40 s;
 - **retoma de onde parou**: se você rodar de novo, cada pedaço já salvo, com o mesmo hash de insumo, completo e sem truncamento, é reaproveitado sem nova chamada;
 - **consolida** o resultado em `01-arabe.md` e `02-hebraico.md`, e a auditoria de ids em `*.audit.json`, contra o lote inteiro. Os pedaços ficam em `*.pNN.md` e `*.pNN.meta.json`.
 
-Se ainda der 504 com pedaços de 10, use `--chunk-size 5`. Se aparecer `finish_reason=length` (resposta truncada), use `$env:DIGITI_MAX_TOKENS = "60000"`. Nos dois casos, basta rodar de novo: os pedaços prontos são reaproveitados.
+Se ainda der 504, use `--chunk-size 5`. Se aparecer `finish_reason=length` (resposta truncada), use `$env:DIGITI_MAX_TOKENS = "60000"`. Nos dois casos, basta rodar de novo: os pedaços prontos são reaproveitados.
 
 ## Saídas e controles
 

@@ -18,7 +18,7 @@ const DEFAULT_URL = 'https://ldgllm.digiti.net.br/v1/chat/completions';
 const DEFAULT_MODEL = 'glm-5.3';
 const PROBE_MARKER = 'TTM_GLM53_PROBE_OK';
 const USAGE =
-  'Uso: node tools/glm53-review/run-review.mjs --prompt <prompt.md> --arabic <lote-1-arabe.md> --hebrew <lote-2-hebraico.md> [--out <dir>] [--model glm-5.3] [--chunk-size 10] [--retries 2] [--skip-probe]';
+  'Uso: node tools/glm53-review/run-review.mjs --prompt <prompt.md> --arabic <lote-1-arabe.md> --hebrew <lote-2-hebraico.md> [--out <dir>] [--model glm-5.3] [--chunk-size 10] [--retries 2] [--no-stream] [--skip-probe]';
 
 function parseArgs(argv) {
   const out = {
@@ -35,6 +35,10 @@ function parseArgs(argv) {
     const arg = argv[i];
     if (arg === '--skip-probe') {
       out.skipProbe = true;
+      continue;
+    }
+    if (arg === '--no-stream') {
+      out.noStream = true;
       continue;
     }
     const flags = {
@@ -94,43 +98,130 @@ function responseText(json) {
   };
 }
 
-async function callGateway({ url, key, model, messages, maxTokens }) {
+async function httpError(res) {
+  const body = await res.text();
+  let json = null;
+  try {
+    json = JSON.parse(body);
+  } catch {
+    /* corpo HTML, por exemplo da Cloudflare */
+  }
+  const title = (body.match(/<title>([^<]*)<\/title>/i) || [])[1];
+  const detail = json?.error?.message || json?.message || (title ? title.trim() : body.slice(0, 400));
+  return Object.assign(new Error(`Digiti devolveu HTTP ${res.status}: ${detail}`), { status: res.status });
+}
+
+/**
+ * Chamada sem streaming: a resposta inteira chega de uma vez. Atrás da Cloudflare,
+ * respostas que demoram mais de ~100 s resultam em HTTP 504.
+ */
+async function callBuffered({ url, key, model, messages, maxTokens }) {
   let res;
   try {
     res = await fetch(url, {
       method: 'POST',
-      headers: {
-        Authorization: `Bearer ${key}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model,
-        messages,
-        stream: false,
-        temperature: 0,
-        max_tokens: maxTokens,
-      }),
+      headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model, messages, stream: false, temperature: 0, max_tokens: maxTokens }),
       signal: AbortSignal.timeout(300_000),
     });
   } catch (err) {
     throw new Error(`Falha ao conectar à Digiti: ${err.message}`);
   }
+  if (!res.ok) throw await httpError(res);
   const body = await res.text();
   let json;
   try {
     json = JSON.parse(body);
   } catch {
-    const title = (body.match(/<title>([^<]*)<\/title>/i) || [])[1];
-    throw Object.assign(
-      new Error(`A Digiti devolveu HTTP ${res.status} com corpo não JSON${title ? ` (${title.trim()})` : ''}: ${title ? '' : body.slice(0, 400)}`),
-      { status: res.status },
-    );
-  }
-  if (!res.ok) {
-    const detail = json?.error?.message || json?.message || body.slice(0, 1600);
-    throw Object.assign(new Error(`Digiti devolveu HTTP ${res.status}: ${detail}`), { status: res.status });
+    throw Object.assign(new Error(`A Digiti devolveu HTTP ${res.status} com corpo não JSON: ${body.slice(0, 400)}`), { status: res.status });
   }
   return responseText(json);
+}
+
+/**
+ * Chamada com streaming (SSE): os tokens chegam aos poucos, então a conexão não fica
+ * ociosa e a Cloudflare não a corta por tempo. Junta só `delta.content`; o raciocínio
+ * (`delta.reasoning_content`) é descartado, nunca salvo.
+ */
+async function callStreaming({ url, key, model, messages, maxTokens }) {
+  const IDLE_MS = 180_000; // sem nenhum dado por 3 min => aborta
+  const TOTAL_MS = 30 * 60_000; // teto de 30 min por chamada
+  const ctrl = new AbortController();
+  const total = setTimeout(() => ctrl.abort(new Error('tempo total de 30 min esgotado')), TOTAL_MS);
+  let idle;
+  const touch = () => {
+    clearTimeout(idle);
+    idle = setTimeout(() => ctrl.abort(new Error('3 min sem receber dados')), IDLE_MS);
+  };
+  try {
+    let res;
+    try {
+      touch();
+      res = await fetch(url, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', Accept: 'text/event-stream' },
+        body: JSON.stringify({ model, messages, stream: true, temperature: 0, max_tokens: maxTokens }),
+        signal: ctrl.signal,
+      });
+    } catch (err) {
+      throw new Error(`Falha ao conectar à Digiti: ${err.message}`);
+    }
+    if (!res.ok) throw await httpError(res);
+    const ctype = res.headers.get('content-type') || '';
+    if (!ctype.includes('text/event-stream')) {
+      // Gateway ignorou stream=true e respondeu tudo de uma vez.
+      const body = await res.text();
+      return responseText(JSON.parse(body));
+    }
+    let content = '';
+    let finishReason = null;
+    let responseModel = null;
+    let responseId = null;
+    let usage = null;
+    let buffer = '';
+    const decoder = new TextDecoder();
+    try {
+      for await (const chunk of res.body) {
+        touch();
+        buffer += decoder.decode(chunk, { stream: true });
+        let nl;
+        while ((nl = buffer.indexOf('\n')) >= 0) {
+          const line = buffer.slice(0, nl).trim();
+          buffer = buffer.slice(nl + 1);
+          if (!line.startsWith('data:')) continue;
+          const data = line.slice(5).trim();
+          if (data === '[DONE]') continue;
+          let evt;
+          try {
+            evt = JSON.parse(data);
+          } catch {
+            continue;
+          }
+          if (evt.error) throw new Error(`Digiti devolveu erro no stream: ${evt.error.message || JSON.stringify(evt.error)}`);
+          responseModel = evt.model ?? responseModel;
+          responseId = evt.id ?? responseId;
+          if (evt.usage) usage = evt.usage;
+          const choice = evt.choices?.[0];
+          if (choice?.delta?.content) content += choice.delta.content;
+          if (choice?.finish_reason) finishReason = choice.finish_reason;
+        }
+      }
+    } catch (err) {
+      throw new Error(`Stream interrompido: ${err.message}`);
+    }
+    if (!content.trim()) {
+      throw new Error('O stream terminou sem texto final em delta.content. Não usei reasoning_content como resposta final.');
+    }
+    return { text: content.trim(), finishReason, responseModel, responseId, usage };
+  } finally {
+    clearTimeout(total);
+    clearTimeout(idle);
+  }
+}
+
+let STREAM = true;
+function callGateway(opts) {
+  return STREAM ? callStreaming(opts) : callBuffered(opts);
 }
 
 // Erros transitórios do gateway/Cloudflare: tenta de novo com espera crescente.
@@ -140,7 +231,7 @@ async function callWithRetry(opts, retries, label) {
     try {
       return await callGateway(opts);
     } catch (err) {
-      const transient = RETRYABLE.has(err.status) || /Falha ao conectar/.test(err.message);
+      const transient = RETRYABLE.has(err.status) || /Falha ao conectar|Stream interrompido/.test(err.message);
       if (!transient || attempt >= retries) throw err;
       const wait = 20_000 * (attempt + 1);
       console.warn(`  ${label}: ${err.message.split('\n')[0].slice(0, 120)} — nova tentativa em ${wait / 1000}s`);
@@ -216,7 +307,9 @@ async function main() {
   await mkdir(outDir, { recursive: true });
 
   console.log(`Gateway: ${url}`);
+  STREAM = !args.noStream;
   console.log(`Modelo solicitado: ${args.model}`);
+  console.log(`Modo: ${STREAM ? 'streaming (evita o corte de ~100 s da Cloudflare)' : 'resposta inteira (--no-stream)'}`);
   console.log(`Saídas locais: ${outDir}`);
   console.log('A chave de API não será exibida nem gravada. reasoning_content não será salvo.');
 
