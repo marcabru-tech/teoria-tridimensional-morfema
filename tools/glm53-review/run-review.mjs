@@ -18,7 +18,7 @@ const DEFAULT_URL = 'https://ldgllm.digiti.net.br/v1/chat/completions';
 const DEFAULT_MODEL = 'glm-5.3';
 const PROBE_MARKER = 'TTM_GLM53_PROBE_OK';
 const USAGE =
-  'Uso: node tools/glm53-review/run-review.mjs --prompt <prompt.md> --arabic <lote-1-arabe.md> --hebrew <lote-2-hebraico.md> [--out <dir>] [--model glm-5.3] [--chunk-size 10] [--retries 2] [--no-stream] [--reasoning-effort low|high|max] [--skip-probe]\n       node tools/glm53-review/run-review.mjs --diagnose --arabic <lote-1-arabe.md> --prompt <prompt.md>';
+  'Uso: node tools/glm53-review/run-review.mjs --prompt <prompt.md> --arabic <lote-1-arabe.md> --hebrew <lote-2-hebraico.md> [--out <dir>] [--model glm-5.3] [--chunk-size 10] [--retries 2] [--no-stream] [--reasoning-effort low|high|max] [--thinking off] [--skip-probe]\n       node tools/glm53-review/run-review.mjs --diagnose --arabic <lote-1-arabe.md> --prompt <prompt.md>';
 
 function parseArgs(argv) {
   const out = {
@@ -54,6 +54,7 @@ function parseArgs(argv) {
       '--chunk-size': 'chunkSize',
       '--retries': 'retries',
       '--reasoning-effort': 'reasoningEffort',
+      '--thinking': 'thinking',
     };
     const key = flags[arg];
     if (!key || !argv[i + 1] || argv[i + 1].startsWith('--')) {
@@ -65,6 +66,7 @@ function parseArgs(argv) {
   out.retries = Number(out.retries);
   if (!Number.isInteger(out.chunkSize) || out.chunkSize < 0) throw new Error('--chunk-size deve ser inteiro >= 0 (0 = lote inteiro).');
   if (!Number.isInteger(out.retries) || out.retries < 0 || out.retries > 5) throw new Error('--retries deve ser inteiro entre 0 e 5.');
+  if (out.thinking && out.thinking !== 'off') throw new Error('--thinking só aceita "off" (envia chat_template_kwargs.thinking=false).');
   if (out.diagnose) {
     if (!out.prompt || !out.arabic) throw new Error('--diagnose precisa de --prompt e --arabic.\n' + USAGE);
     return out;
@@ -124,13 +126,13 @@ async function httpError(res) {
  * Chamada sem streaming: a resposta inteira chega de uma vez. Atrás da Cloudflare,
  * respostas que demoram mais de ~100 s resultam em HTTP 504.
  */
-async function callBuffered({ url, key, model, messages, maxTokens, reasoningEffort }) {
+async function callBuffered({ url, key, model, messages, maxTokens, reasoningEffort, extra }) {
   let res;
   try {
     res = await fetch(url, {
       method: 'POST',
       headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ model, messages, stream: false, temperature: 0, max_tokens: maxTokens, ...(reasoningEffort ? { reasoning_effort: reasoningEffort } : {}) }),
+      body: JSON.stringify({ model, messages, stream: false, temperature: 0, max_tokens: maxTokens, ...(reasoningEffort ? { reasoning_effort: reasoningEffort } : {}), ...(extra || {}) }),
       signal: AbortSignal.timeout(300_000),
     });
   } catch (err) {
@@ -152,7 +154,7 @@ async function callBuffered({ url, key, model, messages, maxTokens, reasoningEff
  * ociosa e a Cloudflare não a corta por tempo. Junta só `delta.content`; o raciocínio
  * (`delta.reasoning_content`) é descartado, nunca salvo.
  */
-async function callStreaming({ url, key, model, messages, maxTokens, reasoningEffort, onFirstByte }) {
+async function callStreaming({ url, key, model, messages, maxTokens, reasoningEffort, extra, onFirstByte }) {
   const IDLE_MS = 180_000; // sem nenhum dado por 3 min => aborta
   const TOTAL_MS = 30 * 60_000; // teto de 30 min por chamada
   const ctrl = new AbortController();
@@ -169,7 +171,7 @@ async function callStreaming({ url, key, model, messages, maxTokens, reasoningEf
       res = await fetch(url, {
         method: 'POST',
         headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', Accept: 'text/event-stream' },
-        body: JSON.stringify({ model, messages, stream: true, temperature: 0, max_tokens: maxTokens, ...(reasoningEffort ? { reasoning_effort: reasoningEffort } : {}) }),
+        body: JSON.stringify({ model, messages, stream: true, temperature: 0, max_tokens: maxTokens, ...(reasoningEffort ? { reasoning_effort: reasoningEffort } : {}), ...(extra || {}) }),
         signal: ctrl.signal,
       });
     } catch (err) {
@@ -308,9 +310,11 @@ async function diagnose({ url, key, prompt, arabic, maxTokens }) {
     { label: 'glm-5.3, streaming, raciocínio padrão', model: 'glm-5.3' },
     { label: 'glm-5.3, streaming, reasoning_effort=low', model: 'glm-5.3', reasoningEffort: 'low' },
     { label: 'glm-5.2, streaming, raciocínio padrão', model: 'glm-5.2' },
+    { label: 'deepseek-v4-flash, streaming, raciocínio padrão', model: 'deepseek-v4-flash' },
+    { label: 'deepseek-v4-flash, streaming, sem raciocínio', model: 'deepseek-v4-flash', extra: { chat_template_kwargs: { thinking: false } } },
   ];
   console.log(`Gateway: ${url}`);
-  console.log(`Diagnóstico: ${scenarios.length} chamadas de 1 caso (ar-001), uma de cada vez.\n`);
+  console.log(`Diagnóstico: ${scenarios.length} chamadas de 1 caso (ar-001), uma de cada vez (alguns minutos).\n`);
   const rows = [];
   for (const sc of scenarios) {
     const t0 = Date.now();
@@ -318,7 +322,7 @@ async function diagnose({ url, key, prompt, arabic, maxTokens }) {
     process.stdout.write(`- ${sc.label}… `);
     try {
       const r = await callStreaming({
-        url, key, model: sc.model, maxTokens, reasoningEffort: sc.reasoningEffort,
+        url, key, model: sc.model, maxTokens, reasoningEffort: sc.reasoningEffort, extra: sc.extra,
         onFirstByte: () => { ttfb = Date.now() - t0; },
         messages: [{ role: 'system', content: prompt.content }, { role: 'user', content: oneCase }],
       });
@@ -363,13 +367,14 @@ async function main() {
   console.log(`Gateway: ${url}`);
   STREAM = !args.noStream;
   if (args.reasoningEffort) console.log(`reasoning_effort: ${args.reasoningEffort}`);
+  if (args.thinking === 'off') console.log('Raciocínio desligado: chat_template_kwargs.thinking=false');
   console.log(`Modelo solicitado: ${args.model}`);
   console.log(`Modo: ${STREAM ? 'streaming (evita o corte de ~100 s da Cloudflare)' : 'resposta inteira (--no-stream)'}`);
   console.log(`Saídas locais: ${outDir}`);
   console.log('A chave de API não será exibida nem gravada. reasoning_content não será salvo.');
 
   if (!args.skipProbe) {
-    console.log('\n[1/3] Sonda de rota GLM-5.3 (nenhum lote enviado ainda)…');
+    console.log(`\n[1/3] Sonda de rota ${args.model} (nenhum lote enviado ainda)…`);
     const probe = await callGateway({
       url,
       key,
@@ -440,6 +445,7 @@ async function main() {
           model: args.model,
           maxTokens,
           reasoningEffort: args.reasoningEffort,
+          extra: args.thinking === 'off' ? { chat_template_kwargs: { thinking: false } } : undefined,
           messages: [
             { role: 'system', content: prompt.content },
             { role: 'user', content: chunk },
