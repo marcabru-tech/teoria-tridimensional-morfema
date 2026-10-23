@@ -48,9 +48,16 @@ Os três arquivos estão versionados nesta branch, com os hashes em `input/SHA25
 
 Para conferir no PowerShell: `Get-FileHash .\tools\glm53-review\input\*.md -Algorithm SHA256`.
 
-## Atenção a truncamento e tempo
+## Pedaços, novas tentativas e retomada
 
-O GLM-5.3 raciocina antes de responder. Se o gateway contar esse raciocínio dentro de `max_tokens`, 24.000 podem não bastar para os 80 casos árabes, e o runner acusa `finish_reason=length`. Nesse caso, rode de novo com `$env:DIGITI_MAX_TOKENS = "60000"`. O limite de 300 s por chamada também pode ser curto para o lote árabe. Se der timeout, avise antes de aumentar o limite no código.
+A Digiti fica atrás da Cloudflare, que corta qualquer requisição sem resposta em cerca de 100 s. Isso dá HTTP 504 "Gateway time-out". O lote árabe inteiro, com o raciocínio do GLM-5.3, passou desse limite na primeira execução (23/10/2026). Por isso o runner:
+
+- **divide cada lote em pedaços** de 10 casos (`--chunk-size 10`, o padrão; `0` envia o lote inteiro). Cada pedaço leva o cabeçalho do lote, com as atribuições e as raízes cobertas, mais as seções `### id`, sem alterar nenhum caractere. O script confere que cabeçalho e seções reconstroem o lote original;
+- **tenta de novo** em erros transitórios (429, 5xx, 520, 522, 524 e falha de conexão), até `--retries 2` vezes, com espera de 20 s e depois 40 s;
+- **retoma de onde parou**: se você rodar de novo, cada pedaço já salvo, com o mesmo hash de insumo, completo e sem truncamento, é reaproveitado sem nova chamada;
+- **consolida** o resultado em `01-arabe.md` e `02-hebraico.md`, e a auditoria de ids em `*.audit.json`, contra o lote inteiro. Os pedaços ficam em `*.pNN.md` e `*.pNN.meta.json`.
+
+Se ainda der 504 com pedaços de 10, use `--chunk-size 5`. Se aparecer `finish_reason=length` (resposta truncada), use `$env:DIGITI_MAX_TOKENS = "60000"`. Nos dois casos, basta rodar de novo: os pedaços prontos são reaproveitados.
 
 ## Saídas e controles
 
