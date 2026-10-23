@@ -102,7 +102,8 @@ jobs:
 
       - name: Smoke tests against local server
         run: |
-          npm run start -- -p 3000 &
+          # O motor antigo só responde com a flag (contenção de 23/10/2026).
+          TTM_ENABLE_HEURISTIC_ANALYSIS=1 npm run start -- -p 3000 &
           for i in $(seq 1 30); do curl -sf http://localhost:3000/ > /dev/null && break; sleep 1; done
           curl -sf http://localhost:3000/ > /dev/null || {
             echo "Server did not start within 30 seconds"
@@ -111,3 +112,9 @@ jobs:
           npm run smoke -- http://localhost:3000
           # Conjunto de referência (S2.1): só registra o relatório; vira bloqueante no S2.2 com --enforce
           node tests/reference/evaluate.mjs http://localhost:3000 --report /tmp/relatorio-referencia.md
+
+      - name: Public mode (análise antiga desativada sem a flag)
+        run: |
+          npm run start -- -p 3001 &
+          for i in $(seq 1 30); do curl -sf http://localhost:3001/ > /dev/null && break; sleep 1; done
+          node tests/smoke/public-mode.js http://localhost:3001
