@@ -177,7 +177,7 @@ async function main() {
       url,
       key,
       model: args.model,
-      maxTokens: 128,
+      maxTokens: 2048,
       messages: [
         { role: 'system', content: `Responda exatamente com o marcador ${PROBE_MARKER} e nada mais.` },
         { role: 'user', content: `Teste de conectividade. Escreva exatamente: ${PROBE_MARKER}` },
@@ -193,6 +193,11 @@ async function main() {
     if (!probe.text.includes(PROBE_MARKER)) {
       throw new Error(
         `A chamada chegou ao gateway, mas a sonda não confirmou o modelo. Confira ${saved.contentFile}; os lotes grandes NÃO foram enviados.`,
+      );
+    }
+    if (probe.responseModel && probe.responseModel.toLowerCase() !== args.model.toLowerCase()) {
+      throw new Error(
+        `Foi solicitado ${args.model}, mas o gateway informou ${probe.responseModel}. Os lotes grandes NÃO foram enviados.`,
       );
     }
     if (probe.finishReason === 'length') {
