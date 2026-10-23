@@ -103,3 +103,24 @@ O script **não grava** a chave nem o campo `reasoning_content). Se a API negar 
 ## Limites do experimento
 
 A resposta é uma **segunda revisão automática**, não uma revisão humana. O GLM pode errar ou concordar com uma classificação incorreta. Não atualize `review.reviewed_by` como se o modelo fosse pessoa; registre o modelo, versão/ID, prompt e hashes em metadados de auditoria. A decisão sobre substituir ou reduzir a revisão humana continua sendo de Guilherme e da Luna, conforme o plano do S2.
+
+## Consultas avulsas ao GLM-5.3 (`ask.mjs`)
+
+Para usar o GLM-5.3 como engenheiro revisor em tarefas pontuais e grandes, como revisar código ou criticar um plano. Ele **não acessa o repositório**: lê só o que a tarefa envia.
+
+Uma tarefa é uma pasta em `tasks/` com dois arquivos:
+
+- `prompt.md`: as instruções, enviadas como mensagem de sistema;
+- `contexto.md`: os arquivos de código e documentos, enviados como mensagem do usuário.
+
+```powershell
+node .\tools\glm53-review\ask.mjs --task .\tools\glm53-review\tasks\revisao-motor
+```
+
+O resultado fica em `output\revisao-motor.glm-5.3.md`, com os metadados ao lado (`.meta.json`). O script usa streaming, aborta após 5 min sem dados ou 60 min no total e não grava o raciocínio do modelo. No diagnóstico de 23/10/2026, o GLM-5.3 levou 532 s para um único caso. Uma tarefa grande pode levar de 10 a 30 min.
+
+**Tarefa `revisao-motor`:**
+
+- **O que pede:** revisão do motor em produção, com diff da correção do S2.2; divergências entre Python e TypeScript; avaliação da integração com o Álgebra Hexarrelacional, com interface e experimento mensurável; e plano de melhorias priorizado.
+- **De onde vem o contexto:** de `build-context.py`, a partir do TTM no commit `7ab1003` e do `algebra-hexarrelacional` no commit `085f753`. Cada arquivo traz repositório, commit e licença.
+- **Como tratar a resposta:** é a opinião de um revisor automático. Nada entra no repositório sem passar pelo circuito normal, com PR pequena, parecer da Luna e merge do Guilherme.

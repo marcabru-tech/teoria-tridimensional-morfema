@@ -154,15 +154,15 @@ async function callBuffered({ url, key, model, messages, maxTokens, reasoningEff
  * ociosa e a Cloudflare não a corta por tempo. Junta só `delta.content`; o raciocínio
  * (`delta.reasoning_content`) é descartado, nunca salvo.
  */
-async function callStreaming({ url, key, model, messages, maxTokens, reasoningEffort, extra, onFirstByte }) {
-  const IDLE_MS = 180_000; // sem nenhum dado por 3 min => aborta
-  const TOTAL_MS = 30 * 60_000; // teto de 30 min por chamada
+export async function callStreaming({ url, key, model, messages, maxTokens, reasoningEffort, extra, onFirstByte, onData, idleMs = 180_000, totalMs = 30 * 60_000 }) {
+  const IDLE_MS = idleMs; // sem nenhum dado por esse tempo => aborta
+  const TOTAL_MS = totalMs; // teto por chamada
   const ctrl = new AbortController();
-  const total = setTimeout(() => ctrl.abort(new Error('tempo total de 30 min esgotado')), TOTAL_MS);
+  const total = setTimeout(() => ctrl.abort(new Error(`tempo total de ${Math.round(TOTAL_MS / 60000)} min esgotado`)), TOTAL_MS);
   let idle;
   const touch = () => {
     clearTimeout(idle);
-    idle = setTimeout(() => ctrl.abort(new Error('3 min sem receber dados')), IDLE_MS);
+    idle = setTimeout(() => ctrl.abort(new Error(`${Math.round(IDLE_MS / 60000)} min sem receber dados`)), IDLE_MS);
   };
   try {
     let res;
@@ -197,6 +197,7 @@ async function callStreaming({ url, key, model, messages, maxTokens, reasoningEf
         touch();
         if (first && onFirstByte) onFirstByte();
         first = false;
+        if (onData) onData();
         buffer += decoder.decode(chunk, { stream: true });
         let nl;
         while ((nl = buffer.indexOf('\n')) >= 0) {
