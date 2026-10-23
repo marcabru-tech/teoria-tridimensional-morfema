@@ -60,8 +60,9 @@ jobs:
           python examples/arabic_ktb.py
 
   web:
-    # Compila e testa o site como no deploy: a pasta data/ é removida antes do
-    # build, para provar que a base de raízes vai dentro do bundle.
+    # Compila e testa o site como no deploy: aplica o .vercelignore da raiz
+    # antes do build, para provar que nada de web/ some e que a base de
+    # raízes vai dentro do bundle.
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -81,8 +82,15 @@ jobs:
       - name: Check roots database sync (data/roots vs web/src/data/roots)
         run: npm run check:data
 
-      - name: Remove data/ to simulate the deploy bundle
-        run: rm -rf ../data
+      - name: Apply .vercelignore to simulate the Vercel upload
+        # Remove exatamente o que a Vercel removeria (inclui data/), para
+        # provar que o build e a base de raízes não dependem desses arquivos.
+        working-directory: .
+        run: |
+          git ls-files | git -c core.excludesFile=.vercelignore check-ignore --no-index --stdin > /tmp/vercelignored.txt || true
+          echo "Removendo $(wc -l < /tmp/vercelignored.txt) arquivos"
+          if grep '^web/' /tmp/vercelignored.txt; then echo "::error::.vercelignore remove arquivos de web/"; exit 1; fi
+          xargs -a /tmp/vercelignored.txt rm -f
 
       - name: Build
         run: npm run build
