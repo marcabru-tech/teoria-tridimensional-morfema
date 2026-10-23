@@ -1,7 +1,7 @@
 import arabicRoots from '@/data/roots/arabic_roots.json';
 import { MorphemeAnalysis, SemanticLevel, Width, Depth, Height } from './types';
-import { RootMatch, buildRootIndex, matchRoot } from './matching';
-import { ARABIC_AFFIXES, ARABIC_DIACRITICS, normalizeArabic } from './rules';
+import { ResolvedMatch, buildRootIndex, resolveMatch } from './matching';
+import { ARABIC_AFFIXES, ARABIC_DIACRITICS, ARABIC_ORTHOGRAPHY, normalizeArabic } from './rules';
 
 const stripDiacritics = normalizeArabic;
 
@@ -15,12 +15,12 @@ function extractDiacritics(text: string): string[] {
 // (ver scripts/check-data-sync.mjs).
 const rootsData: Record<string, any> = arabicRoots;
 
-const rootIndex = buildRootIndex(rootsData, stripDiacritics);
+const rootIndex = buildRootIndex(rootsData, ARABIC_ORTHOGRAPHY.normalize, ARABIC_ORTHOGRAPHY.vocalKey);
 
 export function analyzeArabic(form: string): MorphemeAnalysis {
   const stripped = stripDiacritics(form);
   const diacriticsFound = extractDiacritics(form);
-  const match: RootMatch | null = matchRoot(stripped, rootIndex, ARABIC_AFFIXES);
+  const match: ResolvedMatch | null = resolveMatch(form, ARABIC_ORTHOGRAPHY, rootIndex, ARABIC_AFFIXES);
   const root = match ? match.rootKey : null;
   const rootInfo = match?.info ?? null;
   const semanticField = rootInfo?.semantic_field || '';
@@ -31,8 +31,8 @@ export function analyzeArabic(form: string): MorphemeAnalysis {
 
   const width: Width = {
     root,
-    prefixes: match?.prefix ? [match.prefix] : [],
-    suffixes: match?.suffix ? [match.suffix] : [],
+    prefixes: match?.surfacePrefix ? [match.surfacePrefix] : [],
+    suffixes: match?.surfaceSuffix ? [match.surfaceSuffix] : [],
     pattern: '',
     derivationDegree: match ? (match.via === 'raiz' ? 0 : 1) : 1,
     possibleDerivations: derivations,
@@ -65,9 +65,14 @@ export function analyzeArabic(form: string): MorphemeAnalysis {
     root,
     rootStatus: match ? 'identificada' : 'nao_identificada',
     rootConfidence: match ? match.confidence : null,
-    rootMessage: match ? `raiz identificada (casamento: ${match.via}; certeza: ${match.confidence})` : 'raiz não identificada',
+    rootMessage: match
+      ? `raiz identificada (casamento: ${match.via}; certeza: ${match.confidence}; glosa: ${match.glossStatus === 'especifica' ? 'específica da forma' : 'não determinada, descrição geral da raiz'})`
+      : 'raiz não identificada',
     language: 'ar',
-    gloss: match?.gloss || description || '',
+    gloss: match ? match.gloss : '',
+    glossStatus: match ? match.glossStatus : null,
+    matchedForm: match ? match.matchedDisplay : null,
+    formCandidates: match ? match.candidates : [],
     coordinates: { x: width.derivationDegree, y: depth.currentLevel, z: height.configurationId },
     dimensions: { width, depth, height },
   };

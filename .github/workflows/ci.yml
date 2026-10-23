@@ -110,5 +110,6 @@ jobs:
             exit 1
           }
           npm run smoke -- http://localhost:3000
+          TTM_BASE_URL=http://localhost:3000 node --test tests/ttm/api.test.mjs
           # Conjunto de referência: só registra o relatório. O --enforce entra quando as duas línguas passarem de 90% (hebraico em 86,7% no S2.2)
           node tests/reference/evaluate.mjs http://localhost:3000 --report /tmp/relatorio-referencia.md

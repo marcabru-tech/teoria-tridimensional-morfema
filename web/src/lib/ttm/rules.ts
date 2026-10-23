@@ -11,7 +11,7 @@
 // Princípio do projeto (23/10/2026): questões em aberto ficam registradas como
 // tais, sem escolher uma corrente em silêncio nem omitir as demais.
 
-import type { AffixConfig } from './matching';
+import type { AffixConfig, Orthography } from './matching';
 
 // ---------------------------------------------------------------- árabe
 
@@ -23,16 +23,47 @@ export function normalizeArabic(text: string): string {
   return text.replace(ARABIC_DIACRITICS, '');
 }
 
+// Marcas de leitura corânica e tatweel: não distinguem formas. As vogais
+// (harakat, tanwin, shadda, sukun) ficam, porque distinguem كَتَبَ de كُتُب.
+const ARABIC_READING_MARKS = /[\u0610-\u061a\u06d6-\u06dc\u06de-\u06e4\u06e7\u06e8\u06ea-\u06ed\u0640]/g;
+
+/** Forma vocalizada comparável (para escolher a glosa específica). */
+export function arabicVocalKey(text: string): string {
+  const k = text
+    .normalize('NFC')
+    .replace(/\u06e1/g, '\u0652') // sukun corânico -> sukun
+    .replace(ARABIC_READING_MARKS, '')
+    // Convenção: comparação na forma de pausa. A vogal/tanwin/sukun final é
+    // desinência de caso ou de modo (i'rab), não distingue o lexema.
+    .replace(/[\u064b-\u0650\u0652]+$/u, '');
+  // Convenção: shadda na 1ª letra vem de assimilação (ال + letra solar),
+  // não do lexema; é ignorada.
+  return k.replace(/^(\P{M})((?:\p{M})*?)\u0651/u, '$1$2');
+}
+
+export const ARABIC_ORTHOGRAPHY: Orthography = {
+  normalize: normalizeArabic,
+  vocalKey: arabicVocalKey,
+  consonantal: (s) => normalizeArabic(s).replace(/\u0640/g, ''),
+};
+
 /**
- * Convenção do TTM para o árabe. Os prefixos verbais (ي ت أ ن ا, سي ست)
+ * Convenção do TTM para o árabe. Os prefixos verbais (ي ت أ ن ا; e س de
+ * futuro somado a prefixo de imperfeito: سي ست سن سأ)
  * entram por decisão explícita do Guilherme (23/10/2026), com parecer da
  * Luna: sem eles o acerto nas formas cobertas cai de 92,5% para 55%, sem
  * ganho em falsos positivos (já em zero). Nenhum afixo é retirado sem que o
  * restante bata com uma forma atestada na base.
+ *
+ * س (futuro) não é tratado como proclítico: ele só ocorre antes de verbo no
+ * imperfeito, então entra combinado com o prefixo do imperfeito, como
+ * prefixo verbal. Retirar س sozinho deixaria um radical sem o prefixo de
+ * imperfeito, que a convenção não reconhece. Remover o س isolado não mudou
+ * o benchmark (medido em 23/10/2026).
  */
 export const ARABIC_AFFIXES: AffixConfig = {
-  proclitics: ['وال', 'فال', 'بال', 'كال', 'لل', 'ال', 'و', 'ف', 'ب', 'ل', 'ك', 'س'],
-  verbalPrefixes: ['سي', 'ست', 'ي', 'ت', 'أ', 'ن', 'ا'],
+  proclitics: ['وال', 'فال', 'بال', 'كال', 'لل', 'ال', 'و', 'ف', 'ب', 'ل', 'ك'],
+  verbalPrefixes: ['سي', 'ست', 'سن', 'سأ', 'ي', 'ت', 'أ', 'ن', 'ا'],
   suffixesToRoot: ['وا', 'ون', 'ين', 'ات', 'نا', 'هم', 'هن', 'كم', 'كن', 'ها', 'ه', 'ك', 'ي', 'ن', 'ا', 'ت'],
   suffixesToExample: ['وا', 'ون', 'ين', 'ات', 'ة', 'ها', 'هم', 'هن', 'كم', 'كن', 'نا', 'تم', 'تن', 'تما', 'ه', 'ك', 'ي', 'ن', 'ا', 'ت'],
 };
@@ -70,6 +101,28 @@ export function normalizeHebrew(text: string): string {
 export function stripNiqqud(text: string): string {
   return text.replace(HEBREW_ALL_MARKS, '');
 }
+
+// Cantilação, meteg, maqaf, paseq e sof pasuq: não distinguem formas.
+// Vogais, dagesh e pontos de shin/sin ficam (distinguem מָלַךְ de מֶלֶךְ).
+const HEBREW_READING_MARKS = /[\u0591-\u05af\u05bd\u05be\u05c0\u05c3\u05c6]/g;
+
+/** Forma vocalizada comparável (para escolher a glosa específica). */
+export function hebrewVocalKey(text: string): string {
+  const k = text
+    .normalize('NFC')
+    .replace(HEBREW_READING_MARKS, '')
+    .replace(/\u05ba/g, '\u05b9'); // holam haser para vav -> holam
+  // Convenção: dagesh na 1ª letra depende do que vem antes (dagesh forte
+  // depois do artigo ou do waw consecutivo; dagesh lene some depois de vogal),
+  // não do lexema; é ignorado.
+  return k.replace(/^(\P{M})((?:\p{M})*?)\u05bc/u, '$1$2');
+}
+
+export const HEBREW_ORTHOGRAPHY: Orthography = {
+  normalize: normalizeHebrew,
+  vocalKey: hebrewVocalKey,
+  consonantal: stripNiqqud,
+};
 
 const HEBREW_AFFIXES_RAW: AffixConfig = {
   proclitics: ['וה', 'וב', 'ול', 'ומ', 'וכ', 'וש', 'ה', 'ו', 'ב', 'ל', 'מ', 'כ', 'ש'],

@@ -1,7 +1,7 @@
 import hebrewRoots from '@/data/roots/hebrew_roots.json';
 import { MorphemeAnalysis, SemanticLevel, Width, Depth, Height } from './types';
-import { RootMatch, buildRootIndex, matchRoot } from './matching';
-import { HEBREW_AFFIXES, HEBREW_ALL_MARKS, normalizeHebrew, stripNiqqud } from './rules';
+import { ResolvedMatch, buildRootIndex, resolveMatch } from './matching';
+import { HEBREW_AFFIXES, HEBREW_ALL_MARKS, HEBREW_ORTHOGRAPHY, stripNiqqud } from './rules';
 
 function extractNiqqud(text: string): string[] {
   return text.match(HEBREW_ALL_MARKS) || [];
@@ -13,13 +13,12 @@ function extractNiqqud(text: string): string[] {
 // (ver scripts/check-data-sync.mjs).
 const rootsData: Record<string, any> = hebrewRoots;
 
-const rootIndex = buildRootIndex(rootsData, normalizeHebrew);
+const rootIndex = buildRootIndex(rootsData, HEBREW_ORTHOGRAPHY.normalize, HEBREW_ORTHOGRAPHY.vocalKey);
 
 export function analyzeHebrew(form: string): MorphemeAnalysis {
   const stripped = stripNiqqud(form);
   const niqqudFound = extractNiqqud(form);
-  const norm = normalizeHebrew(form);
-  const match: RootMatch | null = matchRoot(norm, rootIndex, HEBREW_AFFIXES);
+  const match: ResolvedMatch | null = resolveMatch(form, HEBREW_ORTHOGRAPHY, rootIndex, HEBREW_AFFIXES);
   const root = match ? match.rootKey : null;
   const rootInfo = match?.info ?? null;
   const semanticField = rootInfo?.semantic_field || '';
@@ -30,8 +29,8 @@ export function analyzeHebrew(form: string): MorphemeAnalysis {
 
   const width: Width = {
     root,
-    prefixes: match?.prefix ? [match.prefix] : [],
-    suffixes: match?.suffix ? [match.suffix] : [],
+    prefixes: match?.surfacePrefix ? [match.surfacePrefix] : [],
+    suffixes: match?.surfaceSuffix ? [match.surfaceSuffix] : [],
     pattern: '',
     derivationDegree: match ? (match.via === 'raiz' ? 0 : 1) : 1,
     possibleDerivations: derivations,
@@ -64,9 +63,14 @@ export function analyzeHebrew(form: string): MorphemeAnalysis {
     root,
     rootStatus: match ? 'identificada' : 'nao_identificada',
     rootConfidence: match ? match.confidence : null,
-    rootMessage: match ? `raiz identificada (casamento: ${match.via}; certeza: ${match.confidence})` : 'raiz não identificada',
+    rootMessage: match
+      ? `raiz identificada (casamento: ${match.via}; certeza: ${match.confidence}; glosa: ${match.glossStatus === 'especifica' ? 'específica da forma' : 'não determinada, descrição geral da raiz'})`
+      : 'raiz não identificada',
     language: 'he',
-    gloss: match?.gloss || description || '',
+    gloss: match ? match.gloss : '',
+    glossStatus: match ? match.glossStatus : null,
+    matchedForm: match ? match.matchedDisplay : null,
+    formCandidates: match ? match.candidates : [],
     coordinates: { x: width.derivationDegree, y: depth.currentLevel, z: height.configurationId },
     dimensions: { width, depth, height },
   };

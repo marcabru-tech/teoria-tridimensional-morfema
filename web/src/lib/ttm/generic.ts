@@ -44,6 +44,9 @@ export function analyzeGeneric(form: string, language: string): MorphemeAnalysis
     rootMessage: 'raiz não identificada (língua sem base morfológica no TTM)',
     language,
     gloss: '',
+    glossStatus: null,
+    matchedForm: null,
+    formCandidates: [],
     coordinates: { x: width.derivationDegree, y: depth.currentLevel, z: height.configurationId },
     dimensions: { width, depth, height },
   };
