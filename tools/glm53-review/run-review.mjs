@@ -426,11 +426,11 @@ async function main() {
       const mdFile = resolve(outDir, `${stem}.md`);
       const metaFile = resolve(outDir, `${stem}.meta.json`);
       const chunkHash = sha256(chunk);
-      // Retomada: reaproveita um pedaço já salvo se for do mesmo insumo, completo e sem truncamento.
+      // Retomada: reaproveita um pedaço já salvo se for do mesmo insumo e do mesmo modelo, completo e sem truncamento.
       if (chunks.length > 1 && (await exists(mdFile)) && (await exists(metaFile))) {
         const prev = JSON.parse(await readFile(metaFile, 'utf8'));
         const prevText = (await readFile(mdFile, 'utf8')).trim();
-        if (prev.input?.sha256 === chunkHash && prev.finish_reason !== 'length' && !auditIds(chunk, prevText).missing_ids.length) {
+        if (prev.input?.sha256 === chunkHash && prev.model_requested === args.model && prev.finish_reason !== 'length' && !auditIds(chunk, prevText).missing_ids.length) {
           console.log(`  pedaço ${k + 1}/${chunks.length}: já concluído, reaproveitado`);
           texts.push(prevText);
           parts.push({ file: basename(mdFile), sha256_input: chunkHash, reused: true });
