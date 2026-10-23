@@ -1,10 +1,15 @@
-api/
-ttm/
-tests/
-data/
-examples/
-scripts/
-Dockerfile
-docker-compose.yml
-pyproject.toml
-requirements.txt
+# Arquivos do pacote Python que não entram no deploy do site (web/).
+# Cada regra começa com "/" para valer só na raiz do repositório. Sem a
+# barra, "ttm/", "api/", "data/" etc. casam em qualquer profundidade e
+# apagavam web/src/lib/ttm/, web/src/app/api/ e web/src/data/, quebrando
+# o build na Vercel.
+/api/
+/ttm/
+/tests/
+/data/
+/examples/
+/scripts/
+/Dockerfile
+/docker-compose.yml
+/pyproject.toml
+/requirements.txt

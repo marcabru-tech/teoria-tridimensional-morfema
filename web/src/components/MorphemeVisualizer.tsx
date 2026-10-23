@@ -2,8 +2,35 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Text, Stars, Grid, Line } from '@react-three/drei'
 import { AnalysisResponse } from '@/lib/ttm/types'
-import { useRef, useState } from 'react'
+import { Component, ReactNode, Suspense, useRef, useState } from 'react'
+import type { ComponentProps } from 'react'
 import * as THREE from 'three'
+
+// Os rótulos 3D (<Text>) baixam fontes da internet. Se o download falhar ou
+// demorar, o rótulo some, mas a cena 3D continua: sem esta proteção, a falha
+// suspendia o Canvas inteiro ("Loading 3D visualizer..." para sempre).
+class LabelBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
+  state = { failed: false }
+  static getDerivedStateFromError() {
+    return { failed: true }
+  }
+  componentDidCatch(error: unknown) {
+    console.warn('3D label disabled (font unavailable):', error)
+  }
+  render() {
+    return this.state.failed ? null : this.props.children
+  }
+}
+
+function Label(props: ComponentProps<typeof Text>) {
+  return (
+    <LabelBoundary>
+      <Suspense fallback={null}>
+        <Text {...props} />
+      </Suspense>
+    </LabelBoundary>
+  )
+}
 
 interface MorphemeVisualizerProps {
   result: AnalysisResponse | null
@@ -29,7 +56,7 @@ function MorphemeSphere({ position, morpheme }: { position: [number, number, num
         />
       </mesh>
       
-      <Text
+      <Label
         position={[0, 0.6, 0]}
         fontSize={0.3}
         color="#e2e8f0"
@@ -37,7 +64,7 @@ function MorphemeSphere({ position, morpheme }: { position: [number, number, num
         anchorY="middle"
       >
         {morpheme}
-      </Text>
+      </Label>
     </group>
   )
 }
@@ -51,21 +78,21 @@ function AxisArrows() {
     <>
       {/* X-axis (Blue) */}
       <Line points={xPoints} color="#3b82f6" lineWidth={2} />
-      <Text position={[5.5, 0, 0]} fontSize={0.4} color="#60a5fa" anchorX="center">
+      <Label position={[5.5, 0, 0]} fontSize={0.4} color="#60a5fa" anchorX="center">
         Width (X)
-      </Text>
+      </Label>
       
       {/* Y-axis (Green) */}
       <Line points={yPoints} color="#16a34a" lineWidth={2} />
-      <Text position={[0, 5.5, 0]} fontSize={0.4} color="#4ade80" anchorX="center">
+      <Label position={[0, 5.5, 0]} fontSize={0.4} color="#4ade80" anchorX="center">
         Depth (Y)
-      </Text>
+      </Label>
       
       {/* Z-axis (Red) */}
       <Line points={zPoints} color="#dc2626" lineWidth={2} />
-      <Text position={[0, 0, 5.5]} fontSize={0.4} color="#f87171" anchorX="center">
+      <Label position={[0, 0, 5.5]} fontSize={0.4} color="#f87171" anchorX="center">
         Height (Z)
-      </Text>
+      </Label>
     </>
   )
 }

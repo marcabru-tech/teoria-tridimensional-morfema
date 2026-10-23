@@ -4,7 +4,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18662347.svg)](https://doi.org/10.5281/zenodo.18662347)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmarcabru-tech%2Fteoria-tridimensional-morfema)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmarcabru-tech%2Fteoria-tridimensional-morfema&root-directory=web)
 
 **Uma implementação computacional da Teoria Tridimensional do Morfema**  
 *A computational implementation of the Three-Dimensional Theory of the Morpheme*
@@ -13,15 +13,20 @@
 
 ## 🚀 Deploy na Vercel | Deploy to Vercel
 
-O frontend Next.js (**TTM Explorer**) pode ser implantado na Vercel em minutos.
-A configuração de build está declarada em `vercel.json` na raiz do repositório.
+O frontend Next.js (**TTM Explorer**) fica em `web/` e pode ser implantado na Vercel em minutos.
+O projeto na Vercel deve usar **Root Directory = `web`**. A Vercel detecta o Next.js
+sozinha; `web/vercel.json` só define cabeçalhos de cache. Não há `vercel.json` na raiz.
+
+> **Base de raízes no deploy.** O site importa a base de `web/src/data/roots/`, uma cópia
+> de `data/roots/` que entra no bundle da função serverless. Ao editar `data/roots/`,
+> rode `npm run check:data -- --fix` dentro de `web/`; o CI falha se as duas divergirem.
 
 ### Opção A — Deploy com um clique
 
 Clique no botão acima ("Deploy with Vercel") ou acesse:
 
 ```
-https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmarcabru-tech%2Fteoria-tridimensional-morfema
+https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmarcabru-tech%2Fteoria-tridimensional-morfema&root-directory=web
 ```
 
 ### Opção B — Deploy manual via Vercel CLI
@@ -30,7 +35,8 @@ https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmarcabru-
 # 1. Instale a CLI da Vercel (se necessário)
 npm i -g vercel
 
-# 2. Na raiz do repositório
+# 2. Entre na pasta do site
+cd web
 vercel login
 
 # 3. Deploy (preview)
@@ -43,12 +49,9 @@ vercel --prod
 ### Opção C — Deploy via Vercel Dashboard (GitHub Integration)
 
 1. Acesse [vercel.com/new](https://vercel.com/new) e importe o repositório.
-2. Deixe **Root Directory** como `./` (raiz do repositório).
-3. O `vercel.json` na raiz já define o framework, comandos de build e diretório de saída.
+2. Em **Root Directory**, escolha `web`.
+3. Mantenha o framework detectado (Next.js) e os comandos padrão.
 4. Clique em **Deploy**.
-
-> Toda a configuração de build vive em `vercel.json` (raiz do repositório).
-> Isso mantém o deploy declarativo via Git e libera a edição pelo dashboard da Vercel.
 
 ---
 

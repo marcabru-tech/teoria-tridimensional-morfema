@@ -58,3 +58,49 @@ jobs:
       - name: Run example
         run: |
           python examples/arabic_ktb.py
+
+  web:
+    # Compila e testa o site como no deploy: aplica o .vercelignore da raiz
+    # antes do build, para provar que nada de web/ some e que a base de
+    # raízes vai dentro do bundle.
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check roots database sync (data/roots vs web/src/data/roots)
+        run: npm run check:data
+
+      - name: Apply .vercelignore to simulate the Vercel upload
+        # Remove exatamente o que a Vercel removeria (inclui data/), para
+        # provar que o build e a base de raízes não dependem desses arquivos.
+        working-directory: .
+        run: |
+          git ls-files | git -c core.excludesFile=.vercelignore check-ignore --no-index --stdin > /tmp/vercelignored.txt || true
+          echo "Removendo $(wc -l < /tmp/vercelignored.txt) arquivos"
+          if grep '^web/' /tmp/vercelignored.txt; then echo "::error::.vercelignore remove arquivos de web/"; exit 1; fi
+          xargs -a /tmp/vercelignored.txt rm -f
+
+      - name: Build
+        run: npm run build
+
+      - name: Smoke tests against local server
+        run: |
+          npm run start -- -p 3000 &
+          for i in $(seq 1 30); do curl -sf http://localhost:3000/ > /dev/null && break; sleep 1; done
+          curl -sf http://localhost:3000/ > /dev/null || {
+            echo "Server did not start within 30 seconds"
+            exit 1
+          }
+          npm run smoke -- http://localhost:3000

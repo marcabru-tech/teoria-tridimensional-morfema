@@ -1,5 +1,4 @@
-import path from 'path';
-import fs from 'fs';
+import arabicRoots from '@/data/roots/arabic_roots.json';
 import { MorphemeAnalysis, SemanticLevel, Width, Depth, Height } from './types';
 
 const ARABIC_DIACRITICS = /[\u0610-\u061a\u064b-\u065f\u0670\u06d6-\u06dc\u06df-\u06e4\u06e7\u06e8\u06ea-\u06ed]/g;
@@ -12,17 +11,13 @@ function extractDiacritics(text: string): string[] {
   return text.match(ARABIC_DIACRITICS) || [];
 }
 
-let rootsData: Record<string, any> | null = null;
+// A base é importada estaticamente para entrar no bundle da função serverless.
+// Ler o arquivo em tempo de execução (fs + process.cwd()) falhava em silêncio
+// quando data/ não acompanhava o deploy. Cópia sincronizada de data/roots/
+// (ver scripts/check-data-sync.mjs).
+const rootsData: Record<string, any> = arabicRoots;
 
 function getRootsData() {
-  if (!rootsData) {
-    const dataPath = path.join(process.cwd(), '..', 'data', 'roots', 'arabic_roots.json');
-    if (fs.existsSync(dataPath)) {
-      rootsData = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
-    } else {
-      rootsData = {};
-    }
-  }
   return rootsData;
 }
 
