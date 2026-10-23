@@ -1,0 +1,3132 @@
+{
+  "description": "Conjunto de referência do TTM — árabe corânico (S2.1). Linha de base inicial, não prova de domínio da variedade.",
+  "attribution": "Texto corânico: Tanzil Project (https://tanzil.net), Tanzil Quran Text (Simple Clean, Version 1.1), Copyright (C) 2007-2021 Tanzil Project, Creative Commons Attribution 3.0. Formas copiadas literalmente, sem alteração. Ver https://tanzil.net/updates/ para atualizações.",
+  "categories": {
+    "coberta": "forma de raiz presente na base do TTM; o motor deve devolver essa raiz",
+    "fora_da_cobertura": "forma legítima de raiz ausente da base; o motor deve devolver 'raiz não identificada'",
+    "armadilha": "forma que contém letras de uma raiz coberta (em sequência, contida nela ou como anagrama) sem pertencer a ela; qualquer raiz coberta devolvida é falso positivo"
+  },
+  "cases": [
+    {
+      "id": "ar-001",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "كتب",
+      "input": "كتب",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ك-ت-ب",
+        "output": "ك-ت-ب"
+      },
+      "reference_root": "ك-ت-ب",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:178",
+        "word": 5,
+        "occurrences_in_text": 23,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ك-ت-ب",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:178:4",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:178:4)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-002",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "يكتبون",
+      "input": "يكتبون",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ك-ت-ب",
+        "output": "ك-ت-ب"
+      },
+      "reference_root": "ك-ت-ب",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:79",
+        "word": 3,
+        "occurrences_in_text": 5,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ك-ت-ب",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:79:3",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:79:3)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-003",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "اقرأ",
+      "input": "اقرأ",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ق-ر-أ",
+        "output": "ق-ر-أ"
+      },
+      "reference_root": "ق-ر-أ",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "17:14",
+        "word": 1,
+        "occurrences_in_text": 3,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ق-ر-أ",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "17:14:1",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(17:14:1)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-004",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "القرآن",
+      "input": "القرآن",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ق-ر-أ",
+        "output": "ق-ر-أ"
+      },
+      "reference_root": "ق-ر-أ",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:185",
+        "word": 6,
+        "occurrences_in_text": 43,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ق-ر-أ",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:185:6",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:185:6)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "note": "Posição minoritária (al-Shāfiʿī; leitura de Ibn Kathīr «القران») não deriva القرآن de ق-ر-أ; aqui segue-se Lane e a maioria dos lexicógrafos."
+    },
+    {
+      "id": "ar-005",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "يعلم",
+      "input": "يعلم",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ع-ل-م",
+        "output": "ع-ل-م"
+      },
+      "reference_root": "ع-ل-م",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:77",
+        "word": 5,
+        "occurrences_in_text": 71,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ع-ل-م",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:77:5",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:77:5)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-006",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "فعلموا",
+      "input": "فعلموا",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ع-ل-م",
+        "output": "ع-ل-م"
+      },
+      "reference_root": "ع-ل-م",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "28:75",
+        "word": 9,
+        "occurrences_in_text": 1,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ع-ل-م",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "28:75:9",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(28:75:9)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-007",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "يفعل",
+      "input": "يفعل",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ف-ع-ل",
+        "output": "ف-ع-ل"
+      },
+      "reference_root": "ف-ع-ل",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:85",
+        "word": 31,
+        "occurrences_in_text": 17,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ف-ع-ل",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:85:31",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:85:31)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-008",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "فعلوا",
+      "input": "فعلوا",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ف-ع-ل",
+        "output": "ف-ع-ل"
+      },
+      "reference_root": "ف-ع-ل",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "3:135",
+        "word": 3,
+        "occurrences_in_text": 4,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ف-ع-ل",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "3:135:3",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(3:135:3)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-009",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "درست",
+      "input": "درست",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "د-ر-س",
+        "output": "د-ر-س"
+      },
+      "reference_root": "د-ر-س",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "6:105",
+        "word": 5,
+        "occurrences_in_text": 1,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "د-ر-س",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "6:105:5",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(6:105:5)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-010",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "تدرسون",
+      "input": "تدرسون",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "د-ر-س",
+        "output": "د-ر-س"
+      },
+      "reference_root": "د-ر-س",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "3:79",
+        "word": 28,
+        "occurrences_in_text": 2,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "د-ر-س",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "3:79:28",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(3:79:28)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-011",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "الحمد",
+      "input": "الحمد",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ح-م-د",
+        "output": "ح-م-د"
+      },
+      "reference_root": "ح-م-د",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "1:2",
+        "word": 1,
+        "occurrences_in_text": 26,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ح-م-د",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "1:2:1",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(1:2:1)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-012",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "بحمد",
+      "input": "بحمد",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ح-م-د",
+        "output": "ح-م-د"
+      },
+      "reference_root": "ح-م-د",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "15:98",
+        "word": 2,
+        "occurrences_in_text": 10,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ح-م-د",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "15:98:2",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(15:98:2)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-013",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "أسلم",
+      "input": "أسلم",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "س-ل-م",
+        "output": "س-ل-م"
+      },
+      "reference_root": "س-ل-م",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:112",
+        "word": 3,
+        "occurrences_in_text": 7,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "س-ل-م",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:112:3",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:112:3)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-014",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "المسلمين",
+      "input": "المسلمين",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "س-ل-م",
+        "output": "س-ل-م"
+      },
+      "reference_root": "س-ل-م",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "6:163",
+        "word": 8,
+        "occurrences_in_text": 11,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "س-ل-م",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "6:163:8",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(6:163:8)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-015",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "فتحنا",
+      "input": "فتحنا",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ف-ت-ح",
+        "output": "ف-ت-ح"
+      },
+      "reference_root": "ف-ت-ح",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "6:44",
+        "word": 6,
+        "occurrences_in_text": 4,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ف-ت-ح",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "6:44:6",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(6:44:6)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-016",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "الفتح",
+      "input": "الفتح",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ف-ت-ح",
+        "output": "ف-ت-ح"
+      },
+      "reference_root": "ف-ت-ح",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "8:19",
+        "word": 5,
+        "occurrences_in_text": 4,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ف-ت-ح",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "8:19:5",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(8:19:5)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-017",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "يجمع",
+      "input": "يجمع",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ج-م-ع",
+        "output": "ج-م-ع"
+      },
+      "reference_root": "ج-م-ع",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "5:109",
+        "word": 2,
+        "occurrences_in_text": 3,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ج-م-ع",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "5:109:2",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(5:109:2)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-018",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "أجمعين",
+      "input": "أجمعين",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ج-م-ع",
+        "output": "ج-م-ع"
+      },
+      "reference_root": "ج-م-ع",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:161",
+        "word": 13,
+        "occurrences_in_text": 23,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ج-م-ع",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:161:13",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:161:13)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-019",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "أنزل",
+      "input": "أنزل",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ن-ز-ل",
+        "output": "ن-ز-ل"
+      },
+      "reference_root": "ن-ز-ل",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:4",
+        "word": 4,
+        "occurrences_in_text": 95,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ن-ز-ل",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:4:4",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:4:4)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-020",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "ينزل",
+      "input": "ينزل",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ن-ز-ل",
+        "output": "ن-ز-ل"
+      },
+      "reference_root": "ن-ز-ل",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:90",
+        "word": 12,
+        "occurrences_in_text": 17,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ن-ز-ل",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:90:12",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:90:12)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-021",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "خلق",
+      "input": "خلق",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "خ-ل-ق",
+        "output": "خ-ل-ق"
+      },
+      "reference_root": "خ-ل-ق",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:29",
+        "word": 3,
+        "occurrences_in_text": 83,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "خ-ل-ق",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:29:3",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:29:3)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-022",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "خلقكم",
+      "input": "خلقكم",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "خ-ل-ق",
+        "output": "خ-ل-ق"
+      },
+      "reference_root": "خ-ل-ق",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:21",
+        "word": 7,
+        "occurrences_in_text": 18,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "خ-ل-ق",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:21:6",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:21:6)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-023",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "نعبد",
+      "input": "نعبد",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ع-ب-د",
+        "output": "ع-ب-د"
+      },
+      "reference_root": "ع-ب-د",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "1:5",
+        "word": 2,
+        "occurrences_in_text": 6,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ع-ب-د",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "1:5:2",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(1:5:2)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-024",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "اعبدوا",
+      "input": "اعبدوا",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ع-ب-د",
+        "output": "ع-ب-د"
+      },
+      "reference_root": "ع-ب-د",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:21",
+        "word": 4,
+        "occurrences_in_text": 17,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ع-ب-د",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:21:3",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:21:3)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-025",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "الرحمن",
+      "input": "الرحمن",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ر-ح-م",
+        "output": "ر-ح-م"
+      },
+      "reference_root": "ر-ح-م",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "1:1",
+        "word": 3,
+        "occurrences_in_text": 45,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ر-ح-م",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "1:1:3",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(1:1:3)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-026",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "رحمة",
+      "input": "رحمة",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ر-ح-م",
+        "output": "ر-ح-م"
+      },
+      "reference_root": "ر-ح-م",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "3:8",
+        "word": 12,
+        "occurrences_in_text": 34,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ر-ح-م",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "3:8:12",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(3:8:12)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-027",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "شهداء",
+      "input": "شهداء",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ش-ه-د",
+        "output": "ش-ه-د"
+      },
+      "reference_root": "ش-ه-د",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:133",
+        "word": 3,
+        "occurrences_in_text": 12,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ش-ه-د",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:133:3",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:133:3)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-028",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "يشهد",
+      "input": "يشهد",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ش-ه-د",
+        "output": "ش-ه-د"
+      },
+      "reference_root": "ش-ه-د",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "4:166",
+        "word": 3,
+        "occurrences_in_text": 5,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ش-ه-د",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "4:166:3",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(4:166:3)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-029",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "وحده",
+      "input": "وحده",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "و-ح-د",
+        "output": "و-ح-د"
+      },
+      "reference_root": "و-ح-د",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "7:70",
+        "word": 5,
+        "occurrences_in_text": 6,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "و-ح-د",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "7:70:5",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(7:70:5)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-030",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "واحد",
+      "input": "واحد",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "و-ح-د",
+        "output": "و-ح-د"
+      },
+      "reference_root": "و-ح-د",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:61",
+        "word": 9,
+        "occurrences_in_text": 18,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "و-ح-د",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:61:8",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:61:8)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-031",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "ينصرون",
+      "input": "ينصرون",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ن-ص-ر",
+        "output": "ن-ص-ر"
+      },
+      "reference_root": "ن-ص-ر",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:48",
+        "word": 19,
+        "occurrences_in_text": 13,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ن-ص-ر",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:48:19",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:48:19)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-032",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "النصر",
+      "input": "النصر",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ن-ص-ر",
+        "output": "ن-ص-ر"
+      },
+      "reference_root": "ن-ص-ر",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "3:126",
+        "word": 11,
+        "occurrences_in_text": 3,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ن-ص-ر",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "3:126:11",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(3:126:11)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-033",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "يحكم",
+      "input": "يحكم",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ح-ك-م",
+        "output": "ح-ك-م"
+      },
+      "reference_root": "ح-ك-م",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:113",
+        "word": 24,
+        "occurrences_in_text": 17,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ح-ك-م",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:113:24",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:113:24)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-034",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "الحكمة",
+      "input": "الحكمة",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ح-ك-م",
+        "output": "ح-ك-م"
+      },
+      "reference_root": "ح-ك-م",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:269",
+        "word": 2,
+        "occurrences_in_text": 5,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ح-ك-م",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:269:2",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:269:2)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-035",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "وأصلحوا",
+      "input": "وأصلحوا",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ص-ل-ح",
+        "output": "ص-ل-ح"
+      },
+      "reference_root": "ص-ل-ح",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:160",
+        "word": 4,
+        "occurrences_in_text": 6,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ص-ل-ح",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:160:4",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:160:4)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-036",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "مصلحون",
+      "input": "مصلحون",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ص-ل-ح",
+        "output": "ص-ل-ح"
+      },
+      "reference_root": "ص-ل-ح",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:11",
+        "word": 11,
+        "occurrences_in_text": 2,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ص-ل-ح",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:11:11",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:11:11)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-037",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "الذكر",
+      "input": "الذكر",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ذ-ك-ر",
+        "output": "ذ-ك-ر"
+      },
+      "reference_root": "ذ-ك-ر",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "3:36",
+        "word": 13,
+        "occurrences_in_text": 19,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ذ-ك-ر",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "3:36:13",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(3:36:13)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-038",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "فاذكروني",
+      "input": "فاذكروني",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ذ-ك-ر",
+        "output": "ذ-ك-ر"
+      },
+      "reference_root": "ذ-ك-ر",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:152",
+        "word": 1,
+        "occurrences_in_text": 1,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ذ-ك-ر",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:152:1",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:152:1)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-039",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "جهد",
+      "input": "جهد",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ج-ه-د",
+        "output": "ج-ه-د"
+      },
+      "reference_root": "ج-ه-د",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "5:53",
+        "word": 8,
+        "occurrences_in_text": 5,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ج-ه-د",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "5:53:8",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(5:53:8)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-040",
+      "category": "coberta",
+      "variety": "árabe corânico",
+      "attested_form": "جاهدوا",
+      "input": "جاهدوا",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": "ج-ه-د",
+        "output": "ج-ه-د"
+      },
+      "reference_root": "ج-ه-د",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "3:142",
+        "word": 10,
+        "occurrences_in_text": 5,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ج-ه-د",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "3:142:10",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(3:142:10)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-041",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "يؤمنون",
+      "input": "يؤمنون",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "أ-م-ن",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:3",
+        "word": 2,
+        "occurrences_in_text": 86,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "أ-م-ن",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:3:2",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:3:2)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-042",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "ويقيمون",
+      "input": "ويقيمون",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ق-و-م",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:3",
+        "word": 4,
+        "occurrences_in_text": 2,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ق-و-م",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:3:4",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:3:4)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-043",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "رزقناهم",
+      "input": "رزقناهم",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ر-ز-ق",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:3",
+        "word": 7,
+        "occurrences_in_text": 10,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ر-ز-ق",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:3:7",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:3:7)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-044",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "ينفقون",
+      "input": "ينفقون",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ن-ف-ق",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:3",
+        "word": 8,
+        "occurrences_in_text": 20,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ن-ف-ق",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:3:8",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:3:8)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-045",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "يوقنون",
+      "input": "يوقنون",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ي-ق-ن",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:4",
+        "word": 12,
+        "occurrences_in_text": 11,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ي-ق-ن",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:4:12",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:4:12)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-046",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "المفلحون",
+      "input": "المفلحون",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ف-ل-ح",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:5",
+        "word": 8,
+        "occurrences_in_text": 12,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ف-ل-ح",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:5:8",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:5:8)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-047",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "كفروا",
+      "input": "كفروا",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ك-ف-ر",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:6",
+        "word": 3,
+        "occurrences_in_text": 189,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ك-ف-ر",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:6:3",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:6:3)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-048",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "قلوبهم",
+      "input": "قلوبهم",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ق-ل-ب",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:7",
+        "word": 4,
+        "occurrences_in_text": 65,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ق-ل-ب",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:7:4",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:7:4)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-049",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "عذاب",
+      "input": "عذاب",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ع-ذ-ب",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:7",
+        "word": 11,
+        "occurrences_in_text": 150,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ع-ذ-ب",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:7:11",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:7:11)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-050",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "يقول",
+      "input": "يقول",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ق-و-ل",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:8",
+        "word": 4,
+        "occurrences_in_text": 39,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ق-و-ل",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:8:4",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:8:4)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-051",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "يخادعون",
+      "input": "يخادعون",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "خ-د-ع",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:9",
+        "word": 1,
+        "occurrences_in_text": 2,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "خ-د-ع",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:9:1",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:9:1)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-052",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "مرض",
+      "input": "مرض",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "م-ر-ض",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:10",
+        "word": 3,
+        "occurrences_in_text": 12,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "م-ر-ض",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:10:3",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:10:3)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-053",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "يكذبون",
+      "input": "يكذبون",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ك-ذ-ب",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:10",
+        "word": 12,
+        "occurrences_in_text": 6,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ك-ذ-ب",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:10:12",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:10:12)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-054",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "تفسدوا",
+      "input": "تفسدوا",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ف-س-د",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:11",
+        "word": 5,
+        "occurrences_in_text": 4,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ف-س-د",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:11:5",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:11:5)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-055",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "الأرض",
+      "input": "الأرض",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "أ-ر-ض",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:11",
+        "word": 7,
+        "occurrences_in_text": 287,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "أ-ر-ض",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:11:7",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:11:7)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-056",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "السفهاء",
+      "input": "السفهاء",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "س-ف-ه",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:13",
+        "word": 12,
+        "occurrences_in_text": 5,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "س-ف-ه",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:13:12",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:13:12)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-057",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "اشتروا",
+      "input": "اشتروا",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ش-ر-ي",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:16",
+        "word": 3,
+        "occurrences_in_text": 6,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ش-ر-ي",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:16:3",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:16:3)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-058",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "الضلالة",
+      "input": "الضلالة",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ض-ل-ل",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:16",
+        "word": 4,
+        "occurrences_in_text": 6,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ض-ل-ل",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:16:4",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:16:4)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-059",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "نورهم",
+      "input": "نورهم",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ن-و-ر",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "57:12",
+        "word": 6,
+        "occurrences_in_text": 2,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ن-و-ر",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "57:12:6",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(57:12:6)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-060",
+      "category": "fora_da_cobertura",
+      "variety": "árabe corânico",
+      "attested_form": "ظلمات",
+      "input": "ظلمات",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ظ-ل-م",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:17",
+        "word": 15,
+        "occurrences_in_text": 8,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ظ-ل-م",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:17:15",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:17:15)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      }
+    },
+    {
+      "id": "ar-061",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "فعليها",
+      "input": "فعليها",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "sem raiz de referência: partícula على",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "6:104",
+        "word": 11,
+        "occurrences_in_text": 3,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "sem raiz de referência: partícula على",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "6:104:11",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(6:104:11)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ف-ع-ل",
+        "why": "fa + ʿalā + hā: contém ف-ع-ل em sequência"
+      }
+    },
+    {
+      "id": "ar-062",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "فعليه",
+      "input": "فعليه",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "sem raiz de referência: partícula على",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "10:84",
+        "word": 9,
+        "occurrences_in_text": 4,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "sem raiz de referência: partícula على",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "10:84:8",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(10:84:8)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ف-ع-ل",
+        "why": "fa + ʿalā + hi: contém ف-ع-ل em sequência"
+      }
+    },
+    {
+      "id": "ar-063",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "فعليكم",
+      "input": "فعليكم",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "sem raiz de referência: partícula على",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "8:72",
+        "word": 34,
+        "occurrences_in_text": 1,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "sem raiz de referência: partícula على",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "8:72:34",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(8:72:34)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ف-ع-ل",
+        "why": "fa + ʿalaykum: contém ف-ع-ل em sequência"
+      }
+    },
+    {
+      "id": "ar-064",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "فتحرير",
+      "input": "فتحرير",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ح-ر-ر",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "4:92",
+        "word": 13,
+        "occurrences_in_text": 3,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ح-ر-ر",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "4:92:13",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(4:92:13)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ف-ت-ح",
+        "why": "fa + taḥrīr: contém ف-ت-ح em sequência"
+      }
+    },
+    {
+      "id": "ar-065",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "فتحسسوا",
+      "input": "فتحسسوا",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ح-س-س",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "12:87",
+        "word": 4,
+        "occurrences_in_text": 1,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ح-س-س",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "12:87:3",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(12:87:3)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ف-ت-ح",
+        "why": "fa + taḥassasū: contém ف-ت-ح em sequência"
+      }
+    },
+    {
+      "id": "ar-066",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "نصرف",
+      "input": "نصرف",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ص-ر-ف",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "6:46",
+        "word": 19,
+        "occurrences_in_text": 4,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ص-ر-ف",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "6:46:19",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(6:46:19)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ن-ص-ر",
+        "why": "nuṣarrif: contém ن-ص-ر em sequência"
+      }
+    },
+    {
+      "id": "ar-067",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "انصرفوا",
+      "input": "انصرفوا",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ص-ر-ف",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "9:127",
+        "word": 14,
+        "occurrences_in_text": 1,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ص-ر-ف",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "9:127:14",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(9:127:14)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ن-ص-ر",
+        "why": "inṣarafū: contém ن-ص-ر em sequência"
+      }
+    },
+    {
+      "id": "ar-068",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "ريحكم",
+      "input": "ريحكم",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ر-و-ح",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "8:46",
+        "word": 8,
+        "occurrences_in_text": 1,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ر-و-ح",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "8:46:8",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(8:46:8)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ح-ك-م",
+        "why": "rīḥu + kum: contém ح-ك-م em sequência"
+      }
+    },
+    {
+      "id": "ar-069",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "لم",
+      "input": "لم",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "partícula لم",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:6",
+        "word": 8,
+        "occurrences_in_text": 178,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "partícula لم",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:6:8",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:6:8)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ع-ل-م",
+        "why": "palavra curta contida em ع-ل-م e س-ل-م"
+      }
+    },
+    {
+      "id": "ar-070",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "مع",
+      "input": "مع",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "partícula مع",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:43",
+        "word": 6,
+        "occurrences_in_text": 58,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "partícula مع",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:43:6",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:43:6)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ج-م-ع",
+        "why": "palavra curta contida em ج-م-ع"
+      }
+    },
+    {
+      "id": "ar-071",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "كم",
+      "input": "كم",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "partícula كم",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:211",
+        "word": 4,
+        "occurrences_in_text": 12,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "partícula كم",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:211:4",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:211:4)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ح-ك-م",
+        "why": "palavra curta contida em ح-ك-م"
+      }
+    },
+    {
+      "id": "ar-072",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "سل",
+      "input": "سل",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "س-أ-ل",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:211",
+        "word": 1,
+        "occurrences_in_text": 1,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "س-أ-ل",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:211:1",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:211:1)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "س-ل-م",
+        "why": "imperativo de سأل; contido em س-ل-م"
+      }
+    },
+    {
+      "id": "ar-073",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "صر",
+      "input": "صر",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ص-ر-ر",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "3:117",
+        "word": 11,
+        "occurrences_in_text": 1,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ص-ر-ر",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "3:117:11",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(3:117:11)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ن-ص-ر",
+        "why": "ṣirr (frio intenso); contido em ن-ص-ر"
+      }
+    },
+    {
+      "id": "ar-074",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "مد",
+      "input": "مد",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "م-د-د",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "13:3",
+        "word": 3,
+        "occurrences_in_text": 2,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "م-د-د",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "13:3:3",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(13:3:3)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ح-م-د",
+        "why": "madda; contido em ح-م-د"
+      }
+    },
+    {
+      "id": "ar-075",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "عمل",
+      "input": "عمل",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ع-م-ل",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "3:195",
+        "word": 7,
+        "occurrences_in_text": 16,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ع-م-ل",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "3:195:7",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(3:195:7)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ع-ل-م",
+        "why": "anagrama de علم"
+      }
+    },
+    {
+      "id": "ar-076",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "بعد",
+      "input": "بعد",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ب-ع-د",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:27",
+        "word": 6,
+        "occurrences_in_text": 149,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ب-ع-د",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:27:6",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:27:6)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ع-ب-د",
+        "why": "anagrama de عبد"
+      }
+    },
+    {
+      "id": "ar-077",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "سدر",
+      "input": "سدر",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "س-د-ر",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "34:16",
+        "word": 15,
+        "occurrences_in_text": 2,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "س-د-ر",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "34:16:15",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(34:16:15)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "د-ر-س",
+        "why": "anagrama de درس"
+      }
+    },
+    {
+      "id": "ar-078",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "حرم",
+      "input": "حرم",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ح-ر-م",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "2:173",
+        "word": 2,
+        "occurrences_in_text": 21,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ح-ر-م",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "2:173:2",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:173:2)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ر-ح-م",
+        "why": "anagrama de رحم"
+      }
+    },
+    {
+      "id": "ar-079",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "لمسنا",
+      "input": "لمسنا",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ل-م-س",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "72:8",
+        "word": 2,
+        "occurrences_in_text": 1,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ل-م-س",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "72:8:2",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(72:8:2)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "س-ل-م",
+        "why": "lamasnā: anagrama parcial de سلم"
+      }
+    },
+    {
+      "id": "ar-080",
+      "category": "armadilha",
+      "variety": "árabe corânico",
+      "attested_form": "فتهجد",
+      "input": "فتهجد",
+      "input_derivation": "idêntico à forma atestada (texto Simple Clean, sem diacríticos)",
+      "expected": {
+        "root": null,
+        "output": "raiz não identificada"
+      },
+      "reference_root": "ه-ج-د",
+      "source": {
+        "corpus": "Tanzil Quran Text (Simple Clean, Version 1.1)",
+        "url": "https://tanzil.net/download/",
+        "mirror": "https://github.com/OpenITI/0025AH (data/0001Quran/0001Quran.Mushaf/0001Quran.Mushaf.Tanzil001-ara1.mARkdown)",
+        "version": "Tanzil Simple Clean 1.1; OpenITI/0025AH@05bfb1cad632ff98d62c925c6a28c0e3b4e67a64",
+        "license": "Creative Commons Attribution 3.0; termos do Tanzil: cópia literal permitida, alteração proibida, citar o Tanzil e linkar tanzil.net",
+        "location": "17:79",
+        "word": 3,
+        "occurrences_in_text": 1,
+        "note": "primeira ocorrência no texto; posição e contagem ignoram os marcadores de página ms do OpenITI e a basmala prefixada ao versículo 1 das suras 2 a 114"
+      },
+      "root_evidence": {
+        "lexicon": "Lane, An Arabic-English Lexicon (1863–1893), edição impressa, citada pelo verbete da raiz",
+        "entry": "ه-ج-د",
+        "cross_check": {
+          "corpus": "Quranic Arabic Corpus 0.4 (citado só pela localização; nenhum dado copiado)",
+          "location": "17:79:3",
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(17:79:3)",
+          "status": "posição calculada: a do texto Simple Clean menos uma para cada «يا» anterior no versículo, porque no corpus «يا» vem unido à palavra seguinte; amostra conferida na revisão do S2.1"
+        }
+      },
+      "review": {
+        "proposed_by": "Claude",
+        "reviewed_by": null
+      },
+      "trap": {
+        "confusable_with": "ج-ه-د",
+        "why": "fa + tahajjad: anagrama de جهد"
+      }
+    }
+  ]
+}
