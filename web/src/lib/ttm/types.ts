@@ -19,7 +19,7 @@ export interface Diacritic {
 }
 
 export interface Width {
-  root: string;
+  root: string | null;
   prefixes: string[];
   suffixes: string[];
   pattern: string;
@@ -49,9 +49,23 @@ export interface MorphemeCoordinates {
 
 export interface MorphemeAnalysis {
   morpheme: string;
-  root: string;
+  root: string | null;
+  rootStatus: 'identificada' | 'nao_identificada';
+  rootConfidence: 'alta' | 'media' | null;
+  rootMessage: string;
   language: string;
+  /** Glosa específica da forma, ou descrição geral da raiz (ver glossStatus). */
   gloss: string;
+  /**
+   * 'especifica': a vocalização identificou a forma atestada.
+   * 'nao_determinada': raiz identificada, forma não; ver formCandidates.
+   * null: raiz não identificada.
+   */
+  glossStatus: 'especifica' | 'nao_determinada' | null;
+  /** Forma atestada identificada pela vocalização, ou null. */
+  matchedForm: string | null;
+  /** Formas atestadas compatíveis com a grafia sem vogais. */
+  formCandidates: { display: string; gloss: string }[];
   coordinates: MorphemeCoordinates;
   dimensions: {
     width: Width;

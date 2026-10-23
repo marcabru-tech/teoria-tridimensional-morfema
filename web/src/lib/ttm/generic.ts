@@ -2,7 +2,7 @@ import { MorphemeAnalysis, SemanticLevel, Width, Depth, Height } from './types';
 
 export function analyzeGeneric(form: string, language: string): MorphemeAnalysis {
   const words = form.trim().split(/\s+/);
-  const root = words[0].toLowerCase();
+  const root = null;
   
   const width: Width = {
     root,
@@ -29,7 +29,7 @@ export function analyzeGeneric(form: string, language: string): MorphemeAnalysis
   const vowels = form.match(/[aeiouáéíóúàèìòùâêîôûãõ]/gi) || [];
   
   const height: Height = {
-    baseForm: root,
+    baseForm: words[0],
     configurationId: vowels.length,
     vowels,
     diacritics: [],
@@ -39,8 +39,14 @@ export function analyzeGeneric(form: string, language: string): MorphemeAnalysis
   return {
     morpheme: form,
     root,
+    rootStatus: 'nao_identificada',
+    rootConfidence: null,
+    rootMessage: 'raiz não identificada (língua sem base morfológica no TTM)',
     language,
     gloss: '',
+    glossStatus: null,
+    matchedForm: null,
+    formCandidates: [],
     coordinates: { x: width.derivationDegree, y: depth.currentLevel, z: height.configurationId },
     dimensions: { width, depth, height },
   };
