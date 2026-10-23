@@ -17,14 +17,6 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
                 <p className="text-slate-400">Teoria Tridimensional do Morfema</p>
               </div>
             </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand/hubstry-logo-white-800.png"
-              alt="Hubstry"
-              width={160}
-              height={20}
-              className="hidden sm:block h-5 w-auto opacity-90"
-            />
           </div>
         </div>
       </header>
@@ -35,26 +27,12 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
       {/* Footer */}
       <footer className="border-t border-slate-700/50 mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3 text-sm text-slate-400">
-            <span>Desenvolvido por</span>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand/hubstry-logo-white-800.png"
-              alt="Hubstry"
-              width={128}
-              height={16}
-              className="h-4 w-auto"
-            />
-          </div>
-          {/* Selo oficial do NVIDIA Inception Program, usado sem alterações */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/brand/nvidia-inception-program-badge.svg"
-            alt="Membro do NVIDIA Inception Program"
-            width={160}
-            height={69}
-            className="h-auto w-40"
-          />
+          {/* Identidade provisória: a logo do Polyograph entra quando for enviada. */}
+          <p className="text-sm text-slate-400">
+            Parte do <span className="text-slate-200 font-medium">Polyograph</span> — deep polymath and polyglot
+            ecosystem
+          </p>
+          <p className="text-sm text-slate-500">Projeto de pesquisa, não comercial.</p>
         </div>
       </footer>
     </div>
