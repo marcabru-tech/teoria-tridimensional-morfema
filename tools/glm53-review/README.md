@@ -26,16 +26,31 @@ $secure = Read-Host "Chave de API da Digiti" -AsSecureString
 $env:MAAS_API_KEY = [System.Net.NetworkCredential]::new("", $secure).Password
 
 node .\tools\glm53-review\run-review.mjs `
-  --prompt "C:\CAMINHO\prompt-revisao.md" `
-  --arabic "C:\CAMINHO\lote-1-arabe.md" `
-  --hebrew "C:\CAMINHO\lote-2-hebraico.md"
+  --prompt .\tools\glm53-review\input\prompt-revisao.md `
+  --arabic .\tools\glm53-review\input\lote-1-arabe.md `
+  --hebrew .\tools\glm53-review\input\lote-2-hebraico.md
 
 $env:MAAS_API_KEY = $null
 ```
 
-Substitua os três caminhos pelo local real dos arquivos que o Claude preparou. O runner não contém nem recria esses arquivos para não substituir silenciosamente o prompt aprovado por uma paráfrase. Mantenha a chave fora do Git e não a cole no chat.
-
 Opcionalmente, defina `DIGITI_MAAS_URL`, `DIGITI_MAAS_MODEL` ou `DIGITI_MAX_TOKENS`. O padrão é o endpoint acima, `glm-5.3` e 24.000 tokens de saída. O script envia primeiro a sonda, depois o lote árabe e depois o hebraico, sem chamadas paralelas.
+
+## Insumos (`input/`)
+
+Os três arquivos estão versionados nesta branch, com os hashes em `input/SHA256SUMS`:
+
+- `lote-1-arabe.md` e `lote-2-hebraico.md`: idênticos aos lotes entregues pelo Claude, com o versículo completo de cada caso. Trazem as atribuições exigidas do Tanzil e do OSHB.
+- `prompt-revisao.md`: é o prompt entregue para uso em chat, com só duas mudanças para a API.
+  - Saiu o cabeçalho com as instruções de "colar no chat".
+  - A última frase passou de "Comece quando eu colar o primeiro lote." para "O lote a revisar vem na próxima mensagem."
+
+  O conteúdo da revisão não mudou.
+
+Para conferir no PowerShell: `Get-FileHash .\tools\glm53-review\input\*.md -Algorithm SHA256`.
+
+## Atenção a truncamento e tempo
+
+O GLM-5.3 raciocina antes de responder. Se o gateway contar esse raciocínio dentro de `max_tokens`, 24.000 podem não bastar para os 80 casos árabes, e o runner acusa `finish_reason=length`. Nesse caso, rode de novo com `$env:DIGITI_MAX_TOKENS = "60000"`. O limite de 300 s por chamada também pode ser curto para o lote árabe. Se der timeout, avise antes de aumentar o limite no código.
 
 ## Saídas e controles
 
