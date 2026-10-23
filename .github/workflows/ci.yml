@@ -85,6 +85,7 @@ jobs:
       - name: Reference set self-tests (normalização e construtor hebraico)
         run: |
           node --test tests/reference/normalize.test.mjs
+          node --test tests/flags/heuristic.test.mjs
           (cd tests/reference/tools && python3 -m unittest -v test_he_build)
 
       - name: Apply .vercelignore to simulate the Vercel upload
@@ -102,7 +103,8 @@ jobs:
 
       - name: Smoke tests against local server
         run: |
-          npm run start -- -p 3000 &
+          # O motor antigo só responde com a flag (contenção de 23/10/2026).
+          TTM_ENABLE_HEURISTIC_ANALYSIS=1 npm run start -- -p 3000 &
           for i in $(seq 1 30); do curl -sf http://localhost:3000/ > /dev/null && break; sleep 1; done
           curl -sf http://localhost:3000/ > /dev/null || {
             echo "Server did not start within 30 seconds"
@@ -111,3 +113,22 @@ jobs:
           npm run smoke -- http://localhost:3000
           # Conjunto de referência (S2.1): só registra o relatório; vira bloqueante no S2.2 com --enforce
           node tests/reference/evaluate.mjs http://localhost:3000 --report /tmp/relatorio-referencia.md
+
+      - name: Public mode (análise antiga desativada sem a flag)
+        run: |
+          npm run start -- -p 3001 &
+          for i in $(seq 1 30); do curl -sf http://localhost:3001/ > /dev/null && break; sleep 1; done
+          node tests/smoke/public-mode.js http://localhost:3001
+
+      - name: Flag ligada em ambientes de deploy continua bloqueada (410)
+        # Política: o motor antigo só liga no CI e no desenvolvimento local.
+        # Com a flag ligada, preview, produção e um servidor fora do CI sem as
+        # variáveis da Vercel têm de continuar no modo público.
+        run: |
+          TTM_ENABLE_HEURISTIC_ANALYSIS=1 VERCEL_ENV=preview npm run start -- -p 3002 &
+          TTM_ENABLE_HEURISTIC_ANALYSIS=1 VERCEL_ENV=production npm run start -- -p 3003 &
+          env -u CI TTM_ENABLE_HEURISTIC_ANALYSIS=1 npm run start -- -p 3004 &
+          for port in 3002 3003 3004; do
+            for i in $(seq 1 30); do curl -sf http://localhost:$port/ > /dev/null && break; sleep 1; done
+            node tests/smoke/public-mode.js http://localhost:$port
+          done

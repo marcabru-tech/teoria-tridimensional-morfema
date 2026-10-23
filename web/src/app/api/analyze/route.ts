@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { analyze } from '@/lib/ttm/analyzer';
+import { HEURISTIC_DISABLED_MESSAGE, heuristicAnalysisEnabled } from '@/lib/flags/heuristic';
 
 export async function POST(request: NextRequest) {
+  // Contenção: fora do CI/desenvolvimento, a rota responde 410 (Gone).
+  if (!heuristicAnalysisEnabled()) {
+    return NextResponse.json({ error: HEURISTIC_DISABLED_MESSAGE }, { status: 410 });
+  }
   try {
     const body = await request.json();
     const { text, language } = body;
