@@ -99,4 +99,8 @@ jobs:
         run: |
           npm run start -- -p 3000 &
           for i in $(seq 1 30); do curl -sf http://localhost:3000/ > /dev/null && break; sleep 1; done
+          curl -sf http://localhost:3000/ > /dev/null || {
+            echo "Server did not start within 30 seconds"
+            exit 1
+          }
           npm run smoke -- http://localhost:3000
