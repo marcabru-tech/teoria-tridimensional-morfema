@@ -1,5 +1,4 @@
-import path from 'path';
-import fs from 'fs';
+import hebrewRoots from '@/data/roots/hebrew_roots.json';
 import { MorphemeAnalysis, SemanticLevel, Width, Depth, Height } from './types';
 
 const HEBREW_NIQQUD = /[\u0591-\u05c7]/g;
@@ -12,17 +11,13 @@ function extractNiqqud(text: string): string[] {
   return text.match(HEBREW_NIQQUD) || [];
 }
 
-let rootsData: Record<string, any> | null = null;
+// A base é importada estaticamente para entrar no bundle da função serverless.
+// Ler o arquivo em tempo de execução (fs + process.cwd()) falhava em silêncio
+// quando data/ não acompanhava o deploy. Cópia sincronizada de data/roots/
+// (ver scripts/check-data-sync.mjs).
+const rootsData: Record<string, any> = hebrewRoots;
 
 function getRootsData() {
-  if (!rootsData) {
-    const dataPath = path.join(process.cwd(), '..', 'data', 'roots', 'hebrew_roots.json');
-    if (fs.existsSync(dataPath)) {
-      rootsData = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
-    } else {
-      rootsData = {};
-    }
-  }
   return rootsData;
 }
 

@@ -67,6 +67,14 @@ async function run() {
       typeof json.morpheme.coordinates === 'object',
       'Missing morpheme.coordinates',
     );
+    // A base de raízes precisa ter sido carregada: sem ela, a API ainda
+    // responde 200, mas com a palavra fatiada e sem derivações.
+    assert(json.morpheme.root === 'ك-ت-ب', `Expected root ك-ت-ب, got ${json.morpheme.root}`);
+    assert(json.morpheme.gloss, 'Empty gloss: roots database not loaded');
+    const forms = (json.morpheme.dimensions?.width?.possibleDerivations || []).map((d) => d.form);
+    for (const expected of ['كِتَاب', 'كَاتِب', 'مَكْتَبَة']) {
+      assert(forms.includes(expected), `Missing derivation ${expected}; got [${forms.join(', ')}]`);
+    }
   });
 
   // 3. POST /api/analyze — Hebrew
@@ -80,6 +88,9 @@ async function run() {
     const json = await res.json();
     assert(json.originalText === 'מלך', 'originalText mismatch');
     assert(json.morpheme && json.morpheme.root, 'Missing morpheme.root');
+    assert(json.morpheme.root === 'מ-ל-ך', `Expected root מ-ל-ך, got ${json.morpheme.root}`);
+    const forms = (json.morpheme.dimensions?.width?.possibleDerivations || []).map((d) => d.form);
+    assert(forms.includes('מֶלֶךְ'), `Missing derivation מֶלֶךְ; got [${forms.join(', ')}]`);
   });
 
   // 4. POST /api/analyze — Generic (English)
