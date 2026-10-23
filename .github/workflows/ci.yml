@@ -82,6 +82,11 @@ jobs:
       - name: Check roots database sync (data/roots vs web/src/data/roots)
         run: npm run check:data
 
+      - name: Reference set self-tests (normalização e construtor hebraico)
+        run: |
+          node --test tests/reference/normalize.test.mjs
+          (cd tests/reference/tools && python3 -m unittest -v test_he_build)
+
       - name: Apply .vercelignore to simulate the Vercel upload
         # Remove exatamente o que a Vercel removeria (inclui data/), para
         # provar que o build e a base de raízes não dependem desses arquivos.

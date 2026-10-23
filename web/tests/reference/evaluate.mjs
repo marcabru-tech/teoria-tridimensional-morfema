@@ -19,13 +19,30 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { normRoot } from './normalize.mjs';
 
+const USAGE = 'Uso: node tests/reference/evaluate.mjs <BASE_URL> [--report arquivo.md] [--enforce]';
 const args = process.argv.slice(2);
-const baseUrl = (args.find((a) => !a.startsWith('--')) || '').replace(/\/$/, '');
-const reportPath = args.includes('--report') ? args[args.indexOf('--report') + 1] : null;
-const enforce = args.includes('--enforce');
+let baseUrl = '';
+let reportPath = null;
+let enforce = false;
+for (let i = 0; i < args.length; i++) {
+  if (args[i] === '--enforce') enforce = true;
+  else if (args[i] === '--report') {
+    reportPath = args[i + 1];
+    if (!reportPath || reportPath.startsWith('--')) {
+      console.error('--report exige o caminho do arquivo.\n' + USAGE);
+      process.exit(1);
+    }
+    i++;
+  } else if (!args[i].startsWith('--') && !baseUrl) baseUrl = args[i].replace(/\/$/, '');
+  else {
+    console.error(`Argumento não reconhecido: ${args[i]}\n${USAGE}`);
+    process.exit(1);
+  }
+}
 if (!baseUrl) {
-  console.error('Uso: node tests/reference/evaluate.mjs <BASE_URL> [--report arquivo.md] [--enforce]');
+  console.error(USAGE);
   process.exit(1);
 }
 
@@ -34,20 +51,6 @@ const sets = [
   { lang: 'ar', name: 'Árabe corânico', file: 'ar.json' },
   { lang: 'he', name: 'Hebraico bíblico', file: 'he.json' },
 ];
-
-// Normaliza uma raiz para comparação: sem hífens, sem diacríticos árabes e sem pontos
-// hebraicos (inclui os pontos de shin/sin), com letras finais hebraicas em forma medial.
-const ARABIC_MARKS = /[ؐ-ًؚ-ٰٟۖ-ۜ۟-۪ۤۧۨ-ۭ]/g;
-const HEBREW_MARKS = /[֑-ׇ]/g;
-const FINALS = { 'ך': 'כ', 'ם': 'מ', 'ן': 'נ', 'ף': 'פ', 'ץ': 'צ' };
-function normRoot(r) {
-  if (!r) return '';
-  return r
-    .replace(/-/g, '')
-    .replace(ARABIC_MARKS, '')
-    .replace(HEBREW_MARKS, '')
-    .replace(/[ךםןףץ]/g, (c) => FINALS[c]);
-}
 
 async function analyze(text, language) {
   const res = await fetch(`${baseUrl}/api/analyze`, {

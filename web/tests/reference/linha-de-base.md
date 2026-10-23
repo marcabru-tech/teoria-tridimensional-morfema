@@ -107,6 +107,6 @@ Nas armadilhas, uma raiz devolvida que não pertence à base também aparece na 
 | he-056 | armadilha | גְּמֻלְכֶ֖ם | Joel.4.4 | raiz não identificada | raiz inventada: ג-מ-ל-כ-ם |
 | he-057 | armadilha | כִּתְבוּנָם֙ | Hos.13.2 | raiz não identificada | raiz inventada: כ-ת-ב-ו-נ-ם |
 | he-058 | armadilha | כְּתַבְנִ֣ית | Isa.44.13 | raiz não identificada | raiz inventada: כ-ת-ב-נ-י-ת |
-| he-059 | armadilha | וּֽכְמַשְׂמְר֥וֹת | Eccl.12.11 | raiz não identificada | raiz inventada: ו-כ-מ-ש-מ-ר-ו-ת |
+| he-059 | armadilha | בִּרְאוֹתָ֖ם | 1Sam.17.24 | raiz não identificada | raiz inventada: ב-ר-א-ו-ת-ם |
 | he-060 | armadilha | כִּתְבוּאַ֥ת | Num.18.30 | raiz não identificada | raiz inventada: כ-ת-ב-ו-א-ת |
 

@@ -16,6 +16,11 @@
       "form": "ב/מלכן",
       "location": "2Sam.12.31",
       "reason": "ketiv sem vogais (qere בַּמַּלְבֵּן) e de raiz disputada (uma linha o liga a Moloque/Malcam, raiz מלך)."
+    },
+    {
+      "form": "וּֽ/כְ/מַשְׂמְר֥וֹת",
+      "location": "Eccl.12.11",
+      "reason": "referência lexical inequívoca ausente: BDB liga a forma a מַסְמֵר ('prego', com samekh) e marca como duvidosa a conexão etimológica; a forma é grafada com sin. Um caso de sin/shin precisa de raiz de referência segura antes de entrar na avaliação."
     }
   ],
   "cases": [
@@ -2227,40 +2232,39 @@
       "id": "he-059",
       "category": "armadilha",
       "variety": "hebraico bíblico",
-      "attested_form": "וּֽ/כְ/מַשְׂמְר֥וֹת",
-      "input": "וּֽכְמַשְׂמְר֥וֹת",
+      "attested_form": "בִּ/רְאוֹתָ֖/ם",
+      "input": "בִּרְאוֹתָ֖ם",
       "input_derivation": "derivado da forma atestada: removidos apenas os separadores de morfema '/' do OSHB",
       "expected": {
         "root": null,
         "output": "raiz não identificada"
       },
-      "reference_root": "סמר",
+      "reference_root": "ראה",
       "source": {
         "corpus": "Open Scriptures Hebrew Bible (OSHB), base: Westminster Leningrad Codex",
         "url": "https://github.com/openscriptures/morphhb",
         "version": "morphhb@3d15126fb1ef74867fc1434be1942e837932691f",
         "license": "CC BY 4.0",
-        "location": "Eccl.12.11",
+        "location": "1Sam.17.24",
         "word": 4,
-        "oshb_id": "21TjF",
-        "morph": "HC/R/Ncbpa",
-        "lemma": "c/k/4930"
+        "oshb_id": "09HHt",
+        "morph": "HR/Vqc/Sp3mp",
+        "lemma": "b/7200"
       },
       "root_evidence": {
         "lexicon": "Open Scriptures Hebrew Lexicon, LexicalIndex.xml (Strong ↔ BDB, cadeia etimológica)",
         "url": "https://github.com/openscriptures/HebrewLexicon",
         "version": "HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
         "license": "CC BY 4.0 (texto de BDB e Strong em domínio público)",
-        "entry": "hur",
-        "entry_word": "מַשְׂמְרָה",
-        "bdb": "o.bw.ac",
-        "root_entry": "ivq"
+        "entry": "lpd",
+        "entry_word": "רָאָה",
+        "bdb": "t.ab.aa",
+        "root_entry": "lpd"
       },
       "review": {
         "proposed_by": "Claude",
         "reviewed_by": null
-      },
-      "note": "Armadilha de sin/shin: מַשְׂמְרוֹת (raiz סמר, com sin) só se distingue de מִשְׁמֶרֶת (raiz שמר, com shin) se o motor preservar o ponto diacrítico de ש. Um motor que remove todos os pontos não tem como distinguir."
+      }
     },
     {
       "id": "he-060",

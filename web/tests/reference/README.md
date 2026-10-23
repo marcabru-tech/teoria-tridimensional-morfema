@@ -53,13 +53,14 @@ A categoria e a saída esperada de cada caso foram definidas antes de avaliar o 
 - **Posição no Quranic Arabic Corpus:** fica em `root_evidence.cross_check.location`. É a posição no Simple Clean menos uma para cada «يا» anterior no versículo, porque no texto uthmânico do corpus «يا» vem unido à palavra seguinte. Uma amostra de 28 páginas do corpus foi conferida na revisão.
 - **Raiz no hebraico:** a raiz vem do OSHB (lema Strong aumentado) ligado ao `LexicalIndex.xml`, seguindo a etimologia até a entrada de raiz do BDB. Homônimos de mesma raiz, como ברא I e ברא II, ficaram fora das formas cobertas. Os casos fora da cobertura são só verbos, porque partículas e alguns substantivos têm raiz conjectural no BDB.
 - **Posição no hebraico:** `word` conta todos os `<w>` do versículo no OSHB, incluindo o qere que fica dentro de `<note>`. O `oshb_id` identifica a palavra sem ambiguidade.
-- **Armadilha de sin/shin (`he-059`):** ela só funciona se o motor preservar o ponto que distingue שׂ de שׁ.
+- **Comparação de raízes:** o avaliador (`normalize.mjs`) remove hífens, diacríticos árabes e sinais hebraicos, mas **preserva a distinção entre sin (שׂ) e shin (שׁ)**. ש sem ponto conta como shin, que é a convenção da base.
 - **Casos retirados na revisão:**
   - `فعلي` (11:35) também se lê *fiʿlī* ("meu ato"), da própria raiz ف-ع-ل.
   - `בָרָא` (2Sm 12:17) é tratado como homônimo de ברא por parte dos léxicos.
   - `ב/מלכן` (2Sm 12:31) é um ketiv sem vogais e de raiz disputada.
+  - `מַשְׂמְרוֹת` (Ecl 12:11, antigo `he-059`), retirado no parecer da Luna. O BDB liga a forma a מַסְמֵר ("prego", com samekh) e marca a conexão etimológica como duvidosa, embora a forma seja grafada com sin. Um caso de sin/shin precisa de raiz de referência segura antes de entrar na avaliação.
 
-  Os dois hebraicos estão listados em `excluded` no `he.json`.
+  Os três hebraicos estão listados em `excluded` no `he.json`.
 
 ## Como rodar
 
@@ -76,3 +77,12 @@ Sem `--enforce`, o script sempre termina com sucesso: ele registra a linha de ba
 - raízes inventadas fora da cobertura: 0.
 
 O relatório do motor atual, antes de qualquer correção, está em `linha-de-base.md`.
+
+## Testes do próprio conjunto
+
+```bash
+node --test tests/reference/normalize.test.mjs            # normalização (inclui sin/shin) e argumentos do avaliador
+cd tests/reference/tools && python3 -m unittest test_he_build   # construtor hebraico com tokens sem morfologia
+```
+
+Os dois rodam no CI, no job `web`.
