@@ -18,7 +18,7 @@ const DEFAULT_URL = 'https://ldgllm.digiti.net.br/v1/chat/completions';
 const DEFAULT_MODEL = 'glm-5.3';
 const PROBE_MARKER = 'TTM_GLM53_PROBE_OK';
 const USAGE =
-  'Uso: node tools/glm53-review/run-review.mjs --prompt <prompt.md> --arabic <lote-1-arabe.md> --hebrew <lote-2-hebraico.md> [--out <dir>] [--model glm-5.3] [--chunk-size 10] [--retries 2] [--no-stream] [--skip-probe]';
+  'Uso: node tools/glm53-review/run-review.mjs --prompt <prompt.md> --arabic <lote-1-arabe.md> --hebrew <lote-2-hebraico.md> [--out <dir>] [--model glm-5.3] [--chunk-size 10] [--retries 2] [--no-stream] [--reasoning-effort low|high|max] [--skip-probe]\n       node tools/glm53-review/run-review.mjs --diagnose --arabic <lote-1-arabe.md> --prompt <prompt.md>';
 
 function parseArgs(argv) {
   const out = {
@@ -41,6 +41,10 @@ function parseArgs(argv) {
       out.noStream = true;
       continue;
     }
+    if (arg === '--diagnose') {
+      out.diagnose = true;
+      continue;
+    }
     const flags = {
       '--prompt': 'prompt',
       '--arabic': 'arabic',
@@ -49,6 +53,7 @@ function parseArgs(argv) {
       '--model': 'model',
       '--chunk-size': 'chunkSize',
       '--retries': 'retries',
+      '--reasoning-effort': 'reasoningEffort',
     };
     const key = flags[arg];
     if (!key || !argv[i + 1] || argv[i + 1].startsWith('--')) {
@@ -60,6 +65,10 @@ function parseArgs(argv) {
   out.retries = Number(out.retries);
   if (!Number.isInteger(out.chunkSize) || out.chunkSize < 0) throw new Error('--chunk-size deve ser inteiro >= 0 (0 = lote inteiro).');
   if (!Number.isInteger(out.retries) || out.retries < 0 || out.retries > 5) throw new Error('--retries deve ser inteiro entre 0 e 5.');
+  if (out.diagnose) {
+    if (!out.prompt || !out.arabic) throw new Error('--diagnose precisa de --prompt e --arabic.\n' + USAGE);
+    return out;
+  }
   if (!out.prompt || !out.arabic || !out.hebrew) {
     throw new Error('Informe o prompt e os dois lotes.\n' + USAGE);
   }
@@ -115,17 +124,17 @@ async function httpError(res) {
  * Chamada sem streaming: a resposta inteira chega de uma vez. Atrás da Cloudflare,
  * respostas que demoram mais de ~100 s resultam em HTTP 504.
  */
-async function callBuffered({ url, key, model, messages, maxTokens }) {
+async function callBuffered({ url, key, model, messages, maxTokens, reasoningEffort }) {
   let res;
   try {
     res = await fetch(url, {
       method: 'POST',
       headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ model, messages, stream: false, temperature: 0, max_tokens: maxTokens }),
+      body: JSON.stringify({ model, messages, stream: false, temperature: 0, max_tokens: maxTokens, ...(reasoningEffort ? { reasoning_effort: reasoningEffort } : {}) }),
       signal: AbortSignal.timeout(300_000),
     });
   } catch (err) {
-    throw new Error(`Falha ao conectar à Digiti: ${err.message}`);
+    throw new Error(`Falha ao conectar à Digiti: ${err.message}${err.cause ? ` (${err.cause.code || err.cause.message})` : ''}`);
   }
   if (!res.ok) throw await httpError(res);
   const body = await res.text();
@@ -143,7 +152,7 @@ async function callBuffered({ url, key, model, messages, maxTokens }) {
  * ociosa e a Cloudflare não a corta por tempo. Junta só `delta.content`; o raciocínio
  * (`delta.reasoning_content`) é descartado, nunca salvo.
  */
-async function callStreaming({ url, key, model, messages, maxTokens }) {
+async function callStreaming({ url, key, model, messages, maxTokens, reasoningEffort, onFirstByte }) {
   const IDLE_MS = 180_000; // sem nenhum dado por 3 min => aborta
   const TOTAL_MS = 30 * 60_000; // teto de 30 min por chamada
   const ctrl = new AbortController();
@@ -160,11 +169,11 @@ async function callStreaming({ url, key, model, messages, maxTokens }) {
       res = await fetch(url, {
         method: 'POST',
         headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', Accept: 'text/event-stream' },
-        body: JSON.stringify({ model, messages, stream: true, temperature: 0, max_tokens: maxTokens }),
+        body: JSON.stringify({ model, messages, stream: true, temperature: 0, max_tokens: maxTokens, ...(reasoningEffort ? { reasoning_effort: reasoningEffort } : {}) }),
         signal: ctrl.signal,
       });
     } catch (err) {
-      throw new Error(`Falha ao conectar à Digiti: ${err.message}`);
+      throw new Error(`Falha ao conectar à Digiti: ${err.message}${err.cause ? ` (${err.cause.code || err.cause.message})` : ''}`);
     }
     if (!res.ok) throw await httpError(res);
     const ctype = res.headers.get('content-type') || '';
@@ -181,8 +190,11 @@ async function callStreaming({ url, key, model, messages, maxTokens }) {
     let buffer = '';
     const decoder = new TextDecoder();
     try {
+      let first = true;
       for await (const chunk of res.body) {
         touch();
+        if (first && onFirstByte) onFirstByte();
+        first = false;
         buffer += decoder.decode(chunk, { stream: true });
         let nl;
         while ((nl = buffer.indexOf('\n')) >= 0) {
@@ -207,12 +219,12 @@ async function callStreaming({ url, key, model, messages, maxTokens }) {
         }
       }
     } catch (err) {
-      throw new Error(`Stream interrompido: ${err.message}`);
+      throw new Error(`Stream interrompido: ${err.message}${err.cause ? ` (${err.cause.code || err.cause.message})` : ''}`);
     }
     if (!content.trim()) {
       throw new Error('O stream terminou sem texto final em delta.content. Não usei reasoning_content como resposta final.');
     }
-    return { text: content.trim(), finishReason, responseModel, responseId, usage };
+    return { text: content.trim(), finishReason, responseModel, responseId, usage, streamed: true };
   } finally {
     clearTimeout(total);
     clearTimeout(idle);
@@ -286,6 +298,44 @@ export function splitBatch(content, size) {
 
 const exists = (p) => access(p).then(() => true, () => false);
 
+/**
+ * Diagnóstico: 3 chamadas de 1 caso cada, em sequência, medindo o tempo até o primeiro
+ * byte e o tempo total. Não grava respostas, só imprime uma tabela.
+ */
+async function diagnose({ url, key, prompt, arabic, maxTokens }) {
+  const oneCase = splitBatch(arabic.content, 1)[0];
+  const scenarios = [
+    { label: 'glm-5.3, streaming, raciocínio padrão', model: 'glm-5.3' },
+    { label: 'glm-5.3, streaming, reasoning_effort=low', model: 'glm-5.3', reasoningEffort: 'low' },
+    { label: 'glm-5.2, streaming, raciocínio padrão', model: 'glm-5.2' },
+  ];
+  console.log(`Gateway: ${url}`);
+  console.log(`Diagnóstico: ${scenarios.length} chamadas de 1 caso (ar-001), uma de cada vez.\n`);
+  const rows = [];
+  for (const sc of scenarios) {
+    const t0 = Date.now();
+    let ttfb = null;
+    process.stdout.write(`- ${sc.label}… `);
+    try {
+      const r = await callStreaming({
+        url, key, model: sc.model, maxTokens, reasoningEffort: sc.reasoningEffort,
+        onFirstByte: () => { ttfb = Date.now() - t0; },
+        messages: [{ role: 'system', content: prompt.content }, { role: 'user', content: oneCase }],
+      });
+      const total = Date.now() - t0;
+      const ok = /"id"\s*:\s*"ar-001"/.test(r.text);
+      rows.push({ cenário: sc.label, resultado: ok ? 'ok' : 'respondeu sem ar-001', 'streaming repassado': r.streamed ? 'sim' : 'não', '1º byte (s)': ttfb === null ? '—' : (ttfb / 1000).toFixed(1), 'total (s)': (total / 1000).toFixed(1), 'modelo devolvido': r.responseModel || '—', tokens: r.usage?.completion_tokens ?? r.usage?.total_tokens ?? '—' });
+      console.log('ok');
+    } catch (err) {
+      rows.push({ cenário: sc.label, resultado: err.message.split('\n')[0].slice(0, 90), 'streaming repassado': '—', '1º byte (s)': ttfb === null ? '—' : (ttfb / 1000).toFixed(1), 'total (s)': ((Date.now() - t0) / 1000).toFixed(1), 'modelo devolvido': '—', tokens: '—' });
+      console.log('falhou');
+    }
+  }
+  console.log('');
+  console.table(rows);
+  console.log('Copie esta tabela e mande para o Claude e a Luna. Nenhuma resposta foi gravada.');
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const key = process.env.MAAS_API_KEY;
@@ -302,12 +352,17 @@ async function main() {
 
   const prompt = await readInput(args.prompt, 'prompt');
   const arabic = await readInput(args.arabic, 'lote árabe');
+  if (args.diagnose) {
+    await diagnose({ url, key, prompt, arabic, maxTokens });
+    return;
+  }
   const hebrew = await readInput(args.hebrew, 'lote hebraico');
   const outDir = resolve(args.outDir);
   await mkdir(outDir, { recursive: true });
 
   console.log(`Gateway: ${url}`);
   STREAM = !args.noStream;
+  if (args.reasoningEffort) console.log(`reasoning_effort: ${args.reasoningEffort}`);
   console.log(`Modelo solicitado: ${args.model}`);
   console.log(`Modo: ${STREAM ? 'streaming (evita o corte de ~100 s da Cloudflare)' : 'resposta inteira (--no-stream)'}`);
   console.log(`Saídas locais: ${outDir}`);
@@ -384,6 +439,7 @@ async function main() {
           key,
           model: args.model,
           maxTokens,
+          reasoningEffort: args.reasoningEffort,
           messages: [
             { role: 'system', content: prompt.content },
             { role: 'user', content: chunk },

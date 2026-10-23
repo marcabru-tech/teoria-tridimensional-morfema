@@ -48,6 +48,31 @@ Os três arquivos estão versionados nesta branch, com os hashes em `input/SHA25
 
 Para conferir no PowerShell: `Get-FileHash .\tools\glm53-review\input\*.md -Algorithm SHA256`.
 
+## Diagnóstico antes de rodar os lotes
+
+```powershell
+node .\tools\glm53-review\run-review.mjs --diagnose `
+  --prompt .\tools\glm53-review\input\prompt-revisao.md `
+  --arabic .\tools\glm53-review\input\lote-1-arabe.md
+```
+
+O diagnóstico faz 3 chamadas de 1 caso (`ar-001`), uma de cada vez, e imprime uma tabela com resultado, se o streaming foi repassado, tempo até o primeiro byte, tempo total, modelo devolvido e tokens. Nenhuma resposta é gravada. As chamadas são:
+
+1. `glm-5.3` com streaming e raciocínio padrão;
+2. `glm-5.3` com streaming e `reasoning_effort: "low"`;
+3. `glm-5.2` com streaming, o modelo que já funcionou neste gateway.
+
+Fatos da documentação da Huawei MaaS que motivam o diagnóstico:
+
+- no GLM-5.3, o raciocínio não pode ser desligado, e o `reasoning_effort` padrão é `max`;
+- `reasoning_effort: "low"` dá um raciocínio mais curto;
+- no GLM-5.2, o raciocínio é configurável;
+- `max_tokens` não conta o raciocínio.
+
+Fontes: [API compatível com OpenAI](https://support.huaweicloud.com/intl/en-us/model-call-maas/model-call-021.html) e [lista de modelos](https://support.huaweicloud.com/intl/en-us/model-list-maas/model_list_0001.html).
+
+O limite de tempo do gateway da Digiti não é público. Os erros 504 e 520 da primeira execução vieram do servidor por trás da Cloudflare, não do corte de 100 s da própria Cloudflare, que daria erro 524. Por isso o diagnóstico mede o tempo em vez de supô-lo. Para rodar os lotes com raciocínio curto, use `--reasoning-effort low`; para usar outro modelo, `--model glm-5.2`.
+
 ## Pedaços, novas tentativas e retomada
 
 A Digiti fica atrás da Cloudflare, que corta qualquer requisição sem resposta em cerca de 100 s. Isso dá HTTP 504 "Gateway time-out". Na primeira execução real (23/10/2026), o lote árabe inteiro passou desse limite; pedaços de 10 casos também passaram, por causa do raciocínio do GLM-5.3. Por isso o runner:
