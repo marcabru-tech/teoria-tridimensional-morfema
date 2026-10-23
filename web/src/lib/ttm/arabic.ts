@@ -1,12 +1,9 @@
 import arabicRoots from '@/data/roots/arabic_roots.json';
 import { MorphemeAnalysis, SemanticLevel, Width, Depth, Height } from './types';
-import { AffixConfig, RootMatch, buildRootIndex, matchRoot } from './matching';
+import { RootMatch, buildRootIndex, matchRoot } from './matching';
+import { ARABIC_AFFIXES, ARABIC_DIACRITICS, normalizeArabic } from './rules';
 
-const ARABIC_DIACRITICS = /[\u0610-\u061a\u064b-\u065f\u0670\u06d6-\u06dc\u06df-\u06e4\u06e7\u06e8\u06ea-\u06ed]/g;
-
-function stripDiacritics(text: string): string {
-  return text.replace(ARABIC_DIACRITICS, '');
-}
+const stripDiacritics = normalizeArabic;
 
 function extractDiacritics(text: string): string[] {
   return text.match(ARABIC_DIACRITICS) || [];
@@ -17,13 +14,6 @@ function extractDiacritics(text: string): string[] {
 // quando data/ não acompanhava o deploy. Cópia sincronizada de data/roots/
 // (ver scripts/check-data-sync.mjs).
 const rootsData: Record<string, any> = arabicRoots;
-
-const ARABIC_AFFIXES: AffixConfig = {
-  proclitics: ['وال', 'فال', 'بال', 'كال', 'لل', 'ال', 'و', 'ف', 'ب', 'ل', 'ك', 'س'],
-  verbalPrefixes: ['سي', 'ست', 'ي', 'ت', 'أ', 'ن', 'ا'],
-  suffixesToRoot: ['وا', 'ون', 'ين', 'ات', 'نا', 'هم', 'هن', 'كم', 'كن', 'ها', 'ه', 'ك', 'ي', 'ن', 'ا', 'ت'],
-  suffixesToExample: ['وا', 'ون', 'ين', 'ات', 'ة', 'ها', 'هم', 'هن', 'كم', 'كن', 'نا', 'تم', 'تن', 'تما', 'ه', 'ك', 'ي', 'ن', 'ا', 'ت'],
-};
 
 const rootIndex = buildRootIndex(rootsData, stripDiacritics);
 

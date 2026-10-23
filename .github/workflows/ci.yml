@@ -82,9 +82,10 @@ jobs:
       - name: Check roots database sync (data/roots vs web/src/data/roots)
         run: npm run check:data
 
-      - name: Reference set self-tests (normalização e construtor hebraico)
+      - name: Reference set and engine tests (normalização, construtor hebraico, motor S2.2)
         run: |
           node --test tests/reference/normalize.test.mjs
+          node --test tests/ttm/engine.test.mjs
           (cd tests/reference/tools && python3 -m unittest -v test_he_build)
 
       - name: Apply .vercelignore to simulate the Vercel upload
@@ -109,5 +110,5 @@ jobs:
             exit 1
           }
           npm run smoke -- http://localhost:3000
-          # Conjunto de referência (S2.1): só registra o relatório; vira bloqueante no S2.2 com --enforce
+          # Conjunto de referência: só registra o relatório. O --enforce entra quando as duas línguas passarem de 90% (hebraico em 86,7% no S2.2)
           node tests/reference/evaluate.mjs http://localhost:3000 --report /tmp/relatorio-referencia.md
